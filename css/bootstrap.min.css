@@ -473,7 +473,8 @@ hr {
 
 .img-fluid {
   max-width: 100%;
-  height: auto;
+  height: 250px;
+  width: 400px;
 }
 
 .img-thumbnail {

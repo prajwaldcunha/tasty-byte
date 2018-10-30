@@ -1,0 +1,26 @@
+
+<html>
+<head>
+	<style type="text/css">
+
+	table,th,td{border:1px solid red;;border-collapse: collapse;text-align: center;}
+</style>
+</head>
+<body>
+<table style="align: center;">
+	<caption style="caption-side: bottom;">shello cap</caption>
+<tr>
+<th rowspan="2"></th>
+<th colspan="2">average</th>
+<th rowspan="2">Red eyes</th>
+</tr>
+
+<tr><th>height</th><th>weight</th></tr>
+
+<tr><th>male</th><td>30</td><td>25</td><td>40%</td></tr>
+<tr><th>female</th><td>35</td><td>25</td><td>40%</td></tr>
+<tfoot><tr>female40%</tr></tfoot>
+
+</table>
+</body>
+</html>

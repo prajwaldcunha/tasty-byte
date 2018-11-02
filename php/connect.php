@@ -7,30 +7,9 @@ $db_name = 'tastybytedb';
 //Establishes the connection
 
 
-
-
-
-$con=mysqli_connect($conn, $host, $username, $password, $db_name, 3306);
-
-// Check connection
-if (mysqli_connect_errno()) {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
-$con=mysqli_init();
-if (!$con)
-  {
-  die("mysqli_init failed");
-  }
-echo "init pass";
-
-
-mysqli_ssl_set($con,"key.pem","cert.pem","cacert.pem",NULL,NULL); 
-echo "P pass";
-if (!mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306))
-  {
-  die("Connect Error: " . mysqli_connect_error());
-  }
-
+$con=mysqli_init(); 
+mysqli_ssl_set($con, NULL, NULL, {ca-cert filename}, NULL, NULL); 
+mysqli_real_connect($con, "tastybyte.mysql.database.azure.com", "tastybyte@tastybyte", "Tasty#byte", "tastybytedb", 3306);
 
 //Run the Select query
 echo "Reading data from table:";

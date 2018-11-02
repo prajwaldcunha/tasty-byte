@@ -57,7 +57,7 @@
             </h1>
 
             <h2 class="h5 site-subheading mb-5 site-animate">Real Taste, Real Food!</h2>    
-            <p><a href="https://tasty-byte.azurewebsites.net/" target="_blank" class="btn btn-outline-white btn-lg site-animate" data-toggle="modal" data-target="#reservationModal">Login/Register</a></p>
+            <p><a href="https://tasty-byte.azurewebsites.net/" target="_blank" class="btn btn-outline-white btn-lg site-animate" data-toggle="modal" data-target="#reservationModal">Register</a></p>
           </div>
         </div>
       </div>
@@ -661,9 +661,6 @@
       </div>
     </footer>
 
-    
-    
-
     <!-- Modal -->
     <div class="modal fade" id="reservationModal" tabindex="-1" role="dialog" aria-labelledby="reservationModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
@@ -671,14 +668,21 @@
           <div class="modal-body">
             <div class="row">
               <div class="col-lg-12">
-                <div class="bg-image" style="background-image: url(images/reservation_1.jpg);"></div>
+                <div class="bg-image" style="background-image: url(images/reservation_2.jpg);"></div>
               </div>
               <div class="col-lg-12 p-5">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <small>CLOSE </small><span aria-hidden="true">&times;</span>
                 </button>
-                <h1 class="mb-4">SignUp</h1>  
-                <form action="#" method="post">
+                <h1 class="mb-4">SignUp</h1>
+
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <p><a href="https://tasty-byte.azurewebsites.net/" target="_blank" data-toggle="modal" data-target="#reservationModal1" data-dismiss="modal" class="register">Already have an account? Login Now!</a></p>
+                    </div>
+                  </div>
+
+                <form action="register.php" method="post">
                   <div class="row">
                     <div class="col-md-6 form-group">
                       <label for="m_fname">First Name</label>
@@ -689,12 +693,21 @@
                       <input type="text" class="form-control" id="m_lname">
                     </div>
                   </div>
+
                   <div class="row">
                     <div class="col-md-12 form-group">
                       <label for="m_email">Email</label>
                       <input type="email" class="form-control" id="m_email">
                     </div>
                   </div>
+
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="m_phone">Address</label>
+                      <input type="text" class="form-control" id="m_phone">
+                    </div>
+                  </div>
+
                   <div class="row">
                     <div class="col-md-12 form-group">
                       <label for="m_phone">Phone</label>
@@ -718,6 +731,55 @@
     </div>
 
     <!-- END Modal -->
+
+
+    <div class="modal fade" id="reservationModal1" tabindex="-1" role="dialog" aria-labelledby="reservationModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="bg-image" style="background-image: url(images/reservation_1.jpg);"></div>
+              </div>
+              <div class="col-lg-12 p-5">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <small>CLOSE </small><span aria-hidden="true">&times;</span>
+                </button>
+                <h1 class="mb-4">Login</h1>
+
+                <form action="loginvalidation.php" method="post">
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="m_email">Email</label>
+                      <input type="email" class="form-control" id="m_email">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="m_phone">Password</label>
+                      <input type="text" class="form-control" id="m_phone">
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <input type="submit" class="btn btn-primary btn-lg btn-block" value="login">
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- END Modal -->
+    
+
+    
 
     <!-- loader -->
     <div id="site-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>

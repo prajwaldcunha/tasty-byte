@@ -844,6 +844,60 @@ textarea.form-control {
   }
 }
 
+#reservationModal1 .close {
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  cursor: pointer;
+}
+
+#reservationModal1 .close:active, #reservationModal1 .close:focus {
+  outline: none !important;
+}
+
+#reservationModal1 .close span {
+  font-size: 30px;
+}
+
+#reservationModal1 .close small {
+  font-size: 16px;
+  position: relative;
+  top: -2px;
+  right: 10px;
+}
+
+#reservationModal1 .modal-content {
+  border-radius: 0;
+}
+
+#reservationModal1 .modal-content label {
+  color: #000;
+}
+
+#reservationModal1 .modal-content .modal-body {
+  padding: 0;
+}
+
+#reservationModal1 .modal-content .bg-image, #reservationModal1 .modal-content .site-cover {
+  height: 200px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+@media screen and (max-width: 960px) {
+  #reservationModal1 .modal-content .bg-image, #reservationModal1 .modal-content .site-cover {
+    height: 200px;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-left: 15px;
+    margin-right: 15px;
+    overflow: hidden;
+  }
+}
+
 .image-popup {
   cursor: -webkit-zoom-in;
   cursor: -moz-zoom-in;
@@ -998,7 +1052,7 @@ textarea.form-control {
 .ml5 {
   position: relative;
   font-weight: 300;
-  font-size: 4.5em;
+  font-size: 3.5em;
   color: #fff;
 }
 
@@ -1114,4 +1168,10 @@ a.animated-button-login.button-login-top:after {
   -ms-transform: translateX(-50%) translateY(-50%) rotate(-25deg);
   -webkit-transform: translateX(-50%) translateY(-50%) rotate(-25deg);
   transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+}
+
+.register {
+  font-size: 24px;
+  font-weight: bold;
+  color: red;
 }

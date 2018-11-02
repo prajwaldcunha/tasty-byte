@@ -22,16 +22,18 @@ if (!$con)
   die("mysqli_init failed");
   }
 echo "init pass";
-mysqli_ssl_set($con,"key.pem","cert.pem","cacert.pem",NULL,NULL); 
 
-if (!mysqli_real_connect($con,"localhost","user1","datasoft123","hr"))
+
+mysqli_ssl_set($con,"key.pem","cert.pem","cacert.pem",NULL,NULL); 
+echo "P pass";
+if (!mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306))
   {
   die("Connect Error: " . mysqli_connect_error());
   }
 
 
 //Run the Select query
-printf("Reading data from table: \n");
+echo "Reading data from table:";
 $res = mysqli_query($conn, 'SELECT * FROM customers');
 while ($row = mysqli_fetch_assoc($res)) {
 var_dump($row);

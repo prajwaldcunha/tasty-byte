@@ -17,10 +17,12 @@ mysqli_real_connect($con, "tastybyte.mysql.database.azure.com", "tastybyte@tasty
 echo "initial343";
 //Run the Select query
 echo "Reading data from table:";
-$res = mysqli_query($conn, 'SELECT * FROM customers');
-while ($row = mysqli_fetch_assoc($res)) {
-var_dump($row);
-}
+
+
+
+$sql = "SELECT * FROM customers";
+$result = mysqli_query($conn, $sql);
+var_dump($result);
 
 //Close the connection
 mysqli_close($conn);

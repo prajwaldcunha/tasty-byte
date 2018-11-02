@@ -5,14 +5,6 @@ $password = 'Tasty#byte';
 $db_name = 'tastybytedb';
 
 //Establishes the connection
-$conn = mysqli_init();
-
-mysqli_ssl_set($conn,NULL,NULL, "/ssl/html/BaltimoreCyberTrustRoot.crt.pem", NULL, NULL) ;
-
-mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
-if (mysqli_connect_errno($conn)) {
-die('Failed to connect to MySQL11: '.mysqli_connect_error());
-}
 
 
 

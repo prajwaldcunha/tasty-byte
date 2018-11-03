@@ -369,13 +369,15 @@ h1, h2, h3, h4, h5,
 }
 
 .btn.btn-lg {
-  font-size: 16px !important;
+  font-size: 20px !important;
   padding: 13px 40px !important;
+  color: white;
 }
 
 .btn.btn-sm {
   padding: 10px 20px;
   font-size: 12px;
+  color: white;
 }
 
 .btn.btn-primary {
@@ -1217,7 +1219,7 @@ color:#4a89dc;}
 .login-shadow{-webkit-box-shadow: 5px -5px 6px 0px rgba(82,82,82,0.52);
 -moz-box-shadow: 5px -5px 6px 0px rgba(82,82,82,0.52);
 box-shadow: 5px -5px 6px 0px rgba(82,82,82,0.52);
-  z-index:1;
+  z-index: 1;
    
 }
 
@@ -1344,11 +1346,13 @@ box-shadow: -5px 0px 6px 0px rgba(82,82,82,0.52);
 }
 
 
-.modal-body{background-image:url('http://res.cloudinary.com/rinma/image/upload/v1500489833/Airplane-flying-desktop-pictureproba2_rlcced.jpg');
-background-size:cover;
-z-inedx:4;}
+.modal-body{
+  background-image:url('../images/modalbg.jpg');
+  background-size:cover;
+  z-index:4;
+}
 
 em{display:none;}
 
 
-/* login modal end
+/* login modal end */

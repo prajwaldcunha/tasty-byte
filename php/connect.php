@@ -28,7 +28,7 @@ echo "Reading data from table:";
 
 
 
-$res = mysqli_query($con, 'SELECT * FROM Products');
+$res = mysqli_query($con, 'SELECT * FROM  customer');
 while ($row = mysqli_fetch_assoc($res)) {
 var_dump($row);
 }

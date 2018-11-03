@@ -241,7 +241,7 @@ anime.timeline({loop: true})
 
 
 
-  // modal
+  // modal login
 
   $(window, document, undefined).ready(function() {
 

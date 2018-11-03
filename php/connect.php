@@ -5,12 +5,12 @@ $password = 'Tasty#byte';
 $db_name = 'tastybytedb';
 
 //Establishes the connection
-echo "initial";
+echo "initial<br>";
 
 $con=mysqli_init(); 
 
 
-echo "initial003";
+echo "initial003<br/>";
 
 
 mysqli_ssl_set($con,NULL,NULL, "/ssl/BaltimoreCyberTrustRoot.crt.pem", NULL, NULL) ; 
@@ -22,7 +22,7 @@ mysqli_real_connect($con, "tastybyte.mysql.database.azure.com", "tastybyte@tasty
 if (mysqli_connect_errno($con)) {
 die('Failed to connect to MySQL: '.mysqli_connect_error());
 }
-echo "initial343";
+echo "initial343<br/>";
 //Run the Select query
 echo "Reading data from table:";
 

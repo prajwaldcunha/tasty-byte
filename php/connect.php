@@ -13,9 +13,9 @@ $con=mysqli_init();
 echo "initial003";
 
 
-mysqli_ssl_set($con,NULL,NULL, "/var/www/html/BaltimoreCyberTrustRoot.crt.pem", NULL, NULL) ; 
+mysqli_ssl_set($con,NULL,NULL, "/ssl/BaltimoreCyberTrustRoot.crt.pem", NULL, NULL) ; 
 
-mysqli_options(MYSQLI_OPT_SSL_VERIFY_SERVER_CERT, false);
+mysqli_options(MYSQLI_OPT_SSL_VERIFY_SERVER_CERT, true);
 mysqli_real_connect($con, "tastybyte.mysql.database.azure.com", "tastybyte@tastybyte", "Tasty#byte", "tastybytedb", 3306,SQLI_CLIENT_SSL);
 
 

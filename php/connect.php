@@ -9,8 +9,6 @@ echo "initial";
 
 $con=mysqli_init(); 
 
-echo "initia2l";
-mysqli_ssl_set($con, NULL, NULL, "/ssl/BaltimoreCyberTrustRoot.crt.pem", NULL, NULL); 
 
 echo "initial3";
 mysqli_real_connect($con, "tastybyte.mysql.database.azure.com", "tastybyte@tastybyte", "Tasty#byte", "tastybytedb", 3306);

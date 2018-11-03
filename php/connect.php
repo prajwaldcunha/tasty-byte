@@ -16,7 +16,10 @@ mysqli_real_connect($con, "tastybyte.mysql.database.azure.com", "tastybyte@tasty
 echo "initial3";
 mysqli_ssl_set($conn,NULL,NULL, "/var/www/html/BaltimoreCyberTrustRoot.crt.pem", NULL, NULL) ; 
 
-mysqli_options(MYSQLI_OPT_SSL_VERIFY_SERVER_CERT, true);
+
+echo "ssl set";
+
+mysqli_options(MYSQLI_OPT_SSL_VERIFY_SERVER_CERT, false);
 if (mysqli_connect_errno($conn)) {
 die('Failed to connect to MySQL: '.mysqli_connect_error());
 }

@@ -1,5 +1,5 @@
 <?php
-$host = 'tastybyte.mysql.database.azure.com';
+$host = 'https://tastybyte.mysql.database.azure.com';
 $username = 'tastybyte@tastybyte';
 $password = 'Tasty#byte';
 $dbname = 'tastybytedb';

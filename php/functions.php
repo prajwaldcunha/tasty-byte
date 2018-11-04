@@ -1,5 +1,5 @@
 <?php
-function validate($data) {
+function cleanInput($data) {
 	$data = trim($data);
  	$data = stripslashes($data);
   	$data = htmlspecialchars($data);
@@ -8,9 +8,9 @@ function validate($data) {
 
 function isempty($data) {
 	if (empty($data)) {
-    	return false;
+    	return true;
   	} else {
-  		return true;
+  		return false;
 	}
 }
 

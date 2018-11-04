@@ -1,3 +1,6 @@
+<?php
+  include("login.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,6 +41,9 @@
           <li class="nav-item"><a href="#section-news" class="nav-link">Cart</a></li>
           <li class="nav-item"><a href="#section-gallery" class="nav-link">My Products</a></li>
           <li class="nav-item"><a href="#section-contact" class="nav-link">Contact</a></li>
+          <?php if (isset($_SESSION['username'])):?>
+            <li class="nav-item"><a href="#section-contact" class="nav-link"><?php echo $_SESSION['username'];?></a></li>
+          <?endif?>
         </ul>
       </div>
     </div>
@@ -686,19 +692,19 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <small>CLOSE </small><span aria-hidden="true">&times;</span>
               </button>
-              <form class="form-horizontal">
+              <form class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                 <fieldset>
                   <!-- Sign In Form -->
                   <!-- Text input-->
                   
                   <div class="group">
-                    <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                    <input required="" class="input" type="text" name="email"><span class="highlight"></span><span class="bar"></span>
                     <label class="label" for="date">Email address</label></div>
                     
                     
                     <!-- Password input-->
                     <div class="group">
-                      <input required="" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
+                      <input required="" class="input" type="password" name="password"><span class="highlight"></span><span class="bar"></span>
                       <label class="label" for="date">Password</label>
                     </div>
                     <em>minimum 6 characters</em>
@@ -712,7 +718,7 @@
                     <div class="control-group">
                       <label class="control-label" for="signin"></label>
                       <div class="controls">
-                        <button id="signin" name="signin" class="btn btn-primary btn-block">Log In</button>
+                        <button id="signin" name="signin" class="btn btn-primary btn-block" type="submit">Log In</button>
                       </div>
                     </div>
                   </fieldset>

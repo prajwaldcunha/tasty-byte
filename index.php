@@ -43,7 +43,6 @@
           <li class="nav-item"><a href="#section-contact" class="nav-link">Contact</a></li>
           <?php if (isset($_SESSION['$username'])):?>
             <li class="nav-item"><a href="#section-contact" class="nav-link"><?php echo $_SESSION['username'];?></a></li>
-            <li class="nav-item"><a href="#section-contact" class="nav-link">Logout</a></li>
           <?endif?>
         </ul>
       </div>

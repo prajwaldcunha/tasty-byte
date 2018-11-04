@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if ($result->num_rows > 0) {
 	    // output data of each row
 	    while($row = $result->fetch_array()) {
-	        $_SESSION['$username'] = $row['fname'];
+	        $_SESSION['username'] = $row['fname'];
 	    }
 	} else {
 	    $_SESSION['validation_error'] = "Username and password does not match";

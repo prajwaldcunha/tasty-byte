@@ -53,15 +53,15 @@ h1, h2, h3, h4, h5,
 }
 
 .site-navbar-light .navbar-nav > .nav-item > .nav-link {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   color: rgba(255,255,255,0.6);
   text-transform: uppercase;
   letter-spacing: .2em;
   padding-top: 30px;
   padding-bottom: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 @media screen and (max-width: 960px) {

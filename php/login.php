@@ -4,7 +4,7 @@ require 'functions.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	session_start();
 	$email = cleanInput($_POST['email']);
-	$password= cleanInput($_POST['password']);
+	$password= md5(cleanInput($_POST['password']));
 
 	if(isempty($email)) {
 		$_SESSION['email_empty_error'] = "email address is empty";

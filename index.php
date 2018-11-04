@@ -1,5 +1,5 @@
 <?php
-  include("login.php");
+  require 'php/login.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,8 +41,9 @@
           <li class="nav-item"><a href="#section-news" class="nav-link">Cart</a></li>
           <li class="nav-item"><a href="#section-gallery" class="nav-link">My Products</a></li>
           <li class="nav-item"><a href="#section-contact" class="nav-link">Contact</a></li>
-          <?php if (isset($_SESSION['username'])):?>
-            <li class="nav-item"><a href="#section-contact" class="nav-link"><?php echo $_SESSION['username'];?></a></li>
+          <?php if (isset($_SESSION['$username'])):?>
+            <li class="nav-item"><a href="#section-contact" class="nav-link"><?php echo $_SESSION['$username'];?></a></li>
+            <li class="nav-item"><a href="#section-contact" class="nav-link">Logout</a></li>
           <?endif?>
         </ul>
       </div>

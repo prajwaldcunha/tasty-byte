@@ -1,7 +1,6 @@
 <?php
-require("connect.php");
-require("functions.php");
-
+require 'connect.php';
+require 'functions.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	session_start();
 	$email = cleanInput($_POST['email']);
@@ -17,17 +16,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		// header("Location: https://tastybyte.azurewebsites.net");
 	}
 
-	$sql = "SELECT email, password fname FROM users where email = " . $email . "and password = " . $password;
+	$sql = 'SELECT email, password,fname FROM users where email = "' . $email . '" and password = "' . $password . '"';
 	$result = $conn->query($sql);
 
 	if ($result->num_rows > 0) {
 	    // output data of each row
 	    while($row = $result->fetch_array()) {
-	        $_SESSION['username'] = $fname;
-	        // header("Location: https://tastybyte.azurewebsites.net");
+	        $_SESSION['$username'] = $row['fname'];
 	    }
 	} else {
-		echo "authentication error";
 	    $_SESSION['validation_error'] = "Username and password does not match";
 	    // header("Location: https://tastybyte.azurewebsites.net");
 	}

@@ -3155,7 +3155,7 @@ tbody.collapse.show {
   text-align: center;
 }
 
-.activecontent>.tab-pane {
+.tab-content>.tab-pane {
   display: none;
 }
 

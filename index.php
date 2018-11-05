@@ -696,7 +696,7 @@
  
  <div class="bs-example bs-example-tabs">
  <ul id="myTab" class="nav nav-tabs">
- <li id="tab1" class=" active tab-style login-shadow "><a href="#signin" data-toggle="tab">Log In</a></li>
+ <li id="tab1" class=" active tab-style login-shadow "><a href="#signin" class="active" data-toggle="tab">Log In</a></li>
  <li id="tab2" class=" tab-style "><a href="#signup" data-toggle="tab">Sign Up</a></li>
  
  </ul>
@@ -704,7 +704,7 @@
  <div class="modal-body">
  <div id="myTabContent" class="tab-content">
  
- <div class="tab-pane fade active in" id="signin">
+ <div class="tab-pane fade active in show" id="signin">
  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
  <small>CLOSE </small><span aria-hidden="true">&times;</span>
  </button>

@@ -71,10 +71,10 @@
           </h1>
 
           <h2 class="h5 site-subheading mb-5 site-animate">Real Taste, Real Food!</h2>   
-           <?php if !(isset($_SESSION['username'])):?>
+           <?php if (!isset($_SESSION['username'])):?>
 
           <p><button href="https://tasty-byte.azurewebsites.net/"  class="btn btn-outline-white btn-lg site-animate" data-toggle="modal" data-target=".log-sign">Sign In/Register</button></p> 
-          <?php?>
+          <?php  endif; ?>
 
 
           <!-- <p><a href="https://tasty-byte.azurewebsites.net/" target="_blank" class="btn btn-outline-white btn-lg site-animate" data-toggle="modal" data-target="#reservationModal">Register</a></p> -->

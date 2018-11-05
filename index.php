@@ -8,7 +8,7 @@
  <title>TastyByte</title>
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
- <link href="googleapis.css" rel="stylesheet">
+ <link href="css/googleapis.css" rel="stylesheet">
  <link rel="stylesheet" href="css/bootstrap.min.css">
  <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
  <link rel="stylesheet" href="css/animate.css">
@@ -58,6 +58,7 @@
  </div>
  </nav>
  <!-- END nav -->
+
 
  <section class="site-cover" style="background-image: url(images/background.jpg);" id="section-home">
  <div class="container">
@@ -725,6 +726,11 @@
  </div>
  <em>minimum 6 characters</em>
 
+<!-- display error message-->
+<div class="group">
+  <span class="errormessage"><?php echo $_SESSION['validation_error']?></span>
+</div>
+
  <div class="forgot-link">
  <a href="#forgot" data-toggle="modal" data-dismiss="modal" data-target="#forgot-password"> I forgot my password</a>
  </div>
@@ -746,7 +752,7 @@
  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
  <small>CLOSE </small><span aria-hidden="true">&times;</span>
  </button>
- <form class="form-horizontal" action="php/register.php" method="post">
+ <form class="form-horizontal" id="myform" action="php/register.php" method="post">
  <fieldset>
  <!-- Sign Up Form -->
  <!-- Text input-->
@@ -848,10 +854,6 @@
  <script src="js/jquery.timepicker.min.js"></script>
  
  <script src="js/jquery.animateNumber.min.js"></script>
- 
-
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
- <script src="js/google-map.js"></script>
 
  <script src="js/main.js"></script>
 

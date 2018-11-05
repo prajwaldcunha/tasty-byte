@@ -103,7 +103,7 @@
   </section>
   <!-- END section -->
 
-
+ <?php if (isset($_SESSION['username'])):?>
   <section class="site-section bg-light" id="section-offer">
     <div class="container">
 
@@ -245,6 +245,7 @@
     </div>
   </section>
   <!-- END section -->
+  <?php endif; ?>
 
   <section class="site-section" id="section-menu">
     <div class="container">
@@ -491,6 +492,8 @@
   </section>
   <!-- END section -->
 
+#CART
+ <?php if (isset($_SESSION['username'])):?>
   <section class="site-section bg-light" id="section-news">
     <div class="container">
 
@@ -541,6 +544,7 @@
     </div>
   </section>
   <!-- END section -->
+  #END CART
 
   <section class="site-section" id="section-gallery">
     <div class="container">
@@ -591,6 +595,7 @@
     </div>
   </section>
   <!-- END section -->
+  <?php endif; ?>
 
   <section class="site-section bg-light" id="section-contact">
     <div class="container">

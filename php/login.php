@@ -23,6 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	    // output data of each row
 	    while($row = $result->fetch_array()) {
 	        $_SESSION['username'] = $row['fname'];
+			header("Location: https://tastybyte.azurewebsites.net/index.php");
 	    }
 	} else {
 	    $_SESSION['validation_error'] = "Username and password does not match";

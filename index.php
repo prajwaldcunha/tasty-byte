@@ -1,5 +1,5 @@
 <?php
-  // require 'php/login.php';
+   require 'php/login.php';
 ?>
 
 <!DOCTYPE html>
@@ -708,7 +708,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <small>CLOSE </small><span aria-hidden="true">&times;</span>
               </button>
-              <form class="form-horizontal" action="php/login.php" method="post">
+              <form class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                 <fieldset>
                   <!-- Sign In Form -->
                   <!-- Text input-->

@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	    }
 	} else {
 	    $_SESSION['validation_error'] = "Username and password does not match";
-	    // header("Location: https://tastybyte.azurewebsites.net");
+	    header("Location: https://tastybyte.azurewebsites.net/index.php");
 	}
 }
 ?>

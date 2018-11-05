@@ -1,5 +1,5 @@
 <?php
-  require 'php/login.php';
+  // require 'php/login.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -610,7 +610,7 @@
         </div>
 
         <div class="col-md-7 mb-5 site-animate">
-          <form action="" method="post">
+          <form  method="post">
             <div class="form-group">
               <label for="name" class="sr-only">Name</label>
               <input type="text" class="form-control" id="name" placeholder="Name">
@@ -706,7 +706,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <small>CLOSE </small><span aria-hidden="true">&times;</span>
               </button>
-              <form class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+              <form class="form-horizontal" action="php/login.php" method="post">
                 <fieldset>
                   <!-- Sign In Form -->
                   <!-- Text input-->

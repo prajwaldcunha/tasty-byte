@@ -2584,7 +2584,7 @@ tbody.collapse.show {
 }
 
 .dropdown-item:focus,.dropdown-item:hover {
-  color: #555555;
+  color: #16181b;
   text-decoration: none;
   background-color: #f8f9fa;
 }
@@ -3155,7 +3155,7 @@ tbody.collapse.show {
   text-align: center;
 }
 
-.tab-content>.tab-pane {
+.activecontent>.tab-pane {
   display: none;
 }
 

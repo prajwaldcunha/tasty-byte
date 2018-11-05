@@ -36,13 +36,21 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active"><a href="#section-home" class="nav-link active">Home</a></li>
           <li class="nav-item"><a href="#section-about" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="#section-offer" class="nav-link">My Orders</a></li>
           <li class="nav-item"><a href="#section-menu" class="nav-link">Menu</a></li>
-          <li class="nav-item"><a href="#section-news" class="nav-link">Cart</a></li>
-          <li class="nav-item"><a href="#section-gallery" class="nav-link">My Products</a></li>
           <li class="nav-item"><a href="#section-contact" class="nav-link">Contact</a></li>
           <?php if (isset($_SESSION['username'])):?>
-            <li class="nav-item"><a href="#section-contact" class="nav-link"><?php echo $_SESSION['username'];?></a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <?php echo $_SESSION['username'];?>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#section-offer">My Orders</a>
+                    <a class="dropdown-item" href="#section-news">Cart</a>
+                    <a class="dropdown-item" href="#section-gallery">My Products</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="php/logout.php">Logout</a>
+                </div>
+            </li>
           <?endif?>
         </ul>
       </div>

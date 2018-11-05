@@ -491,7 +491,8 @@
     </div>
   </section>
   <!-- END section -->
-  // CART
+
+#CART
  <?php if (isset($_SESSION['username'])):?>
   <section class="site-section bg-light" id="section-news">
     <div class="container">

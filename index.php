@@ -723,6 +723,9 @@
                       <input required="" class="input" type="password" name="password"><span class="highlight"></span><span class="bar"></span>
                       <label class="label" for="date">Password</label>
                     </div>
+                    <div class="group">
+                        <span class="errormessage"><?php echo $_SESSION['validation_error']; ?></span>
+                    </div>
                     <em>minimum 6 characters</em>
 
                     <div class="forgot-link">

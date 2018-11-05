@@ -743,27 +743,27 @@
                     <!-- Sign Up Form -->
                     <!-- Text input-->
                     <div class="group">
-                      <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                      <input required="" class="input" type="text" name="fname"><span class="highlight"></span><span class="bar"></span>
                       <label class="label" for="date">First Name</label></div>
                       
                       <!-- Text input-->
                       <div class="group">
-                        <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                        <input required="" class="input" type="text" name="lname"><span class="highlight"></span><span class="bar"></span>
                         <label class="label" for="date">Last Name</label></div>
                         
                         <!-- Password input-->
                         <div class="group">
-                          <input required="" class="input" type="email"><span class="highlight"></span><span class="bar"></span>
+                          <input required="" class="input" type="email" name="email"><span class="highlight"></span><span class="bar"></span>
                           <label class="label" for="date">Email</label></div>
                           
                           <!-- Text input-->
                           <div class="group">
-                            <input required="" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
+                            <input required="" class="input" type="password" name="password"><span class="highlight"></span><span class="bar"></span>
                             <label class="label" for="date">Password</label></div>
                             <em>1-8 Characters</em>
                             
                             <div class="group2">
-                              <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                              <input required="" class="input" type="text" name="country"><span class="highlight"></span><span class="bar"></span>
                               <label class="label" for="date">Country</label></div>
                               
                               

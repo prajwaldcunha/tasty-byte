@@ -1,6 +1,7 @@
 <?php
-  require 'php/login.php';
+    session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,8 +72,10 @@
           </h1>
 
           <h2 class="h5 site-subheading mb-5 site-animate">Real Taste, Real Food!</h2>   
+           <?php if (!isset($_SESSION['username'])):?>
 
           <p><button href="https://tasty-byte.azurewebsites.net/"  class="btn btn-outline-white btn-lg site-animate" data-toggle="modal" data-target=".log-sign">Sign In/Register</button></p> 
+          <?php  endif; ?>
 
 
           <!-- <p><a href="https://tasty-byte.azurewebsites.net/" target="_blank" class="btn btn-outline-white btn-lg site-animate" data-toggle="modal" data-target="#reservationModal">Register</a></p> -->
@@ -101,7 +104,7 @@
   </section>
   <!-- END section -->
 
-
+ <?php if (isset($_SESSION['username'])):?>
   <section class="site-section bg-light" id="section-offer">
     <div class="container">
 
@@ -243,6 +246,7 @@
     </div>
   </section>
   <!-- END section -->
+  <?php endif; ?>
 
   <section class="site-section" id="section-menu">
     <div class="container">
@@ -489,6 +493,8 @@
   </section>
   <!-- END section -->
 
+#CART
+ <?php if (isset($_SESSION['username'])):?>
   <section class="site-section bg-light" id="section-news">
     <div class="container">
 
@@ -539,6 +545,7 @@
     </div>
   </section>
   <!-- END section -->
+  #END CART
 
   <section class="site-section" id="section-gallery">
     <div class="container">
@@ -589,6 +596,7 @@
     </div>
   </section>
   <!-- END section -->
+  <?php endif; ?>
 
   <section class="site-section bg-light" id="section-contact">
     <div class="container">
@@ -604,7 +612,7 @@
         </div>
 
         <div class="col-md-7 mb-5 site-animate">
-          <form action="" method="post">
+          <form  method="post">
             <div class="form-group">
               <label for="name" class="sr-only">Name</label>
               <input type="text" class="form-control" id="name" placeholder="Name">
@@ -700,7 +708,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <small>CLOSE </small><span aria-hidden="true">&times;</span>
               </button>
-              <form class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+              <form class="form-horizontal" action="php/login.php" method="post">
                 <fieldset>
                   <!-- Sign In Form -->
                   <!-- Text input-->
@@ -714,6 +722,9 @@
                     <div class="group">
                       <input required="" class="input" type="password" name="password"><span class="highlight"></span><span class="bar"></span>
                       <label class="label" for="date">Password</label>
+                    </div>
+                    <div class="group">
+                        <span class="errormessage"><?php echo $_SESSION['validation_error']; ?></span>
                     </div>
                     <em>minimum 6 characters</em>
 
@@ -743,27 +754,27 @@
                     <!-- Sign Up Form -->
                     <!-- Text input-->
                     <div class="group">
-                      <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                      <input required="" class="input" type="text" name="fname"><span class="highlight"></span><span class="bar"></span>
                       <label class="label" for="date">First Name</label></div>
                       
                       <!-- Text input-->
                       <div class="group">
-                        <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                        <input required="" class="input" type="text" name="lname"><span class="highlight"></span><span class="bar"></span>
                         <label class="label" for="date">Last Name</label></div>
                         
                         <!-- Password input-->
                         <div class="group">
-                          <input required="" class="input" type="email"><span class="highlight"></span><span class="bar"></span>
+                          <input required="" class="input" type="email" name="email"><span class="highlight"></span><span class="bar"></span>
                           <label class="label" for="date">Email</label></div>
                           
                           <!-- Text input-->
                           <div class="group">
-                            <input required="" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
+                            <input required="" class="input" type="password" name="password"><span class="highlight"></span><span class="bar"></span>
                             <label class="label" for="date">Password</label></div>
                             <em>1-8 Characters</em>
                             
                             <div class="group2">
-                              <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                              <input required="" class="input" type="text" name="country"><span class="highlight"></span><span class="bar"></span>
                               <label class="label" for="date">Country</label></div>
                               
                               

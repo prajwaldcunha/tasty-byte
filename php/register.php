@@ -4,14 +4,14 @@ require "functions.php";
 $fname =$lname= $email = $password = $country =$phoneno=$state=$city=$locality=  "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $fname = cleanInput($_POST["fname"]);
-  $lname =cleanInput($_POST["lname"]);
-  $email =cleanInput($_POST["email"]);
-  $phoneno =cleanInput($_POST["phoneno"]);
-  $state =cleanInput($_POST["state"]);
-  $city =cleanInput($_POST["city"]);
-  $locality =cleanInput($_POST["locality"]);
-  $password =md5(cleanInput($_POST["password"]);
+  $fname = mysqli_real_escape_string($conn,$_POST["fname"]);
+  $lname =mysqli_real_escape_string($conn,$_POST["lname"]);
+  $email =mysqli_real_escape_string($conn,$_POST["email"]);
+  $phoneno =mysqli_real_escape_string($conn,$_POST["phoneno"]);
+  $state =mysqli_real_escape_string($conn,$_POST["state"]);
+  $city =mysqli_real_escape_string($conn,$_POST["city"]);
+  $locality =mysqli_real_escape_string($conn,$_POST["locality"]);
+  $password =md5(mysqli_real_escape_string($conn,$_POST["password"]);
 
   
 

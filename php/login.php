@@ -27,6 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	    }
 	} else {
 	    $_SESSION['validation_error'] = "Username and password does not match";
+		$_SESSION['script'] = "<script> $(document).ready(function(){ $('#myModal').modal('show'); }); </script>";
 		header("Location: https://tastybyte.azurewebsites.net/index.php");
 	}
 }

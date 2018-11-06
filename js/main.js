@@ -258,12 +258,20 @@ anime.timeline({loop: true})
 
 $('#tab1').on('click' , function(){
     $('#tab1').addClass('login-shadow');
-   $('#tab2').removeClass('signup-shadow');
+	$('#signin').addClass('active');
+	$('#signin').addClass('show')
+   	$('#tab2').removeClass('signup-shadow');
+	$('#signup').removeClass('active')
+   	$('#signup').removeClass('show');
+   
 });
 
 $('#tab2').on('click' , function(){
     $('#tab2').addClass('signup-shadow');
-   $('#tab1').removeClass('login-shadow');
-
+	$('#signup').addClass('active');
+	$('#signup').addClass('show');
+   	$('#tab1').removeClass('login-shadow');
+	$('#signin').removeClass('active');
+	$('#signin').removeClass('show');
 
 });

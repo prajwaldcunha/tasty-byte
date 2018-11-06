@@ -837,8 +837,8 @@ session_start();
 																	<div class="group2">
 																	<span class="highlight"></span><span class="bar"></span>
 																	<!--<label class="label" for="date">State</label>-->
-																	<select name="city"  id=”city”  required="" class="input">
-																		<option value="">Please select a State</option>
+																	<select name="city"  id="city"  required="" class="input">
+																		<option value="">Please select a city</option>
 																		</select>
 																	</div>
 

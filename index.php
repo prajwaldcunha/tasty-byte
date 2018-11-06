@@ -547,7 +547,7 @@ session_start();
 				</div>
 			</section>
 			<!-- END section -->
-			<!--	#END CART -->
+			<!--    #END CART -->
 
 			<section class="site-section" id="section-gallery">
 				<div class="container">
@@ -588,19 +588,19 @@ session_start();
 												<form action="addProduct.php" method="GET">
 													<div class="section"><span>1</span>Personal details</div>
 													<div class="inner-wrap">
-														<label>Full Name <input type="text" name="field1" required="" /></label>
-														<label>Email Id <input type="email" name="mail" required="" /></label>
-														<label>Address <textarea name="field2" required=""></textarea></label>
+														<label>Full Name <input type="text" name="field1" required="" maxlength="100" /></label>
+														<label>Email Id <input type="email" name="mail" required="" maxlength="50" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/></label>
+														<label>Address <textarea name="field2" required="" maxlength="150"></textarea></label>
 													</div>
 
 													<div class="section"><span>2</span>Item details</div>
 													<div class="inner-wrap">
 
 
-														<label>Product name <input type="text" name="field3" required="" /></label>
-														<label>Quantity<input type="number" name="field4" required=""/></label>                  
-														<label>Date of manufacture <input type="date" name="field5" required=""/></label>      
-														<label>Price <input type="text" name="field6" required=""/></label>
+														<label>Product name <input type="text" name="field3" required="" maxlength="256" /></label>
+														<label>Quantity<input type="number" name="field4" required="" min="1" value="1"/></label>                  
+														<label>Date of manufacture <input type="date" name="dateOfManufacture" required=""  /></label>      
+														<label>Price <input type="text" name="field6" required="" pattern="[0-9]+" /></label>
 													</div>
 													<div class="section"><span>3</span>Item Photographs</div>
 													<div class="inner-wrap">

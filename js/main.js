@@ -275,3 +275,9 @@ $('#tab2').on('click' , function(){
 	$('#signin').removeClass('show');
 
 });
+
+
+
+// add product modal -- min date for manfacture
+var today = new Date().toISOString().split('T')[0];
+document.getElementsByName("dateOfManufacture")[0].setAttribute('min', today);

@@ -1,10 +1,10 @@
 <?php 
 require "connect.php";
 require "functions.php";
-$fname =$lname= $email = $password = $country =  "";
+$fname =$lname= $email = $password = $country =$phoneno=$state=$city=$locality=  "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $fname = cleanInput($_POST["name"]);
+  $fname = cleanInput($_POST["fname"]);
   $lname =cleanInput($_POST["lname"]);
   $email =cleanInput($_POST["email"]);
   $phoneno =cleanInput($_POST["phoneno"]);
@@ -18,9 +18,9 @@ if(isset($_POST['username'])){
   $sql = "INSERT INTO users (fname, lname,email,phoneno,state,city,locality,password)  VALUES (?,?,?,?,?,?,?,?)";
   $stmt = mysqli_prepare($sql);
   $stmt->bind_param($fname,$lname,$email,$phoneno,$state,$city,$locality,$password);
-  $stmt->execute()
+  $stmt->execute();
 }
-;
+
 
 }
 

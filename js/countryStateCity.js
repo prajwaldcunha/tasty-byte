@@ -2,22 +2,22 @@
 The JavaScript Source!! http://www.javascriptsource.com
 Created by: Michael J. Damato | http://developing.damato.net/ */
 // State lists
-var states = new Array('Karnataka','Kerala','Maharashtra');
+var states = new Array("Karnataka","Kerala","Maharashtra");
 
 // City lists
 var city = new Array();
 
-city[‘Karnataka’] = new Array('Mangalore','Bangalore','Mandya');
-city[‘Kerala’] = new Array('Trivandrum','Kochi','Kasargod');
-city[‘Maharashtra’] = new Array('Mumbai','Pune','Nagpur');
+city[‘Karnataka’] = new Array("Mangalore","Bangalore","Mandya");
+city[‘Kerala’] = new Array("Trivandrum","Kochi","Kasargod");
+city[‘Maharashtra’] = new Array("Mumbai","Pune","Nagpur");
 
 
 
 
 function setcity() {}
-  stateSel = document.getElementById(‘state’);
+  stateSel = document.getElementById("state");
   cityList = city[stateSel.value];
-  changeSelect(‘city’, cityList, cityList);
+  changeSelect("city", cityList, cityList);
 }
 
 function changeSelect(fieldID, newOptions, newValues) {
@@ -32,7 +32,7 @@ function changeSelect(fieldID, newOptions, newValues) {
 // http://simonwillison.net/2004/May/26/addLoadEvent/
 function addLoadEvent(func) {
   var oldonload = window.onload;
-  if (typeof window.onload != ‘function’) {
+  if (typeof window.onload != "function") {
     window.onload = func;
   } else {
     window.onload = function() {

@@ -14,12 +14,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $password =md5(cleanInput($_POST["password"]);
 
   
-if(isset($_POST["username"])){
+
   $sql = "INSERT INTO users (fname, lname,email,phoneno,state,city,locality,password)  VALUES (?,?,?,?,?,?,?,?)";
   $stmt = mysqli_prepare($sql);
   $stmt->bind_param($fname,$lname,$email,$phoneno,$state,$city,$locality,$password);
   $stmt->execute();
-}
 
 
 }

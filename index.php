@@ -587,23 +587,18 @@ session_start();
 											<div class="form-style-10">
 												<h1>Product details</h1>
 												<form action="addProduct.php" method="GET">
-													<div class="section"><span>1</span>Personal details</div>
-													<div class="inner-wrap">
-														<label>Full Name <input type="text" name="field1" required="" maxlength="100" /></label>
-														<label>Email Id <input type="email" name="mail" required="" maxlength="50" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/></label>
-														<label>Address <textarea name="field2" required="" maxlength="150"></textarea></label>
-													</div>
-
-													<div class="section"><span>2</span>Item details</div>
+													
+													<div class="section"><span>1</span>Item details</div>
 													<div class="inner-wrap">
 
 
 														<label>Product name <input type="text" name="field3" required="" maxlength="256" /></label>
+														<label>Product description <textarea name="field2" required="" maxlength="150" rows="4"></textarea></label>
 														<label>Quantity<input type="number" name="field4" required="" min="1" value="1"/></label>                  
 														<label>Date of manufacture <input type="date" name="dateOfManufacture" required=""  /></label>      
 														<label>Price <input type="text" name="field6" required="" pattern="[0-9]+" /></label>
 													</div>
-													<div class="section"><span>3</span>Item Photographs</div>
+													<div class="section"><span>2</span>Item Photographs</div>
 													<div class="inner-wrap">
 
 

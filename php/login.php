@@ -16,13 +16,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		// header("Location: https://tastybyte.azurewebsites.net");
 	}
 
-	$sql = 'SELECT email, password,fname FROM users where email = "' . $email . '" and password = "' . $password . '"';
+	$sql = 'SELECT id,email, password,fname,lname FROM users where email = "' . $email . '" and password = "' . $password . '"';
 	$result = $conn->query($sql);
 
 	if ($result->num_rows > 0) {
 	    // output data of each row
 	    while($row = $result->fetch_array()) {
 	        $_SESSION['username'] = $row['fname'];
+	        $_SESSION['name'] = $row['fname'] . " " . $row['lname']; //Full name of user
+	        $_SESSION['uid'] = $row['id'];
 			header("Location: https://tastybyte.azurewebsites.net/index.php");
 	    }
 	} else {

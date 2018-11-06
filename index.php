@@ -827,18 +827,18 @@ session_start();
 																<div class="group2">
 																	<span class="highlight"></span><span class="bar"></span>
 																	<!--<label class="label" for="date">State</label>-->
-																	<select name=”state” required="" class="input" id=”state” onchange=”setcity();”>
-																		<option value=”Karnataka”>Karnataka</option>
-																		<option value=”Kerala”>Kerala</option>
-																		<option value=”Maharashtra”>Maharashtra</option>
+																	<select name="state" required="" class="input" id="state" onchange="setcity();">
+																		<option value="Karnataka">Karnataka</option>
+																		<option value="Kerala">Kerala</option>
+																		<option value="Maharashtra">Maharashtra</option>
 																		</select>
 																	</div>
 																	
 																	<div class="group2">
 																	<span class="highlight"></span><span class="bar"></span>
 																	<!--<label class="label" for="date">State</label>-->
-																	<select name=”city”  id=”city”  required="" class="input">
-																		<option value=””>Please select a State</option>
+																	<select name="city"  id=”city”  required="" class="input">
+																		<option value="">Please select a State</option>
 																		</select>
 																	</div>
 

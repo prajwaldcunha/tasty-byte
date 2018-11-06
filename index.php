@@ -586,7 +586,7 @@ session_start();
 
 											<div class="form-style-10">
 												<h1>Product details</h1>
-												<form action="addProduct.php" method="post">
+												<form action="php/addProduct.php" method="post">
 													
 													<div class="section"><span>1</span>Item details</div>
 													<div class="inner-wrap">

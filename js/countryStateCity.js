@@ -7,9 +7,9 @@ var states = new Array("Karnataka","Kerala","Maharashtra");
 // City lists
 var city = new Array();
 
-city[‘Karnataka’] = new Array("Mangalore","Bangalore","Mandya");
-city[‘Kerala’] = new Array("Trivandrum","Kochi","Kasargod");
-city[‘Maharashtra’] = new Array("Mumbai","Pune","Nagpur");
+city['Karnataka'] = new Array("Mangalore","Bangalore","Mandya");
+city['Kerala'] = new Array("Trivandrum","Kochi","Kasargod");
+city['Maharashtra'] = new Array("Mumbai","Pune","Nagpur");
 
 
 

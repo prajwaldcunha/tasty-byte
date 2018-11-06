@@ -1,6 +1,3 @@
-/* This script and many more are available free online at
-The JavaScript Source!! http://www.javascriptsource.com
-Created by: Michael J. Damato | http://developing.damato.net/ */
 // State lists
 var states = new Array("Karnataka","Kerala","Maharashtra");
 
@@ -14,7 +11,7 @@ city['Maharashtra'] = new Array("Mumbai","Pune","Nagpur");
 
 
 
-function setcity() {}
+function setcity() {
   stateSel = document.getElementById("state");
   cityList = city[stateSel.value];
   changeSelect("city", cityList, cityList);

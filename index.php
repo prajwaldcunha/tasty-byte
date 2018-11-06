@@ -822,7 +822,7 @@ session_start();
 																<em>1-8 Characters</em>
 
 
-																// SetState
+																<!-- Set State-->
 
 																<div class="group2">
 																	<span class="highlight"></span><span class="bar"></span>
@@ -841,6 +841,11 @@ session_start();
 																		<option value=””>Please select a State</option>
 																		</select>
 																	</div>
+
+																	<!-- Text input-->
+																<div class="group">
+																	<input required="" class="input" type="text" name="locality"><span class="highlight"></span><span class="bar"></span>
+																	<label class="label" for="date">Locality</label></div>
 
 
 

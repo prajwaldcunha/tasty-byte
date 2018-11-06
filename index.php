@@ -47,9 +47,9 @@ session_start();
 								<?php echo $_SESSION['username'];?>
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="#section-offer">My Orders</a>
-								<a class="dropdown-item" href="#section-news">Cart</a>
-								<a class="dropdown-item" href="#section-gallery">My Products</a>
+								<a class="dropdown-item" href="#section-order">My Orders</a>
+								<a class="dropdown-item" href="#section-cart">Cart</a>
+								<a class="dropdown-item" href="#section-products">My Products</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="php/logout.php">Logout</a>
 							</div>
@@ -108,7 +108,7 @@ session_start();
 		<!-- END section -->
 
 		<?php if (isset($_SESSION['username'])):?>
-			<section class="site-section bg-light" id="section-offer">
+			<section class="site-section bg-light" id="section-order">
 				<div class="container">
 
 					<div class="row">
@@ -498,7 +498,7 @@ session_start();
 
 		// CART
 		<?php if (isset($_SESSION['username'])):?>
-			<section class="site-section bg-light" id="section-news">
+			<section class="site-section bg-light" id="section-cart">
 				<div class="container">
 
 					<div class="row">
@@ -550,7 +550,7 @@ session_start();
 			<!-- END section -->
 			<!--    #END CART -->
 
-			<section class="site-section" id="section-gallery">
+			<section class="site-section" id="section-products">
 				<div class="container">
 					<div class="row site-custom-gutters">
 

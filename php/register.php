@@ -18,8 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $sql ="INSERT INTO users (fname, lname,email,phoneno,state,city,locality,password)  VALUES (?,?,?,?,?,?,?,?)";
   $stmt = mysqli_prepare($sql);
   $stmt->bind_param($fname,$lname,$email,$phoneno,$state,$city,$locality,$password);
-  $stmt->execute();
+  $result = mysqli_query($conn,$sql);
   
+  if($con->query($sql)==TRUE)
+         {
+         echo "Yoy Data Save Successfully!!!";
+         }
   if (!mysqli_query($conn,$sql)) {
   die('Error: ' . mysqli_error($con));
 }

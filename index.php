@@ -746,7 +746,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <small>CLOSE </small><span aria-hidden="true">&times;</span>
                 </button>
-                <form class="form-horizontal">
+                <form class="form-horizontal" action="php/register.php" method="post">
                   <fieldset>
                     <!-- Sign Up Form -->
                     <!-- Text input-->
@@ -819,7 +819,7 @@
               <div class="control-group">
                 <label class="control-label" for="forpassword"></label>
                 <div class="controls">
-                  <button id="forpasswodr" name="forpassword" class="btn btn-primary btn-block">Send</button>
+                  <button id="forpassword" name="forpassword" class="btn btn-primary btn-block">Send</button>
                 </div>
               </div>
             </fieldset>

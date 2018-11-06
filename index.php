@@ -22,6 +22,7 @@
 
  <link rel="stylesheet" href="css/icomoon.css">
  <link rel="stylesheet" href="css/style.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
 <body data-spy="scroll" data-target="#site-navbar" data-offset="200">
@@ -728,7 +729,7 @@
 
 <!-- display error message-->
 <div class="group">
-  <span class="errormessage"><?php echo $_SESSION['validation_error']?></span>
+  <span class="errormessage"><?php if(isset($_SESSION['validation_error'])) { echo $_SESSION['validation_error']; }?></span>
 </div>
 
  <div class="forgot-link">
@@ -745,6 +746,11 @@
  </div>
  </fieldset>
  </form>
+ 
+ <?php if(isset($_SESSION['script'])) { echo $_SESSION['script']; 
+          $_SESSION['script'] = null;
+       } ?>
+
  </div>
  
  

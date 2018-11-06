@@ -1332,6 +1332,9 @@ box-shadow: -5px 0px 6px 0px rgba(82,82,82,0.52);
 
   #forgot-password{margin-left:20%;
             margin-right:20%;}
+
+  #addProdModal{margin-left:20%;
+            margin-right:20%; }
 } 
 
 
@@ -1343,10 +1346,11 @@ box-shadow: -5px 0px 6px 0px rgba(82,82,82,0.52);
   
   .modal-body{padding-left:50px;
               padding-right:50px;}
+  #addProdModal .modal-dialog  {width:500px;}
 }
 
 
-.modal-body{
+.modal-body-login{
   background-image:url('../images/modalbg.jpg');
   background-size:cover;
   z-index:4;
@@ -1371,7 +1375,7 @@ em{
 
 
 .form-style-10{
-  width:450px;
+  width:400px;
   padding:30px;
   margin:40px auto;
   background: #FFF;
@@ -1481,14 +1485,7 @@ em{
   -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
   box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
 }
-.form-style-10 .privacy-policy{
-  float: right;
-  width: 250px;
-  font: 12px Arial, Helvetica, sans-serif;
-  color: #4D4D4D;
-  margin-top: 10px;
-  text-align: right;
-}
+
 
 
 /*add product modal styles end*/

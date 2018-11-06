@@ -565,12 +565,12 @@ session_start();
 
 						<div class="container">
 
-							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProdModal">
 								Add Product
 							</button>
 
 							<!-- The Modal -->
-							<div class="modal fade" id="myModal">
+							<div class="modal fade" id="addProdModal">
 								<div class="modal-dialog modal-dialog-centered">
 									<div class="modal-content">
 
@@ -590,30 +590,28 @@ session_start();
 													<div class="inner-wrap">
 														<label>Full Name <input type="text" name="field1" required="" /></label>
 														<label>Email Id <input type="email" name="mail" required="" /></label>
-														<label>Address <textarea name="field2"></textarea></label>
+														<label>Address <textarea name="field2" required=""></textarea></label>
 													</div>
 
 													<div class="section"><span>2</span>Item details</div>
 													<div class="inner-wrap">
 
 
-														<label>Product name <input type="text" name="field3" /></label>
-														<label>Quantity<input type="number" name="field4" /></label>                  
-														<label>Date of manufacture <input type="date" name="field5" /></label>      
-														<label>Price <input type="text" name="field6" /></label>
+														<label>Product name <input type="text" name="field3" required="" /></label>
+														<label>Quantity<input type="number" name="field4" required=""/></label>                  
+														<label>Date of manufacture <input type="date" name="field5" required=""/></label>      
+														<label>Price <input type="text" name="field6" required=""/></label>
 													</div>
 													<div class="section"><span>3</span>Item Photographs</div>
 													<div class="inner-wrap">
 
 
-														<label>Product images <input type="file" name="field3" /></label>
+														<label>Product images <input type="file" name="field3" required="" /></label>
 													</div>
 
 													<div class="button-section">
-														<input type="submit" name="Sign Up" />
-														<span class="privacy-policy">
-															<input type="checkbox" name="field7">  I agree to your Terms and Policy. 
-														</span>
+														<input type="submit" name="submitAddProduct" />
+														
 													</div>
 												</form>
 											</div>
@@ -625,11 +623,11 @@ session_start();
 										<div class="modal-footer">
 											<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 										</div>
-										
+
 									</div>
 								</div>
 							</div>
-							
+
 						</div>
 
 
@@ -743,7 +741,7 @@ session_start();
 
 								</ul>
 							</div>
-							<div class="modal-body">
+							<div class="modal-body modal-body-login">
 								<div id="myTabContent" class="tab-content">
 
 									<div class="tab-pane fade active in show" id="signin">

@@ -23,7 +23,7 @@ session_start();
 	<link rel="stylesheet" href="css/icomoon.css">
 	<link rel="stylesheet" href="css/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type=”text/javascript” src=”js/countryStateCity.js”></script>
+	<script type="text/javascript" src="js/countryStateCity.js"></script>
 
 </head>
 <body data-spy="scroll" data-target="#site-navbar" data-offset="200">
@@ -827,7 +827,7 @@ session_start();
 																<div class="group2">
 																	<span class="highlight"></span><span class="bar"></span>
 																	<!--<label class="label" for="date">State</label>-->
-																	<select name="state" required="" class="input" id="state" onchange="setcity();">
+																	<select name="state" required="" class="input" id="state" onchange="setcity()">
 																		<option value="Karnataka">Karnataka</option>
 																		<option value="Kerala">Kerala</option>
 																		<option value="Maharashtra">Maharashtra</option>

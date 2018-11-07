@@ -802,12 +802,14 @@ session_start();
 
 													<!-- Text input-->
 													<div class="group">
-														<input required="" class="input" type="text" name="lname" value="<?php if(isset($_POST['lname'])) { echo $_POST['lname'];  ?>"><span class="highlight"></span><span class="bar"></span>
+														<input required="" class="input" type="text" name="lname" value="<?php if(isset($_POST['lname'])) { echo $_POST['lname']; }  ?>"><span class="highlight"></span><span class="bar"></span>
 														<label class="label" for="date">Last Name</label></div>
 
 													<!-- display error message-->
 													<div class="group">
-														<span class="errormessage"><?php if(isset($_SESSION['email_unique_error'])) { echo $_SESSION['email_unique_error']; }?></span>
+														<span class="errormessage"><?php if(isset($_SESSION['email_unique_error'])) { echo $_SESSION['email_unique_error']; 
+																																	  $_SESSION['email_unique_error']=null;
+																																	}?></span>
 													</div>
 														<!-- email input-->
 														<div class="group">

@@ -24,16 +24,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		// header("Location: https://tastybyte.azurewebsites.net");
 	}
 
-  	if(isempty($password)) {
+  if(isempty($password)) {
 		$_SESSION['password_empty_error'] = "password is empty";
 		// header("Location: https://tastybyte.azurewebsites.net");
 	}
-
-
-$stmt->execute();
-if(!$stmt->execute())
-{
-  $_SESSION['email_unique_error'] = "Email has already been taken";
+  
+  
+  if(!$stmt->execute())
+  {
+  
+    $_SESSION['email_unique_error'] = "Email has already been taken";
 		$_SESSION['email_script'] = "<script> $(document).ready(function(){ 
                                                                        $('#myModal').modal('show');
                                                                        $('#tab2').addClass('signup-shadow');
@@ -43,16 +43,15 @@ if(!$stmt->execute())
                                                                        $('#signin').removeClass('active');
                                                                        $('#signin').removeClass('show');
                                                                   }); </script>";
-	header("Location: https://tastybyte.azurewebsites.net/index.php"); 
-}
-
-//$result = $conn->query($stmt);
-$_SESSION['username'] = $fname;
- $_SESSION['name'] = $fname . " " . $lname; //Full name of user
- //$_SESSION['uid'] = $row['id'];
- header("Location: https://tastybyte.azurewebsites.net/index.php");
-// $_SESSION['script'] = "<script> $(document).ready(function(){ $('#myModal').modal('show'); }); </script>";
-// header("Location: https://tastybyte.azurewebsites.net/index.php");
+	 header("Location: https://tastybyte.azurewebsites.net/index.php"); 
+  }
+  else 
+  {
+    $_SESSION['username'] = $fname;
+    $_SESSION['name'] = $fname . " " . $lname; //Full name of user
+    //$_SESSION['uid'] = $row['id'];
+    header("Location: https://tastybyte.azurewebsites.net/index.php");
+  }
 	
 }
 ?>

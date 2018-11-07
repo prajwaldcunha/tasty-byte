@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	if ($result->num_rows > 0) {
 	    // output data of each row
-	    while($row = $result->fetch_array()) {
+	    while($row = $_POST->fetch_array()) {
 	        $_SESSION['username'] = $row['fname'];
 	        $_SESSION['name'] = $row['fname'] . " " . $row['lname']; //Full name of user
 	        $_SESSION['uid'] = $row['id'];

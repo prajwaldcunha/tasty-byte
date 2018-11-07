@@ -26,8 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   $stmt = $GLOBALS[$conn]->prepare("INSERT INTO users (fname, lname,email,phoneno,state,city,locality,password)  VALUES (?,?,?,?,?,?,?,?)"); 
   $stmt->bind_param("ssssssss",$fname,$lname,$email,$phoneno,$state,$city,$locality,$password);
-  $result=$stmt->execute();
-// $result = $conn->query($sql);
+//   $result=$stmt->execute();
+$result = $conn->query($stmt);
 
 	if ($result->num_rows > 0) {
 	    // output data of each row

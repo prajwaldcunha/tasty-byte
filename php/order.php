@@ -25,7 +25,6 @@ session_start();
 	<link rel="stylesheet" href="../css/icomoon.css">
 	<link rel="stylesheet" href="../css/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type="text/javascript" src="../js/countryStateCity.js"></script>
 
 </head>
 <body data-spy="scroll" data-target="#site-navbar" data-offset="200">

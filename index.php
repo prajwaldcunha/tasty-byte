@@ -597,6 +597,9 @@ session_start();
 														
 													</div>
 												</form>
+												<?php if(isset($_SESSION['script_addProd_modal'])) { echo $_SESSION['script']; 
+											$_SESSION['script'] = null;
+										} ?>
 											</div>
 
 
@@ -609,9 +612,7 @@ session_start();
 
 									</div>
 
-									<?php if(isset($_SESSION['script_addProd_modal'])) { echo $_SESSION['script']; 
-											$_SESSION['script'] = null;
-										} ?>
+									
 
 								</div>
 							</div>

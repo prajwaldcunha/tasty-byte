@@ -32,30 +32,28 @@ session_start();
 
 	<nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
 		<div class="container">
-			<div class="fontblack"><a class="navbar-brand" href="../index.php">TastyByte</a>
+			<a class="navbar-brand" href="../index.php"><div style="color: black;">TastyByte</div></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-nav" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="oi oi-menu"></span> Menu
+				<span class="oi oi-menu"></span> <div style="color: black;">Menu</div>
 			</button>
 
 			<div class="collapse navbar-collapse" id="site-nav">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a href="../index.php" class="nav-link active">Home</a></li>
+					<li class="nav-item active"><a href="../index.php" class="nav-link active"><div style="color: black;">Home</div></a></li>
 				
 					<?php if (isset($_SESSION['username'])):?>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<?php echo $_SESSION['username'];?>
+								<div style="color: black;"><?php echo $_SESSION['username'];?></div>
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="#section-cart">Cart</a>
 								<a class="dropdown-item" href="#section-products">My Products</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="../php/logout.php">Logout</a>
 							</div>
 						</li>
-						<?endif?>
+						<?php endif;?>
 					</ul>
-				</div>
 				</div>
 			</div>
 		</nav>

@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
 	} else {
 		// if everything is ok, try to upload file
 	    if (move_uploaded_file($_FILES["imageToUpload"]["tmp_name"], $target_file)) {
-	        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+	        echo "The file ". basename( $_FILES["imageToUpload"]["name"]). " has been uploaded.";
 	    } else {
 	        echo "Sorry, there was an error uploading your file.";
 	    }
@@ -45,21 +45,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
 
 	session_start();
 
+	$stmt = $conn->prepare("INSERT INTO products (name,imageurl,details,quantity,price,manufacturedate, pickup_address, city, uid) VALUES (?,?,?,?,?,?,?,?,?)");
+
 	$productName = cleanInput($_POST['prodName']);
 	$productDesc = cleanInput($_POST['prodDesc']);
 	$price = cleanInput($_POST['price']);
 	$quantity = cleanInput($_POST['quantity']);
-	$dateOfManu = cleanInput($_POST['dateOfManufacture']);
+	
+	$time = strtotime(cleanInput($_POST['dateOfManufacture']));
+	$dateOfManufacture = date('Y-m-d',$time);
 
-	$address = "";
+	$pickup_address = cleanInput($_POST['pickup_address']);
+	$city = cleanInput($_POST['city']);
 
 	$userid = $_SESSION['uid'];
-	
-	$stmt = $conn->prepare("INSERT INTO products (name,imageurl,details,quantity,price,manufacturedate,uid) VALUES (?,?,?,?,?,?,?)");
 
-	//$stmt->bind_param("sssssii",$fname,$lname,$email,$phoneno,$state,$city,$locality,$password);
-	//$stmt->execute();
-
+	$stmt->bind_param("ssssisssi",$productName,$target_file,$productDesc,$quantity,$price, $dateOfManufacture, $pickup_address, $city, $userid);
+	if(!($stmt->execute())) {
+		echo "Error Insert";
+	}
 
 	
 }

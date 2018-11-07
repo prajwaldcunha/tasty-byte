@@ -43,8 +43,6 @@ $result = $conn->query($stmt);
 		header("Location: https://tastybyte.azurewebsites.net/index.php");
 	}
 }
-  	header("Location: https://tastybyte.azurewebsites.net/index.php");
-}
 ?>
 
 

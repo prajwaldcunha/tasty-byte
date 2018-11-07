@@ -369,13 +369,13 @@ h1, h2, h3, h4, h5,
 .btn.btn-lg {
   font-size: 20px !important;
   padding: 13px 40px !important;
-  color: #3224d4;
+  color: black;
 }
 
 .btn.btn-sm {
   padding: 10px 20px;
   font-size: 12px;
-  color: #3224d4;
+  color: black;
 }
 
 .btn.btn-primary {

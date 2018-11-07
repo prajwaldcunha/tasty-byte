@@ -568,16 +568,16 @@ session_start();
 															<span class="errormessage"><?php 
 																if(isset($_SESSION['fileUploadFail'])) { 
 																	echo $_SESSION['fileUploadFail']; 
-																	unset($_SESSION['fileUploadFail'];
+																	unset($_SESSION['fileUploadFail']);
 																}
 																if(isset($_SESSION['fileUploadError_1'])){
 																	echo $_SESSION['fileUploadError_1']; 
-																	unset($_SESSION['fileUploadError_1'];
+																	unset($_SESSION['fileUploadError_1']);
 
 																}
 																if(isset($_SESSION['fileUploadError'])){
 																	echo $_SESSION['fileUploadError']; 
-																	unset($_SESSION['fileUploadError'];
+																	unset($_SESSION['fileUploadError']);
 
 																}
 

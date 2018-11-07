@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
 	// Allow certain file formats
 	$validExt = array("jpg", "png", "gif", "jpeg");
 	$validMime = array("image/jpeg","image/png");
-	$ext_array = explode(".", $_FILES["imageToUpload"]["name"])
+	$ext_array = explode(".", $_FILES["imageToUpload"]["name"]);
 	
 	$extension = end($ext_array);
 	

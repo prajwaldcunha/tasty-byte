@@ -538,8 +538,6 @@ session_start();
 													
 													<div class="section"><span>1</span>Item details</div>
 													<div class="inner-wrap">
-
-
 														<label>Product name <input type="text" name="prodName" required="" maxlength="256" /></label>
 														<label>Product description <textarea name="prodDesc" required="" maxlength="150" rows="4"></textarea></label>
 														<label>Quantity<input type="number" name="quantity" required="" min="1" value="1"/></label>                  
@@ -566,6 +564,31 @@ session_start();
 													<div class="inner-wrap">
 
 
+														<div class="group">
+															<span class="errormessage"><?php 
+																if(isset($_SESSION['fileUploadFail'])) { 
+																	echo $_SESSION['fileUploadFail']; 
+																	unset($_SESSION['fileUploadFail'];
+																}
+																if(isset($_SESSION['fileUploadError_1'])){
+																	echo $_SESSION['fileUploadError_1']; 
+																	unset($_SESSION['fileUploadError_1'];
+
+																}
+																if(isset($_SESSION['fileUploadError'])){
+																	echo $_SESSION['fileUploadError']; 
+																	unset($_SESSION['fileUploadError'];
+
+																}
+
+																?>
+																
+															</span>
+														</div>
+
+
+
+
 														<label>Product images <input type="file" name="imageToUpload" required="" /></label>
 													</div>
 
@@ -585,6 +608,11 @@ session_start();
 										</div>
 
 									</div>
+
+									<?php if(isset($_SESSION['script'])) { echo $_SESSION['script']; 
+											$_SESSION['script'] = null;
+										} ?>
+
 								</div>
 							</div>
 

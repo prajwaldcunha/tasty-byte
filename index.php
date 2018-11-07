@@ -818,7 +818,7 @@ session_start();
 																
 																<!-- phone number input-->
 														<div class="group">
-															<input required="" class="input" type="text" pattern="[1-9]{1}[0-9]{9}"  name="phoneno"><span class="highlight"></span><span class="bar"></span>
+															<input required="" class="input" type="text" pattern="[1-9]{1}[0-9]{9}" title="Enter 10 digit number"  name="phoneno"><span class="highlight"></span><span class="bar"></span>
 															<label class="label" for="date">Phone Number</label></div>
 
 

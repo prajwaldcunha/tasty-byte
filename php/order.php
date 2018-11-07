@@ -30,7 +30,7 @@ session_start();
 </head>
 <body data-spy="scroll" data-target="#site-navbar" data-offset="200">
 
-	<nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
+	<nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light-scrolled" id="site-navbar">
 		<div class="container">
 			<a class="navbar-brand" href="../index.php">TastyByte</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-nav" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">

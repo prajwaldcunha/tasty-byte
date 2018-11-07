@@ -813,7 +813,7 @@ session_start();
 															<!-- Text input-->
 															<div class="group">
 																<input required="" class="input" type="password" name="password"><span class="highlight"></span><span class="bar"></span>
-																<label class="label" for="date">Password</label></div>
+																<label class="label" for="date">Password(minimum 8 characters)</label></div>
 																<em>1-8 Characters</em>
 																
 																<!-- phone number input-->

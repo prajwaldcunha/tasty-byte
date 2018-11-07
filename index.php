@@ -609,7 +609,7 @@ session_start();
 
 									</div>
 
-									<?php if(isset($_SESSION['script'])) { echo $_SESSION['script']; 
+									<?php if(isset($_SESSION['script_addProd_modal'])) { echo $_SESSION['script']; 
 											$_SESSION['script'] = null;
 										} ?>
 

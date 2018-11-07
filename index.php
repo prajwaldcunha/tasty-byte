@@ -30,7 +30,7 @@ session_start();
 
 	<nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index.html">TastyByte</a>
+			<a class="navbar-brand" href="index.php">TastyByte</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-nav" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
@@ -805,7 +805,11 @@ session_start();
 														<input required="" class="input" type="text" name="lname"><span class="highlight"></span><span class="bar"></span>
 														<label class="label" for="date">Last Name</label></div>
 
-														<!-- Password input-->
+													<!-- display error message-->
+													<div class="group">
+														<span class="errormessage"><?php if(isset($_SESSION['email_unique_error'])) { echo $_SESSION['email_unique_error']; }?></span>
+													</div>
+														<!-- email input-->
 														<div class="group">
 															<input required="" class="input" type="email" name="email"><span class="highlight"></span><span class="bar"></span>
 															<label class="label" for="date">Email</label></div>
@@ -813,8 +817,13 @@ session_start();
 															<!-- Text input-->
 															<div class="group">
 																<input required="" class="input" type="password" name="password"><span class="highlight"></span><span class="bar"></span>
-																<label class="label" for="date">Password</label></div>
+																<label class="label" for="date">Password(minimum 8 characters)</label></div>
 																<em>1-8 Characters</em>
+																
+																<!-- phone number input-->
+														<div class="group">
+															<input required="" class="input" type="text" pattern="[1-9]{1}[0-9]{9}" title="Enter 10 digit number"  name="phoneno"><span class="highlight"></span><span class="bar"></span>
+															<label class="label" for="date">Phone Number</label></div>
 
 
 																<!-- Set State-->
@@ -853,6 +862,10 @@ session_start();
 																	</div>
 																</fieldset>
 															</form>
+															<?php if(isset($_SESSION['email_script'])) { 
+																			echo $_SESSION['email_script']; 
+																			$_SESSION['email_script'] = null;
+																		} ?>
 														</div>
 													</div>
 												</div>

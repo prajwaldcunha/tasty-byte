@@ -23,10 +23,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
 	$extension = end(explode(".", $_FILES["imageToUpload"]["name"]));
 	
 	if (in_array($_FILES["imageToUpload"]["type"],$validMime) && in_array($extension, $validExt)) {
-	 	//echo "Extension and mime types are valid";
+	 	echo "Extension and mime types are valid";
+	 	$uploadOk=1;
 	}
 	else {
-		$uploadOk == 0;
+		$uploadOk = 0;
 	 	// echo $_FILES["imageToUpload"] . " Has an invalid mime type or extension";
 		$_SESSION['fileUploadError_1']='Has an invalid mime type or extension';
 	}
@@ -71,15 +72,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
 
 		else{
 			echo "error";
+			
+	        // echo "Sorry, there was an error uploading your file.";
+		$_SESSION['fileUploadFail']='File was not uploaded.';
 			$_SESSION['script'] = "<script> $(document).ready(function(){ $('#addProdModal').modal('show'); }); </script>";
 			header("Location: https://tastybyte.azurewebsites.net/index.php");
 			
 		}
 		
-	} else {
-	        // echo "Sorry, there was an error uploading your file.";
-		$_SESSION['fileUploadFail']='File was not uploaded.';
-	}
+	} 
 }
 
 

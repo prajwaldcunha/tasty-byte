@@ -547,7 +547,7 @@ session_start();
 														<label>Price <input type="text" name="price" required="" pattern="[0-9]+" /></label>
 														<label>Pickup Address <input type="text" name="pickup_address" required=""/></label>
 														<label>City 
-																<select name="cities" required="">
+																<select name="city" required="">
 																	<option selected><?php echo $_SESSION['city'];?></option>
 																	<option>Bangalore</option>
 																	<option>Mysore</option>

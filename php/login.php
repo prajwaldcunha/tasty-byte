@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		// header("Location: https://tastybyte.azurewebsites.net");
 	}
 
-	$sql = 'SELECT id,email, password,fname,lname FROM users where email = "' . $email . '" and password = "' . $password . '"';
+	$sql = 'SELECT id,email, password,fname,lname, city FROM users where email = "' . $email . '" and password = "' . $password . '"';
 	$result = $conn->query($sql);
 
 	if ($result->num_rows > 0) {
@@ -26,7 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$_SESSION['email_id']=$row['email'];
 	        $_SESSION['name'] = $row['fname'] . " " . $row['lname']; //Full name of user
 	        $_SESSION['uid'] = $row['id'];
-	        $_SESSION['email'] = $row['email'];
+	        $_SESSION['city'] = $row['city'];
+
 			header("Location: https://tastybyte.azurewebsites.net/index.php");
 	    }
 	} else {

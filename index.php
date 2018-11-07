@@ -496,59 +496,7 @@ session_start();
 		</section>
 		<!-- END section -->
 
-		// CART
-		<?php if (isset($_SESSION['username'])):?>
-			<section class="site-section bg-light" id="section-cart">
-				<div class="container">
-
-					<div class="row">
-						<div class="col-md-12 text-center mb-5 site-animate">
-							<h2 class="display-4">Items on Cart</h2>
-							<div class="row justify-content-center">
-								<div class="col-md-7">
-									<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, similique, delectus blanditiis odit expedita amet.</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-lg-4 col-md-6 col-sm-6">
-							<div class="media d-block mb-4 text-center site-media site-animate">
-								<img src="images/offer_1.jpg" alt="TastyByte" class="img-fluid">
-								<div class="media-body p-md-5 p-4">
-									<h5 class="mt-0 h4">Paneer Roll</h5>
-									<p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, similique, delectus blanditiis odit expedita amet.</p>
-
-									<p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Remove from Cart</a></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6 col-sm-6">
-							<div class="media d-block mb-4 text-center site-media site-animate">
-								<img src="images/offer_2.jpg" alt="TastyByte" class="img-fluid">
-								<div class="media-body p-md-5 p-4">
-									<h5 class="mt-0 h4">Italian Special</h5>
-									<p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, similique, delectus blanditiis odit expedita amet.</p>
-
-									<p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Remove from Cart</a></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6 col-sm-6">
-							<div class="media d-block mb-4 text-center site-media site-animate">
-								<img src="images/offer_3.jpg" alt="TastyByte" class="img-fluid">
-								<div class="media-body p-md-5 p-4">
-									<h5 class="mt-0 h4">Noodles</h5>
-									<p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, similique, delectus blanditiis odit expedita amet.</p>
-
-									<p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Remove from Cart</a></p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- END section -->
-			<!--    #END CART -->
+		
 
 			<section class="site-section" id="section-products">
 				<div class="container">
@@ -597,6 +545,22 @@ session_start();
 														<label>Quantity<input type="number" name="quantity" required="" min="1" value="1"/></label>                  
 														<label>Date of manufacture <input type="date" name="dateOfManufacture" required=""  /></label>      
 														<label>Price <input type="text" name="price" required="" pattern="[0-9]+" /></label>
+														<label>Pickup Address <input type="text" name="pickup_address" required=""/></label>
+														<label>City 
+																<select name="cities" required="">
+																	<option selected><?php echo $_SESSION['city'];?></option>
+																	<option>Bangalore</option>
+																	<option>Mysore</option>
+																	<option>Mumbai</option>
+																	<option>Delhi</option>
+																	<option>Hyderabad</option>
+																	<option>Ahmedabad</option>
+																	<option>Chennai</option>
+																	<option>Kolkata</option>
+																	<option>Surat</option>
+																	<option>Pune</option>
+																</select>
+														</label>
 													</div>
 													<div class="section"><span>2</span>Item Photographs</div>
 													<div class="inner-wrap">

@@ -30,7 +30,7 @@ session_start();
 
 	<nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index.html">TastyByte</a>
+			<a class="navbar-brand" href="index.php">TastyByte</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-nav" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
@@ -586,27 +586,27 @@ session_start();
 
 											<div class="form-style-10">
 												<h1>Product details</h1>
-												<form action="php/addProduct.php" method="post">
+												<form action="php/addProduct.php" method="post" enctype="multipart/form-data">
 													
 													<div class="section"><span>1</span>Item details</div>
 													<div class="inner-wrap">
 
 
-														<label>Product name <input type="text" name="field3" required="" maxlength="256" /></label>
-														<label>Product description <textarea name="field2" required="" maxlength="150" rows="4"></textarea></label>
-														<label>Quantity<input type="number" name="field4" required="" min="1" value="1"/></label>                  
+														<label>Product name <input type="text" name="prodName" required="" maxlength="256" /></label>
+														<label>Product description <textarea name="prodDesc" required="" maxlength="150" rows="4"></textarea></label>
+														<label>Quantity<input type="number" name="quantity" required="" min="1" value="1"/></label>                  
 														<label>Date of manufacture <input type="date" name="dateOfManufacture" required=""  /></label>      
-														<label>Price <input type="text" name="field6" required="" pattern="[0-9]+" /></label>
+														<label>Price <input type="text" name="price" required="" pattern="[0-9]+" /></label>
 													</div>
 													<div class="section"><span>2</span>Item Photographs</div>
 													<div class="inner-wrap">
 
 
-														<label>Product images <input type="file" name="field3" required="" /></label>
+														<label>Product images <input type="file" name="imageToUpload" required="" /></label>
 													</div>
 
 													<div class="button-section">
-														<input type="submit" name="submitAddProduct" value="Submit" />
+														<input type="submit" name="submit" value="Submit" />
 														
 													</div>
 												</form>
@@ -797,15 +797,21 @@ session_start();
 												<!-- Sign Up Form -->
 												<!-- Text input-->
 												<div class="group">
-													<input required="" class="input" type="text" name="fname"><span class="highlight"></span><span class="bar"></span>
+													<input required="" class="input" type="text" name="fname" value="<?php echo isset($_POST['fname']) ? $_POST['fname'] : "";  ?>"><span class="highlight"></span><span class="bar"></span>
 													<label class="label" for="date">First Name</label></div>
 
 													<!-- Text input-->
 													<div class="group">
-														<input required="" class="input" type="text" name="lname"><span class="highlight"></span><span class="bar"></span>
+														<input required="" class="input" type="text" name="lname" value="<?php if(isset($_POST['lname'])) { echo $_POST['lname']; }  ?>"><span class="highlight"></span><span class="bar"></span>
 														<label class="label" for="date">Last Name</label></div>
 
-														<!-- Password input-->
+													<!-- display error message-->
+													<div class="group">
+														<span class="errormessage"><?php if(isset($_SESSION['email_unique_error'])) { echo $_SESSION['email_unique_error']; 
+																																	  $_SESSION['email_unique_error']=null;
+																																	}?></span>
+													</div>
+														<!-- email input-->
 														<div class="group">
 															<input required="" class="input" type="email" name="email"><span class="highlight"></span><span class="bar"></span>
 															<label class="label" for="date">Email</label></div>
@@ -813,8 +819,13 @@ session_start();
 															<!-- Text input-->
 															<div class="group">
 																<input required="" class="input" type="password" name="password"><span class="highlight"></span><span class="bar"></span>
-																<label class="label" for="date">Password</label></div>
+																<label class="label" for="date">Password(minimum 8 characters)</label></div>
 																<em>1-8 Characters</em>
+																
+																<!-- phone number input-->
+														<div class="group">
+															<input required="" class="input" type="text" pattern="[1-9]{1}[0-9]{9}" title="Enter 10 digit number"  name="phoneno" value="<?php echo isset($_POST['phoneno']) ? $_POST['phoneno'] : "" ;?>"><span class="highlight"></span><span class="bar"></span>
+															<label class="label" for="date">Phone Number</label></div>
 
 
 																<!-- Set State-->
@@ -839,7 +850,7 @@ session_start();
 
 																	<!-- Text input-->
 																<div class="group">
-																	<input required="" class="input" type="text" name="locality"><span class="highlight"></span><span class="bar"></span>
+																	<input required="" class="input" type="text" name="locality" ><span class="highlight"></span><span class="bar"></span>
 																	<label class="label" for="date">Locality</label></div>
 
 
@@ -853,6 +864,10 @@ session_start();
 																	</div>
 																</fieldset>
 															</form>
+															<?php if(isset($_SESSION['email_script'])) { 
+																			echo $_SESSION['email_script']; 
+																			$_SESSION['email_script'] = null;
+																		} ?>
 														</div>
 													</div>
 												</div>

@@ -24,7 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
 	$extension = end($ext_array);
 	
 	if (in_array($_FILES["imageToUpload"]["type"],$validMime) && in_array($extension, $validExt)) {
-	 	//echo "Extension and mime types are valid";
+	 	echo "Extension and mime types are valid";
+	 	$uploadOk=1;
 	}
 	else {
 		$uploadOk = 0;

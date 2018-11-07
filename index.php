@@ -805,7 +805,11 @@ session_start();
 														<input required="" class="input" type="text" name="lname"><span class="highlight"></span><span class="bar"></span>
 														<label class="label" for="date">Last Name</label></div>
 
-														<!-- Password input-->
+													<!-- display error message-->
+													<div class="group">
+														<span class="errormessage"><?php if(isset($_SESSION['email_unique_error'])) { echo $_SESSION['email_unique_error']; }?></span>
+													</div>
+														<!-- email input-->
 														<div class="group">
 															<input required="" class="input" type="email" name="email"><span class="highlight"></span><span class="bar"></span>
 															<label class="label" for="date">Email</label></div>
@@ -858,6 +862,10 @@ session_start();
 																	</div>
 																</fieldset>
 															</form>
+															<?php if(isset($_SESSION['email_script'])) { 
+																			echo $_SESSION['email_script']; 
+																			$_SESSION['email_script'] = null;
+																		} ?>
 														</div>
 													</div>
 												</div>

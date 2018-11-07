@@ -34,8 +34,16 @@ $stmt->execute();
 if(!$stmt->execute())
 {
   $_SESSION['email_unique_error'] = "Email has already been taken";
-		$_SESSION['email_script'] = "<script> $(document).ready(function(){ $('#myModal').modal('show'); }); </script>";
-		header("Location: https://tastybyte.azurewebsites.net/index.php"); 
+		$_SESSION['email_script'] = "<script> $(document).ready(function(){ 
+                                                                                                        $('#myModal').modal('show');
+                                                                                                       $('#tab2').addClass('signup-shadow');
+                                                                                                       $('#signup').addClass('active');
+                                                                                                       $('#signup').addClass('show');
+                                                                                                       $('#tab1').removeClass('login-shadow');
+                                                                                                       $('#signin').removeClass('active');
+                                                                                                      $('#signin').removeClass('show');
+                                                                                               }); </script>";
+	header("Location: https://tastybyte.azurewebsites.net/index.php"); 
 }
 
 //$result = $conn->query($stmt);

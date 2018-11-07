@@ -30,9 +30,9 @@ session_start();
 </head>
 <body data-spy="scroll" data-target="#site-navbar" data-offset="200">
 
-	<nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
+	<nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light.scrolled" id="site-navbar">
 		<div class="container">
-			<div class="fontblack"><a class="navbar-brand" href="../index.php">TastyByte</a>
+			<a class="navbar-brand" href="../index.php">TastyByte</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-nav" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
@@ -47,15 +47,13 @@ session_start();
 								<?php echo $_SESSION['username'];?>
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="#section-cart">Cart</a>
 								<a class="dropdown-item" href="#section-products">My Products</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="../php/logout.php">Logout</a>
 							</div>
 						</li>
-						<?endif?>
+						<?php endif;?>
 					</ul>
-				</div>
 				</div>
 			</div>
 		</nav>

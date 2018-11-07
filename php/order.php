@@ -32,7 +32,7 @@ session_start();
 
 	<nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="../index.php">TastyByte</a>
+			<div class="fontblack"><a class="navbar-brand" href="../index.php">TastyByte</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-nav" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
@@ -56,39 +56,13 @@ session_start();
 						<?endif?>
 					</ul>
 				</div>
+				</div>
 			</div>
 		</nav>
 		<!-- END nav -->
 
 
-		<section class="site-cover" style="background-image: url(../images/background.jpg);" id="section-home">
-			<div class="container">
-				<div class="row align-items-center justify-content-center text-center site-vh-100">
-					<div class="col-md-12">
-						<h1 class="ml5">
-							<span class="text-wrapper">
-								<span class="line line1"></span>
-								<span class="letters letters-left">WELCOME TO TASTY BYTE</span>
-								<span class="line line2"></span>
-							</span>
-						</h1>
-
-						<h2 class="h5 site-subheading mb-5 site-animate">Real Taste, Real Food!</h2> 
-						<?php if (!isset($_SESSION['username'])):?>
-
-							<p><button href="https://tasty-byte.azurewebsites.net/" class="btn btn-outline-white btn-lg site-animate" data-toggle="modal" data-target=".log-sign">Sign In/Register</button></p> 
-						<?php endif; ?>
-
-
-						<!-- <p><a href="https://tasty-byte.azurewebsites.net/" target="_blank" class="btn btn-outline-white btn-lg site-animate" data-toggle="modal" data-target="#reservationModal">Register</a></p> -->
-
-
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- END section -->
-		
+	
 		
 		<?php if (isset($_SESSION['username'])):?>
 			<section class="site-section bg-light" id="section-order">
@@ -233,6 +207,24 @@ session_start();
 			</section>
 			<!-- END section -->
 		<?php endif; ?>
+
+		<!-- loader -->
+	<div id="site-loader" class="show fullscreen">
+		<svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
+		</svg>
+	</div>
+		<script src="../js/anime.min.js"></script>
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/popper.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/jquery.easing.1.3.js"></script>
+		<script src="../js/jquery.waypoints.min.js"></script>
+		<script src="../js/owl.carousel.min.js"></script>
+		<script src="../js/jquery.magnific-popup.min.js"></script>
+		<script src="../js/bootstrap-datepicker.js"></script>
+		<script src="../js/jquery.timepicker.min.js"></script>
+		<script src="../js/jquery.animateNumber.min.js"></script>
+		<script src="../js/main.js"></script>
 
 	</body>
 </html>	

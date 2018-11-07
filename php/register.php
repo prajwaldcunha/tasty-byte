@@ -1,10 +1,15 @@
 <?php 
 require "connect.php";
 require "functions.php";
-$fname =$lname= $email = $password = $country =$phoneno=$state=$city=$locality=  "";
+$fname =$lname= $email = $password =$phoneno=$state=$city=$locality=  "";
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   session_start();
+
+  $stmt = $conn->prepare("INSERT INTO users (fname, lname,email,phoneno,state,city,locality,password)  VALUES (?,?,?,?,?,?,?,?)"); 
+  $stmt->bind_param("ssssssss",$fname,$lname,$email,$phoneno,$state,$city,$locality,$password);
+  
   $fname = cleanInput($_POST["fname"]);
   $lname =cleanInput($_POST["lname"]);
   $email =cleanInput($_POST["email"]);
@@ -24,24 +29,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		// header("Location: https://tastybyte.azurewebsites.net");
 	}
 
-  $stmt = $GLOBALS[$conn]->prepare("INSERT INTO users (fname, lname,email,phoneno,state,city,locality,password)  VALUES (?,?,?,?,?,?,?,?)"); 
-  $stmt->bind_param("ssssssss",$fname,$lname,$email,$phoneno,$state,$city,$locality,$password);
-//   $result=$stmt->execute();
-$result = $conn->query($stmt);
 
-	if ($result->num_rows > 0) {
-	    // output data of each row
-	    while($row = $_POST->fetch_array()) {
-	        $_SESSION['username'] = $row['fname'];
-	        $_SESSION['name'] = $row['fname'] . " " . $row['lname']; //Full name of user
-	        $_SESSION['uid'] = $row['id'];
-			header("Location: https://tastybyte.azurewebsites.net/index.php");
-	    }
-	} else {
-	    $_SESSION['validation_error'] = "Username and password does not match";
-		$_SESSION['script'] = "<script> $(document).ready(function(){ $('#myModal').modal('show'); }); </script>";
-		header("Location: https://tastybyte.azurewebsites.net/index.php");
-	}
+ $stmt->execute();
+
+
+//$result = $conn->query($stmt);
+$_SESSION['username'] = $fname;
+ $_SESSION['name'] = $fname . " " . $lname; //Full name of user
+ //$_SESSION['uid'] = $row['id'];
+ header("Location: https://tastybyte.azurewebsites.net/index.php");
+// $_SESSION['script'] = "<script> $(document).ready(function(){ $('#myModal').modal('show'); }); </script>";
+// header("Location: https://tastybyte.azurewebsites.net/index.php");
+	
 }
 ?>
 

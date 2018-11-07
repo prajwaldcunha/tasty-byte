@@ -25,7 +25,6 @@ session_start();
 	<link rel="stylesheet" href="../css/icomoon.css">
 	<link rel="stylesheet" href="../css/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type="text/javascript" src="../js/countryStateCity.js"></script>
 
 </head>
 <body data-spy="scroll" data-target="#site-navbar" data-offset="200">
@@ -44,7 +43,7 @@ session_start();
 					<?php if (isset($_SESSION['username'])):?>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<div style="color: black;"><?php echo $_SESSION['username'];?></div>
+								<div style="color: black;"><?php echo $_SESSION['username'];?></div>	
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="#section-products">My Products</a>

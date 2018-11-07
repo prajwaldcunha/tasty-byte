@@ -802,7 +802,7 @@ session_start();
 
 													<!-- Text input-->
 													<div class="group">
-														<input required="" class="input" type="text" name="lname" value="<?php echo isset($_POST['lname']) ? $_POST['lname'] :  "";  ?>"><span class="highlight"></span><span class="bar"></span>
+														<input required="" class="input" type="text" name="lname" value="<?php if(isset($_POST['lname'])) { echo $_POST['lname'];  ?>"><span class="highlight"></span><span class="bar"></span>
 														<label class="label" for="date">Last Name</label></div>
 
 													<!-- display error message-->

@@ -425,7 +425,7 @@ h1, h2, h3, h4, h5,
 
 .btn.btn-outline-white:hover, .btn.btn-outline-white:focus, .btn.btn-outline-white:active {
   background: #fff;
-  border-color: #fff;
+  border-color: black;
   color: #3224d4;
 }
 

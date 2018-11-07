@@ -11,7 +11,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
 	
 	// Check file size
 	if ($_FILES["imageToUpload"]["size"] > 500000) {
-    	echo "Sorry, your file is too large.";
+    	// echo "Sorry, your file is too large.";
+    	$_SESSION['fileUploadError']='large';
     	$uploadOk = 0;
 	}
 
@@ -25,19 +26,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
 	 	echo "Extension and mime types are valid";
 	}
 	else {
-	 	echo $_FILES["imageToUpload"] . " Has an invalid mime type or extension";
+	 	// echo $_FILES["imageToUpload"] . " Has an invalid mime type or extension";
+	 	$_SESSION['fileUploadError_1']='Has an invalid mime type or extension';
 	 }
 
 	// Check if $uploadOk is set to 0 by an error
 	if ($uploadOk == 0) {
-	    echo "Sorry, your file was not uploaded.";
+	    // echo "Sorry, your file was not uploaded.";
+	    $_SESSION['fileUploadFail']='File was not uploaded.';
 	
 	} else {
 		// if everything is ok, try to upload file
 	    if (move_uploaded_file($_FILES["imageToUpload"]["tmp_name"], $target_file)) {
+
 	        echo "The file ". basename( $_FILES["imageToUpload"]["name"]). " has been uploaded.";
 	    } else {
-	        echo "Sorry, there was an error uploading your file.";
+	        // echo "Sorry, there was an error uploading your file.";
+			$_SESSION['fileUploadFail']='File was not uploaded.';
 	    }
 	}
 
@@ -70,6 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
 
 else{
 	echo "error";
+	
 }
   
 

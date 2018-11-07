@@ -586,7 +586,7 @@ session_start();
 
 											<div class="form-style-10">
 												<h1>Product details</h1>
-												<form action="php/addProduct.php" method="post">
+												<form action="php/addProduct.php" method="post" enctype="multipart/form-data">
 													
 													<div class="section"><span>1</span>Item details</div>
 													<div class="inner-wrap">
@@ -602,11 +602,11 @@ session_start();
 													<div class="inner-wrap">
 
 
-														<label>Product images <input type="file" name="fileUp" required="" /></label>
+														<label>Product images <input type="file" name="imageToUpload" required="" /></label>
 													</div>
 
 													<div class="button-section">
-														<input type="submit" name="submitAddProduct" value="Submit" />
+														<input type="submit" name="submit" value="Submit" />
 														
 													</div>
 												</form>

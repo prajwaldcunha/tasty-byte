@@ -592,17 +592,17 @@ session_start();
 													<div class="inner-wrap">
 
 
-														<label>Product name <input type="text" name="field3" required="" maxlength="256" /></label>
-														<label>Product description <textarea name="field2" required="" maxlength="150" rows="4"></textarea></label>
-														<label>Quantity<input type="number" name="field4" required="" min="1" value="1"/></label>                  
+														<label>Product name <input type="text" name="prodName" required="" maxlength="256" /></label>
+														<label>Product description <textarea name="prodDesc" required="" maxlength="150" rows="4"></textarea></label>
+														<label>Quantity<input type="number" name="quantity" required="" min="1" value="1"/></label>                  
 														<label>Date of manufacture <input type="date" name="dateOfManufacture" required=""  /></label>      
-														<label>Price <input type="text" name="field6" required="" pattern="[0-9]+" /></label>
+														<label>Price <input type="text" name="price" required="" pattern="[0-9]+" /></label>
 													</div>
 													<div class="section"><span>2</span>Item Photographs</div>
 													<div class="inner-wrap">
 
 
-														<label>Product images <input type="file" name="field3" required="" /></label>
+														<label>Product images <input type="file" name="fileUp" required="" /></label>
 													</div>
 
 													<div class="button-section">

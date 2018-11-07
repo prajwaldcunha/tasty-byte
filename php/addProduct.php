@@ -4,6 +4,7 @@ require 'functions.php';
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	echo "prod naeme ".$_POST['prodName'];
 	$productName=cleanInput($_POST['prodName']);
 	$productDesc=cleanInput($_POST['prodDesc']);
 	$price=cleanInput($_POST['price']);
@@ -14,9 +15,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	//accept files.
 	$file=cleanInput($_POST['fileUp']);
 
-	$userName=$_SESSION['username'];
+	$userName=$_SESSION['email_id'];
+	echo "user ".$userName;
 
-	$sql="SELECT * FROM USERS WHERE email='".$userName."'";
+	$sql="SELECT * FROM USERS WHERE email='".$userName."';";
 	$result = mysqli_query($conn, $sql);
 
    if (mysqli_num_rows($result) > 0) {
@@ -27,6 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       echo "0 results";
    }
 }
-   mysqli_close($conn);
+else{
+	echo "error";
+}
+  
 
 ?>

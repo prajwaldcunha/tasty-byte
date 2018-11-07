@@ -16,6 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
 	if($check !== false) {
 		echo "File is an image - " . $check["mime"] . ".";
 		$uploadOk = 1;
+		
 	} 
 	else {
 		echo "File is not an image.";

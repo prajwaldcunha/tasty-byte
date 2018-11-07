@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
 	} else {
 		// if everything is ok, try to upload file
 	    if (move_uploaded_file($_FILES["imageToUpload"]["tmp_name"], $target_file)) {
-	        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+	        echo "The file ". basename( $_FILES["imageToUpload"]["name"]). " has been uploaded.";
 	    } else {
 	        echo "Sorry, there was an error uploading your file.";
 	    }

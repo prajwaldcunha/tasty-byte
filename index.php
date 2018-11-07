@@ -797,12 +797,12 @@ session_start();
 												<!-- Sign Up Form -->
 												<!-- Text input-->
 												<div class="group">
-													<input required="" class="input" type="text" name="fname" value="<?php echo isset($_POST['fname']) ? $_POST['fname'] : '' ?>"><span class="highlight"></span><span class="bar"></span>
+													<input required="" class="input" type="text" name="fname" value="<?php echo isset($_POST['fname']) ? $_POST['fname'] : "";  ?>"><span class="highlight"></span><span class="bar"></span>
 													<label class="label" for="date">First Name</label></div>
 
 													<!-- Text input-->
 													<div class="group">
-														<input required="" class="input" type="text" name="lname" value="<?php echo isset($_POST['lname']) ? $_POST['lname'] : '' ?>"><span class="highlight"></span><span class="bar"></span>
+														<input required="" class="input" type="text" name="lname" value="<?php echo isset($_POST['lname']) ? $_POST['lname'] :  "";  ?>"><span class="highlight"></span><span class="bar"></span>
 														<label class="label" for="date">Last Name</label></div>
 
 													<!-- display error message-->
@@ -822,7 +822,7 @@ session_start();
 																
 																<!-- phone number input-->
 														<div class="group">
-															<input required="" class="input" type="text" pattern="[1-9]{1}[0-9]{9}" title="Enter 10 digit number"  name="phoneno" value="<?php echo isset($_POST['phoneno']) ? $_POST['phoneno'] : '' ?>"><span class="highlight"></span><span class="bar"></span>
+															<input required="" class="input" type="text" pattern="[1-9]{1}[0-9]{9}" title="Enter 10 digit number"  name="phoneno" value="<?php echo isset($_POST['phoneno']) ? $_POST['phoneno'] : "" ;?>"><span class="highlight"></span><span class="bar"></span>
 															<label class="label" for="date">Phone Number</label></div>
 
 

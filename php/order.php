@@ -43,9 +43,11 @@ session_start();
 				
 					<?php if (isset($_SESSION['username'])):?>
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<div style="color: black;"><?php echo $_SESSION['username'];?></div>
-							</a>
+							<div style="color: black;">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<?php echo $_SESSION['username'];?>
+								</a>
+							</div>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="#section-products">My Products</a>
 								<div class="dropdown-divider"></div>

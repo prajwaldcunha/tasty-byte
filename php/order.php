@@ -61,34 +61,7 @@ session_start();
 		<!-- END nav -->
 
 
-		<section class="site-cover" style="background-image: url(../images/background.jpg);" id="section-home">
-			<div class="container">
-				<div class="row align-items-center justify-content-center text-center site-vh-100">
-					<div class="col-md-12">
-						<h1 class="ml5">
-							<span class="text-wrapper">
-								<span class="line line1"></span>
-								<span class="letters letters-left">WELCOME TO TASTY BYTE</span>
-								<span class="line line2"></span>
-							</span>
-						</h1>
-
-						<h2 class="h5 site-subheading mb-5 site-animate">Real Taste, Real Food!</h2> 
-						<?php if (!isset($_SESSION['username'])):?>
-
-							<p><button href="https://tasty-byte.azurewebsites.net/" class="btn btn-outline-white btn-lg site-animate" data-toggle="modal" data-target=".log-sign">Sign In/Register</button></p> 
-						<?php endif; ?>
-
-
-						<!-- <p><a href="https://tasty-byte.azurewebsites.net/" target="_blank" class="btn btn-outline-white btn-lg site-animate" data-toggle="modal" data-target="#reservationModal">Register</a></p> -->
-
-
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- END section -->
-		
+	
 		
 		<?php if (isset($_SESSION['username'])):?>
 			<section class="site-section bg-light" id="section-order">

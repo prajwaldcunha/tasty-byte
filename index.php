@@ -62,7 +62,7 @@ session_start();
 		<!-- END nav -->
 
 
-		<section class="site-cover" style="background-image: url(images/background.jpg);" id="section-home">
+		<section class="site-cover" style="background-image: url(images/background1.jpg);" id="section-home">
 			<div class="container">
 				<div class="row align-items-center justify-content-center text-center site-vh-100">
 					<div class="col-md-12">

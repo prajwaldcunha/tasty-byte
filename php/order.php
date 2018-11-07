@@ -203,9 +203,21 @@ session_start();
 				</div>
 			</section>
 			<!-- END section -->
-		<?php endif; ?>
+		<?php endif; 
+		// SELECT name, imageurl, details, quantity, price, manufacturedate, pickup_address, city, fname, lname, email, phoneno 
+		// FROM users u, products p
+		//  WHERE p.uid = u.id AND  p.pid = (SELECT pid 
+		//															FROM orders o
+		//                                                           WHERE o.uid = $_SESSION['uid'] )
 
-		<!-- loader -->
+
+
+
+
+
+		?>
+
+	<!-- loader -->
 	<div id="site-loader" class="show fullscreen">
 		<svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
 		</svg>

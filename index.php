@@ -497,7 +497,7 @@ session_start();
 		<!-- END section -->
 
 		
-
+		<?php if (isset($_SESSION['username'])):?>
 			<section class="site-section" id="section-products">
 				<div class="container">
 					<div class="row site-custom-gutters">

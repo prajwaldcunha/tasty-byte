@@ -369,7 +369,7 @@ h1, h2, h3, h4, h5,
 .btn.btn-lg {
   font-size: 20px !important;
   padding: 13px 40px !important;
-  color: white;
+  color: black;
 }
 
 .btn.btn-sm {
@@ -417,7 +417,7 @@ h1, h2, h3, h4, h5,
 }
 
 .btn.btn-outline-white {
-  border-color: rgba(255, 255, 255, 0.8);
+  border-color: black;
   background: none;
   border-radius: 0px;
   border-width: 2px;

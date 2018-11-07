@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	        $_SESSION['username'] = $row['fname'];
 	        $_SESSION['name'] = $row['fname'] . " " . $row['lname']; //Full name of user
 	        $_SESSION['uid'] = $row['id'];
+	        $_SESSION['email'] = $row['email'];
 			header("Location: https://tastybyte.azurewebsites.net/index.php");
 	    }
 	} else {

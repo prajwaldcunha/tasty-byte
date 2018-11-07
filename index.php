@@ -30,7 +30,7 @@ session_start();
 
 	<nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index.html">TastyByte</a>
+			<a class="navbar-brand" href="index.php">TastyByte</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-nav" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
@@ -815,6 +815,11 @@ session_start();
 																<input required="" class="input" type="password" name="password"><span class="highlight"></span><span class="bar"></span>
 																<label class="label" for="date">Password</label></div>
 																<em>1-8 Characters</em>
+																
+																<!-- phone number input-->
+														<div class="group">
+															<input required="" class="input" type="tel" name="phoneno"><span class="highlight"></span><span class="bar"></span>
+															<label class="label" for="date">Phone Number</label></div>
 
 
 																<!-- Set State-->

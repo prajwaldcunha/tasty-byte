@@ -24,7 +24,7 @@ session_start();
 	<link rel="stylesheet" href="../css/icomoon.css">
 	<link rel="stylesheet" href="../css/style.css">
 
-	<link rel="stylesheet" href="../css/order.css">
+	<link rel="stylesheet" href="../css/product.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -61,6 +61,9 @@ session_start();
 		</nav>
 		<!-- END nav -->
 
+		<section class="site-section bg-light" id="section-order">
+				
+
 	<div class="container">
          <div class="level">
             <div class="level-name">
@@ -96,6 +99,7 @@ session_start();
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</p>
          </div>
       </div>
+  </section>
 	
 </body>
 </html>

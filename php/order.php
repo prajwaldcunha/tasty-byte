@@ -33,7 +33,7 @@ session_start();
 		<div class="container">
 			<a class="navbar-brand" href="../index.php"><div style="color: black;">TastyByte</div></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-nav" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="oi oi-menu"></span> <div style="color: black;">Menu</div>
+				<span class="oi oi-menu"></span> Menu
 			</button>
 
 			<div class="collapse navbar-collapse" id="site-nav">

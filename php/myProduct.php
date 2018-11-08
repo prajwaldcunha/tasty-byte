@@ -2,6 +2,11 @@
 require  'connect.php';
 require 'functions.php';
 session_start();
+
+$stmt = "SELECT name,price,imageurl,details,quantity,price,manufacturedate,pickup_address,city FROM MyGuests";
+$result = $conn->query($sql);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +47,7 @@ session_start();
 			<div class="collapse navbar-collapse" id="site-nav">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active"><a href="../index.php" class="nav-link active"><div style="color: black;">Home</div></a></li>
-				
+
 					<?php if (isset($_SESSION['username'])):?>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -54,68 +59,84 @@ session_start();
 								<a class="dropdown-item" href="../php/logout.php">Logout</a>
 							</div>
 						</li>
-						<?php endif;?>
-					</ul>
-				</div>
+					<?php endif;?>
+				</ul>
 			</div>
-		</nav>
-		<!-- END nav -->
+		</div>
+	</nav>
+	<!-- END nav -->
 
-		<section class="site-section bg-light" >
-				
-				<div class="row">
-						<div class="col-md-12 text-center mb-5 site-animate">
-							<h2 class="display-4">Your Orders</h2>
-							
-						</div>
-					</div>
+	<section class="site-section bg-light" >
 
-
-
-	<div class="container-grid">
+		<div class="container">
+			<div class="row">
+				<h2>My products</h2>
+			</div>
+		</div>
 
 
+		<?php
 
-         <div class="level">
-            <div class="level-name">
-               <h3>Product name</h3>
-            </div>
-            <img src="https://source.unsplash.com/230x160/?london,building">
-            <div class="pmpro-level-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</div>
-            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</div>
-            <div class="pmpro-level-button" type="button" class="btn btn-primary">Primary</div>
-         </div>
-         <div class="level">
-            <h3>Views of Paris</h3>
-            <img src="https://source.unsplash.com/230x160/?paris,building">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</p>
-         </div>
-         <div class="level">
-            <h3>Views of Madrid</h3>
-            <img src="https://source.unsplash.com/230x160/?madrid,building"> <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-         </div>
-         <div class="level">
-            <h3>Views of Berlin</h3>
-            <img src="https://source.unsplash.com/230x160/?berlin,building"> <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</p>
-         </div>
-         <div class="level">
-            <h3>Views of Brussels</h3>
-            <img src="https://source.unsplash.com/230x160/?brussels,building"> <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</p>
-         </div>
-         <div class="level">
-            <h3>Views of Rome</h3>
-            <img src="https://source.unsplash.com/230x160/?rome,building"> <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</p>
-         </div>
-      </div>
-  </section>
-  
-  
-  
-  
+		if ($result->num_rows > 0) {
+    // output data of each row
+			while($row = $result->fetch_assoc()) {
+				echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+			}
+		} else {
+			echo "0 results";
+		}
+
+		?>
+
+		
+		<div class="container-grid">
+
+
+			<div class="level">
+				<div class="level-name">
+					<h3 class="prodName">Product name</h3>
+				</div>
+				<img src="https://source.unsplash.com/230x160/?london,building">
+				<div class="prodDesc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</div>
+				<div class="quantity">Quantity : 1 Kg</div>
+				<div class="manuDate">Manuafavture Date : 25/12/2018</div>
+				<div class="Price">Rs 1500</div>
+				<div class="Pick up Address">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</div>
+				<div class="city">City : Mangalore</div>
+			</div>
+
+
+			<div class="level">
+				<h3>Views of Paris</h3>
+				<img src="https://source.unsplash.com/230x160/?paris,building">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</p>
+			</div>
+			<div class="level">
+				<h3>Views of Madrid</h3>
+				<img src="https://source.unsplash.com/230x160/?madrid,building"> <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+			</div>
+			<div class="level">
+				<h3>Views of Berlin</h3>
+				<img src="https://source.unsplash.com/230x160/?berlin,building"> <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</p>
+			</div>
+			<div class="level">
+				<h3>Views of Brussels</h3>
+				<img src="https://source.unsplash.com/230x160/?brussels,building"> <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</p>
+			</div>
+			<div class="level">
+				<h3>Views of Rome</h3>
+				<img src="https://source.unsplash.com/230x160/?rome,building"> <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</p>
+			</div>
+		</div>
+	</section>
+
+
+
+
 	
 </body>
 </html>

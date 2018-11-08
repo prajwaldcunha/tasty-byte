@@ -13,14 +13,14 @@ header {
   margin: 10px;
 }
 
-h3 {
+.prodName {
   color: black;
   font-size: 140%;
   padding: 2px;
   margin: 10px;
 }
 
-.pmpro-level-descr, p {
+.prodDesc {
   font-size: 80%;
 }
 

@@ -3,7 +3,7 @@ require  'connect.php';
 require 'functions.php';
 session_start();
 
-$stmt = "SELECT name,price,imageurl,details,quantity,price,manufacturedate,pickup_address,city FROM MyGuests";
+$stmt = "SELECT name,price,imageurl,details,quantity,price,manufacturedate,pickup_address,city FROM products";
 $result = $conn->query($sql);
 
 
@@ -79,7 +79,7 @@ $result = $conn->query($sql);
 
 		if ($result->num_rows > 0) {
     // output data of each row
-			while($row = $result->fetch_assoc()) {
+			while($row = $result->fetch_array()) {
 				echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
 			}
 		} else {

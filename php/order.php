@@ -207,8 +207,8 @@ session_start();
 		// SELECT name, imageurl, details, quantity, price, manufacturedate, pickup_address, city, fname, lname, email, phoneno 
 		// FROM users u, products p
 		//  WHERE p.uid = u.id AND  p.pid = (SELECT pid 
-		//															FROM orders o
-		//                                                           WHERE o.uid = $_SESSION['uid'] )
+		//									FROM orders o
+		//                                  WHERE o.uid = $_SESSION['uid'] )
 
 
 

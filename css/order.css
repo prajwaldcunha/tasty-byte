@@ -1,0 +1,47 @@
+.container > * {
+  background-color: #fff;
+  border: .01em solid grey;
+  color: black;
+  padding: 1em; 
+  margin: 10px;
+}
+
+header {
+  color: black;
+  font-size: 200%;
+  padding: 2px;
+  margin: 10px;
+}
+
+h3 {
+  color: black;
+  font-size: 140%;
+  padding: 2px;
+  margin: 10px;
+}
+
+.pmpro-level-descr, p {
+  font-size: 80%;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+  "title"
+  "description"
+  "button"
+   ;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: .5em;
+}
+
+.level:hover {
+box-shadow: 1px 2px 3px 0px rgba(25,25,25,0.6);
+opacity: 1;
+transition:all 0.5s ease;  
+}
+
+img {
+  width: 100%;
+  align: center;
+}

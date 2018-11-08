@@ -49,7 +49,7 @@ session_start();
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="php/order.php">My Orders</a>
 								<a class="dropdown-item" href="#section-cart">Cart</a>
-								<a class="dropdown-item" href="#section-products">My Products</a>
+								<a class="dropdown-item" href="php/myProduct.php">My Products</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="php/logout.php">Logout</a>
 							</div>
@@ -597,6 +597,9 @@ session_start();
 														
 													</div>
 												</form>
+												<?php if(isset($_SESSION['script_addProd_modal'])) { echo $_SESSION['script_addProd_modal']; 
+											$_SESSION['script_addProd_modal'] = null;
+										} ?>
 											</div>
 
 
@@ -609,9 +612,7 @@ session_start();
 
 									</div>
 
-									<?php if(isset($_SESSION['script'])) { echo $_SESSION['script']; 
-											$_SESSION['script'] = null;
-										} ?>
+									
 
 								</div>
 							</div>

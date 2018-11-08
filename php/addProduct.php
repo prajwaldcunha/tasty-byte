@@ -36,7 +36,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
 	// Check if $uploadOk is set to 0 by an error
 	if ($uploadOk == 0) {
 	    // echo "Sorry, your file was not uploaded.";
-		$_SESSION['fileUploadFail']='File was not uploaded.';
+		$_SESSION['fileUploadFail']='File was not uploaded.';	
+			$_SESSION['script_addProd_modal'] = "<script> $(document).ready(function(){ $('#addProdModal').modal('show'); }); </script>";
+			header("Location: https://tastybyte.azurewebsites.net/index.php");
 		
 	} else {
 		// if everything is ok, try to upload file
@@ -72,11 +74,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
 		}
 
 		else{
-			echo "error";
+			//echo "error";
 			
 	        // echo "Sorry, there was an error uploading your file.";
 		$_SESSION['fileUploadFail']='File was not uploaded.';
-			$_SESSION['script'] = "<script> $(document).ready(function(){ $('#addProdModal').modal('show'); }); </script>";
+			$_SESSION['script_addProd_modal'] = "<script> $(document).ready(function(){ $('#addProdModal').modal('show'); }); </script>";
 			header("Location: https://tastybyte.azurewebsites.net/index.php");
 			
 		}

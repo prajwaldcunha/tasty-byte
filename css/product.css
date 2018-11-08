@@ -1,4 +1,4 @@
-.container > * {
+.container-grid > * {
   background-color: #fff;
   border: .01em solid grey;
   color: black;
@@ -24,7 +24,7 @@ h3 {
   font-size: 80%;
 }
 
-.container {
+.container-grid {
   display: grid;
   grid-template-areas:
   "title"

@@ -64,7 +64,7 @@ session_start();
 		<section class="site-section bg-light" id="section-order">
 				
 
-	<div class="container">
+	<div class="container-grid">
          <div class="level">
             <div class="level-name">
                <h3>Product name</h3>

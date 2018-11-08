@@ -62,7 +62,7 @@ session_start();
 	
 		
 		<?php if (isset($_SESSION['username'])):?>
-			<section class="site-section bg-light" id="section-order">
+			<section class="site-section bg-light">
 				<div class="container">
 
 					<div class="row">

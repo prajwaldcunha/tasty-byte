@@ -49,7 +49,7 @@ session_start();
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="php/order.php">My Orders</a>
 								<a class="dropdown-item" href="#section-cart">Cart</a>
-								<a class="dropdown-item" href="#section-products">My Products</a>
+								<a class="dropdown-item" href="php/myProduct.php">My Products</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="php/logout.php">Logout</a>
 							</div>

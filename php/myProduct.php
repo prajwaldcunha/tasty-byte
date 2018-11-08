@@ -3,7 +3,7 @@ require  'connect.php';
 require 'functions.php';
 session_start();
 
-$stmt = "SELECT name,price,imageurl,details,quantity,price,manufacturedate,pickup_address,city FROM products";
+$sql = "SELECT name,price,imageurl,details,quantity,price,manufacturedate,pickup_address,city FROM products";
 $result = $conn->query($sql);
 
 

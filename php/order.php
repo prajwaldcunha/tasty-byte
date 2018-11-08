@@ -46,9 +46,9 @@ session_start();
 								<?php echo $_SESSION['username'];?>	
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="#section-products">My Products</a>
+								<a class="dropdown-item" href="myProduct.php">My Products</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="../php/logout.php">Logout</a>
+								<a class="dropdown-item" href="logout.php">Logout</a>
 							</div>
 						</li>
 						<?php endif;?>

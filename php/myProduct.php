@@ -46,12 +46,12 @@ $result = $conn->query($sql);
 
 			<div class="collapse navbar-collapse" id="site-nav">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a href="../index.php" class="nav-link active"><div style="color: black;">Home</div></a></li>
+					<li class="nav-item active"><a href="../index.php" class="nav-link active">Home</a></li>
 
 					<?php if (isset($_SESSION['username'])):?>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<div style="color: black;"><?php echo $_SESSION['username'];?></div>	
+								<?php echo $_SESSION['username'];?>
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="../php/order.php">My Orders</a>

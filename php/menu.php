@@ -3,15 +3,6 @@ session_start();
 require  'connect.php';
 require 'functions.php';
 
-
-function processDrpdown($selectedVal) {
-    echo "Selected value in php ".$selectedVal;
-}        
-
-if ($_POST['dropdownValue']){
-    //call the function or execute the code
-    processDrpdown($_POST['dropdownValue']);
-}
 ?>
 
 <!DOCTYPE html>
@@ -67,20 +58,85 @@ if ($_POST['dropdownValue']){
 			</div>
 		</nav>
 		<!-- END nav -->
-		
+	
 		<!--Actual Display-->
 		<section class="site-section bg-light" id="section-order">
 
 						<div class="container">
-						<select id="myDropDown">
-							<option>Choose Color</option>
+						<form>
+							<select id="myDropDown" name="city" onchange="this.form.submit()">>
+							<option>Choose City</option>
 							<option value="Mangalore">Mangalore</option>
 							<option value="Bangalore">Bangalore</option>
 							<option value="Mumbai">Mumbai</option>
 						</select>
+						</form>
 					
-					
-					</section>
+
+					<?php
+
+						if(isset($_GET['city'])){
+							$city=cleanInput($_GET['city']);
+      						if (isset($_SESSION['username'])){
+													$sql = "SELECT name,price,imageurl,details,quantity,price,manufacturedate,pickup_address,products.city,fname,lname,email,phoneno,orderdate FROM products, users,orders WHERE products.uid=users.id AND orders.pid=products.id AND products.city=".$city;
+													$result = $conn->query($sql);
+															}
+      									}								
+												
+					?>
+
+					<div class="card-deck">
+					<?php
+					$i=0;
+					if ($result->num_rows > 0) {
+   						 // output data of each row
+						while($row = $result->fetch_array()) {
+							$i+=1;
+							if($i%3==0) echo "<br/>";
+					?>
+					<div class="card">
+						<img class="card-img-top" src="../images/offer_1.jpg" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title"><?php echo $row['name']; ?></h5>
+							<p class="card-text">Order date : <?php echo $row['orderdate']; ?></p>
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetails">Details</button>
+						</div>
+
+
+						<!-- Button trigger modal -->
+
+
+						<!-- Modal -->
+						<div class="modal fade" id="modalDetails" tabindex="-1" role="dialog" aria-labelledby="modalDetailsTitle" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-centered" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLongTitle">Product Details</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<ul>
+											<li>Product Name : <?php echo $row['name']; ?></li>
+											<li>Price :  Rs. <?php echo $row['price']; ?></li>
+											<li>Quantity: <?php echo $row['quantity']; ?></li>
+											<li>Date of manufacture : <?php echo $row['manufacturedate']; ?></li>
+											<li>Seller Name : <?php echo $row['fname']." ".$row['lname']; ?></li>
+											<li>PickUp Address : <?php echo $row['']; ?></li>
+											<li>Phone number : <?php echo $row['phoneno']; ?></li>
+											<li>Email id: <?php echo $row['email']; ?></li>
+										</ul>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+		</div>
+	</section>
 		<!-- End of actual Display -->
 
 		<!-- loader -->

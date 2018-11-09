@@ -80,7 +80,8 @@ $result = $conn->query($sql);
 		if ($result->num_rows > 0) {
     // output data of each row
 			while($row = $result->fetch_array()) {
-				echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+
+				var_dump($row+"</br>");
 			}
 		} else {
 			echo "0 results";

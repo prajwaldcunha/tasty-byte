@@ -25,7 +25,7 @@ session_start();
 	<link rel="stylesheet" href="../css/icomoon.css">
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/grid_layout.css">
-  	<link rel="stylesheet" type="text/css" href="../css/deco.css">
+	<link rel="stylesheet" type="text/css" href="../css/deco.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
@@ -41,7 +41,7 @@ session_start();
 			<div class="collapse navbar-collapse" id="site-nav">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active"><a href="../index.php" class="nav-link active">Home</a></li>
-				
+
 					<?php if (isset($_SESSION['username'])):?>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -53,82 +53,82 @@ session_start();
 								<a class="dropdown-item" href="logout.php">Logout</a>
 							</div>
 						</li>
-						<?php endif;?>
-					</ul>
+					<?php endif;?>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- END nav -->
+
+
+	<?php if (isset($_SESSION['username'])):?>
+		<section class="site-section bg-light" id="section-order">
+			<div class="container">
+
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-6">
+						<div class="backgroundcol">
+							<div class="thumbnail">
+								<a href="#"><img class="card-img-top" src="../images/menu_1.jpg" alt=""></a>
+								<hr>
+								<h4>Wedding Bells Decorators</h4>
+								<div class="container">
+
+									<!-- Trigger the modal with a button -->
+									<button type="button" class="btn btn-info btn-sm continfo" data-toggle="modal" data-target="#1myModal">Contact Info</button>
+									<a href="Dream/dreamgal.html" class="btn btn-primary btn-sm disabled"   role="button">Gallery</a>
+									<button type="button" class="btn btn-success btn-sm " data-toggle="modal" data-target="#1myModal2">Address</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="1myModal" role="dialog">
+										<div class="modal-dialog modal-sm">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal">&times;</button>
+													<h4 class="modal-title">Wedding Bells Decorators</h4>
+												</div>
+												<div class="modal-body">
+													<p>Owner Name: Lancy</p>
+													<p>Tel:  0824 4258077</p>
+													<p>Phone:      9343565457 (Lancy)</p>
+													<p>Phone:      9741529619 (Sonia)</p>
+													<p>Email: Weddingbellsmlr@gmail.com</p>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- Modal -->
+									<div class="modal fade" id="1myModal2" role="dialog">
+										<div class="modal-dialog modal-sm">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal">&times;</button>
+													<h4 class="modal-title">Wedding Bells Decorators</h4>
+												</div>
+												<div class="modal-body">
+													<p>Address: Presidency zone ||</p>
+													<p>Bendorewell,Kankanady(Below JustBake)</p>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
 				</div>
 			</div>
-		</nav>
-		<!-- END nav -->
-
-
-	
-		
-		<?php if (isset($_SESSION['username'])):?>
-			<section class="site-section bg-light" id="section-order">
-				<div class="container">
-
-					<div class="row">
-						<div class="col-lg-4 col-md-4 col-sm-6">
-        <div class="thumbnail">
-          <a href="#"><img class="card-img-top" src="../assets/images/wedbells.jpg" alt=""></a>
-          <hr>
-          <h4>Wedding Bells Decorators</h4>
-          <div class="container">
-
-            <!-- Trigger the modal with a button -->
-            <button type="button" class="btn btn-info btn-sm continfo" data-toggle="modal" data-target="#1myModal">Contact Info</button>
-            <a href="Dream/dreamgal.html" class="btn btn-primary btn-sm disabled"   role="button">Gallery</a>
-            <button type="button" class="btn btn-success btn-sm " data-toggle="modal" data-target="#1myModal2">Address</button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="1myModal" role="dialog">
-              <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Wedding Bells Decorators</h4>
-                  </div>
-                  <div class="modal-body">
-                    <p>Owner Name: Lancy</p>
-                    <p>Tel:  0824 4258077</p>
-                    <p>Phone:      9343565457 (Lancy)</p>
-                    <p>Phone:      9741529619 (Sonia)</p>
-                    <p>Email: Weddingbellsmlr@gmail.com</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Modal -->
-            <div class="modal fade" id="1myModal2" role="dialog">
-              <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Wedding Bells Decorators</h4>
-                  </div>
-                  <div class="modal-body">
-                   <p>Address: Presidency zone ||</p>
-                   <p>Bendorewell,Kankanady(Below JustBake)</p>
-                 </div>
-                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-              </div>
-            </div>
-            </div>
-          </div>
-        </div>
-    </div>
-
-					</div>
-				</div>
-			</section>
-			<!-- END section -->
-		<?php endif; 
+		</section>
+		<!-- END section -->
+	<?php endif; 
 		// SELECT name, imageurl, details, quantity, price, manufacturedate, pickup_address, city, fname, lname, email, phoneno 
 		// FROM users u, products p
 		//  WHERE p.uid = u.id AND  p.pid = (SELECT pid 
@@ -140,25 +140,25 @@ session_start();
 
 
 
-		?>
+	?>
 
 	<!-- loader -->
 	<div id="site-loader" class="show fullscreen">
 		<svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
 		</svg>
 	</div>
-		<script src="../js/anime.min.js"></script>
-		<script src="../js/jquery.min.js"></script>
-		<script src="../js/popper.min.js"></script>
-		<script src="../js/bootstrap.min.js"></script>
-		<script src="../js/jquery.easing.1.3.js"></script>
-		<script src="../js/jquery.waypoints.min.js"></script>
-		<script src="../js/owl.carousel.min.js"></script>
-		<script src="../js/jquery.magnific-popup.min.js"></script>
-		<script src="../js/bootstrap-datepicker.js"></script>
-		<script src="../js/jquery.timepicker.min.js"></script>
-		<script src="../js/jquery.animateNumber.min.js"></script>
-		<script src="../js/main.js"></script>
+	<script src="../js/anime.min.js"></script>
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/popper.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/jquery.easing.1.3.js"></script>
+	<script src="../js/jquery.waypoints.min.js"></script>
+	<script src="../js/owl.carousel.min.js"></script>
+	<script src="../js/jquery.magnific-popup.min.js"></script>
+	<script src="../js/bootstrap-datepicker.js"></script>
+	<script src="../js/jquery.timepicker.min.js"></script>
+	<script src="../js/jquery.animateNumber.min.js"></script>
+	<script src="../js/main.js"></script>
 
-	</body>
+</body>
 </html>	

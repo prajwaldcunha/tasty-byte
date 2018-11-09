@@ -62,17 +62,30 @@ session_start();
 
 
 	<?php if (isset($_SESSION['username'])):?>
-	<div class="autosized autosized4">
-        <select name="Location">
-			<option value="Mangalore">Mangalore</option>
-			<option value="Bangalore">Bangalore</option>
-			<option value="Mumbai">Mumbai</option>
-			<option value="Hyderabad">Hyderabad</option>
- 		 </select>
-    </div>
-	<hr>
+	
+
 		<section class="site-section bg-light" id="section-order">
 			<div class="container">
+			<ul>
+			<li><a href="#">View</a></li>
+			<li class="drop">
+				<a href="#">You</a>
+				
+				<div class="dropdownContain">
+					<div class="dropOut">
+						<div class="triangle"></div>
+						<ul>
+							<li>Plan</li>
+							<li>Account Settings</li>
+							<li>Switch Account</li>
+							<li>Sign Out</li>
+						</ul>
+					</div>
+				</div>
+			
+			</li>
+			<li><a href="#">Help</a></li>
+		</ul>
 
 				<div class="row">
 					<div class="col-lg-4 col-md-4 col-sm-6">

@@ -63,34 +63,27 @@ require 'functions.php';
 		<section class="site-section bg-light" id="section-order">
 
 						<div class="container">
-						<select id="myDropDown" name="city" onchange="this.form.submit()">>
+						<form>
+							<select id="myDropDown" name="city" onchange="this.form.submit()">>
 							<option>Choose City</option>
 							<option value="Mangalore">Mangalore</option>
 							<option value="Bangalore">Bangalore</option>
 							<option value="Mumbai">Mumbai</option>
 						</select>
+						</form>
 					
 
 					<?php
 
-									if(isset($_GET["city"])){
-      										 	 if (isset($_SESSION['username'])):
-		$sql = "SELECT name,price,imageurl,details,quantity,price,manufacturedate,pickup_address,city,fname,lname,email,phoneno,orderdate FROM products, users,orders WHERE uid=id  AND orders.uid=$_SESSION['uid'] and products.city=$_GET['city']";
-		$result = $conn->query($sql);
-		
-      									
-   }								
+						if(isset($_GET['city'])){
+							$city=cleanInput($_GET['city']);
+      						if (isset($_SESSION['username'])){
+													$sql = "SELECT name,price,imageurl,details,quantity,price,manufacturedate,pickup_address,products.city,fname,lname,email,phoneno,orderdate FROM products, users,orders WHERE products.uid=users.id AND orders.pid=products.id AND products.city=".$city;
+													$result = $conn->query($sql);
+															}
+      									}								
 												
-// SELECT A from 
-
-
-
-
-
 					?>
-
-
-
 
 					<div class="card-deck">
 					<?php
@@ -142,8 +135,8 @@ require 'functions.php';
 							</div>
 						</div>
 					</div>
-					</div>
-					</section>
+		</div>
+	</section>
 		<!-- End of actual Display -->
 
 		<!-- loader -->

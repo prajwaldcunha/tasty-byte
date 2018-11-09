@@ -81,7 +81,7 @@ require 'functions.php';
 
 		<!--Actual Display-->
 
-						<div>
+						<div class="container">
 						<select>
 							<option>Choose Color</option>
 							<option value="red">Red</option>

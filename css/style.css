@@ -1489,3 +1489,16 @@ em{
 
 
 /*add product modal styles end*/
+
+.card-margin{
+  margin-top: 50px;
+}
+
+.container-fluid {
+  max-width: 1200px;
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+}

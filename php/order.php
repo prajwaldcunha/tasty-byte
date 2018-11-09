@@ -83,7 +83,7 @@ session_start();
 
 									<!-- Trigger the modal with a button -->
 									<button type="button" class="btn btn-info btn-sm continfo" data-toggle="modal" data-target="#ModalDetails">Details</button>
-									<p>Order Date: 08-11-2018</p>
+									<p class="orderdate">Order Date: 08-11-2018</p>
 
 									<!-- Modal -->
 									<div class="modal fade" id="ModalDetails" role="dialog">

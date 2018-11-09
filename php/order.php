@@ -67,7 +67,6 @@ session_start();
 		<section class="site-section bg-light" id="section-order">
 			<div class="container">
 			<ul>
-			<li><a href="#">View</a></li>
 			<li class="drop">
 				<a href="#">You</a>
 				

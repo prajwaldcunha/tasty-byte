@@ -60,25 +60,7 @@ require 'functions.php';
 			</div>
 		</nav>
 		<!-- END nav -->
-		<div class="container">
-			<ul>
-				<li class="drop">
-					<a href="#">You</a>
-					<div class="dropdownContain">
-						<div class="dropOut">
-							<div class="triangle"></div>
-							<ul>
-								<li>Plan</li>
-								<li>Account Settings</li>
-								<li>Switch Account</li>
-								<li>Sign Out</li>
-							</ul>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-
+		
 		<!--Actual Display-->
 
 						<div class="container">

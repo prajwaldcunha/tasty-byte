@@ -79,7 +79,7 @@ $result = $conn->query($sql);
     // output data of each row
 			while($row = $result->fetch_array()) {
 
-				var_dump($row+"</br>");
+				var_dump($row . "</br>");
 			}
 		} else {
 			echo "0 results";

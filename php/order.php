@@ -64,7 +64,7 @@ session_start();
 
 		<section class="site-section bg-light" id="section-order">
 			<div class="container">
-				<div class="card-deck">
+				<div class="card-deck card-margin">
 
 					<div class="card">
 						<img class="card-img-top" src="../images/offer_1.jpg" alt="Card image cap">
@@ -122,7 +122,7 @@ session_start();
 								<a href="#" class="btn btn-primary">Details</a>
 							</div>
 						</div>
-						
+
 					</div>
 
 

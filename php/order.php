@@ -66,138 +66,61 @@ session_start();
 				<div class="container">
 
 					<div class="row">
-						<div class="col-md-12 text-center mb-5 site-animate">
-							<h2 class="display-4">Your Orders</h2>
-							<div class="row justify-content-center">
-								<div class="col-md-7">
-									<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, similique, delectus blanditiis odit expedita amet.</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-12">
-							<div class="owl-carousel site-owl">
+						<div class="col-lg-4 col-md-4 col-sm-6">
+        <div class="thumbnail">
+          <a href="#"><img class="card-img-top" src="../assets/images/wedbells.jpg" alt=""></a>
+          <hr>
+          <h4>Wedding Bells Decorators</h4>
+          <div class="container">
 
-								<div class="item">
-									<div class="media d-block mb-4 text-center site-media site-animate border-0">
-										<img src="../images/offer_1.jpg" alt="TastyByte" class="img-fluid" style="height: 250px;">
-										<div class="media-body p-md-5 p-4">
-											<h5 class="text-primary">Rs.100.00</h5>
-											<h5 class="mt-0 h4">Paneer Roll</h5>
-											<p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, similique, delectus blanditiis odit expedita amet.</p>
+            <!-- Trigger the modal with a button -->
+            <button type="button" class="btn btn-info btn-sm continfo" data-toggle="modal" data-target="#1myModal">Contact Info</button>
+            <a href="Dream/dreamgal.html" class="btn btn-primary btn-sm disabled"   role="button">Gallery</a>
+            <button type="button" class="btn btn-success btn-sm " data-toggle="modal" data-target="#1myModal2">Address</button>
 
-											<p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Check Details</a></p>
-										</div>
-									</div>
-								</div>
+            <!-- Modal -->
+            <div class="modal fade" id="1myModal" role="dialog">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Wedding Bells Decorators</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>Owner Name: Lancy</p>
+                    <p>Tel:  0824 4258077</p>
+                    <p>Phone:      9343565457 (Lancy)</p>
+                    <p>Phone:      9741529619 (Sonia)</p>
+                    <p>Email: Weddingbellsmlr@gmail.com</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-								<div class="item">
-									<div class="media d-block mb-4 text-center site-media site-animate border-0">
-										<img src="../images/offer_2.jpg" alt="TastyByte" class="img-fluid">
-										<div class="media-body p-md-5 p-4">
-											<h5 class="text-primary">Rs.50.00</h5>
-											<h5 class="mt-0 h4">Egg with Garlic </h5>
-											<p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, similique, delectus blanditiis odit expedita amet.</p>
-
-											<p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Check Details</a></p>
-										</div>
-									</div>
-								</div>
-
-								<div class="item">
-									<div class="media d-block mb-4 text-center site-media site-animate border-0">
-										<img src="../images/pastasalad.jpeg" alt="TastyByte" class="img-fluid" style="height: 250px;">
-										<div class="media-body p-md-5 p-4">
-											<h5 class="text-primary">Rs.50.00</h5>
-											<h5 class="mt-0 h4">Caprese Pasta Salad</h5>
-											<p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, similique, delectus blanditiis odit expedita amet.</p>
-
-											<p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Check Details</a></p>
-										</div>
-									</div>
-								</div>
-
-								<div class="item">
-									<div class="media d-block mb-4 text-center site-media site-animate border-0">
-										<img src="../images/offer_1.jpg" alt="TastyByte" class="img-fluid" style="height: 250px;">
-										<div class="media-body p-md-5 p-4">
-											<h5 class="text-primary">Rs.100.00</h5>
-											<h5 class="mt-0 h4">Paneer Roll</h5>
-											<p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, similique, delectus blanditiis odit expedita amet.</p>
-
-											<p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Check Details</a></p>
-										</div>
-									</div>
-								</div>
-
-								<div class="item">
-									<div class="media d-block mb-4 text-center site-media site-animate border-0">
-										<img src="../images/offer_2.jpg" alt="TastyByte" class="img-fluid">
-										<div class="media-body p-md-5 p-4">
-											<h5 class="text-primary">Rs.50.00</h5>
-											<h5 class="mt-0 h4">Egg with Garlic </h5>
-											<p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, similique, delectus blanditiis odit expedita amet.</p>
-
-											<p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Check Details</a></p>
-										</div>
-									</div>
-								</div>
-
-								<div class="item">
-									<div class="media d-block mb-4 text-center site-media site-animate border-0">
-										<img src="../images/pastasalad.jpeg" alt="TastyByte" class="img-fluid" style="height: 250px;">
-										<div class="media-body p-md-5 p-4">
-											<h5 class="text-primary">Rs.50.00</h5>
-											<h5 class="mt-0 h4">Caprese Pasta Salad</h5>
-											<p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, similique, delectus blanditiis odit expedita amet.</p>
-
-											<p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Check Details</a></p>
-										</div>
-									</div>
-								</div>
-
-								<div class="item">
-									<div class="media d-block mb-4 text-center site-media site-animate border-0">
-										<img src="../images/offer_1.jpg" alt="TastyByte" class="img-fluid" style="height: 250px;">
-										<div class="media-body p-md-5 p-4">
-											<h5 class="text-primary">Rs.100.00</h5>
-											<h5 class="mt-0 h4">Paneer Roll</h5>
-											<p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, similique, delectus blanditiis odit expedita amet.</p>
-
-											<p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Check Details</a></p>
-										</div>
-									</div>
-								</div>
-
-								<div class="item">
-									<div class="media d-block mb-4 text-center site-media site-animate border-0">
-										<img src="../images/offer_2.jpg" alt="TastyByte" class="img-fluid">
-										<div class="media-body p-md-5 p-4">
-											<h5 class="text-primary">Rs.50.00</h5>
-											<h5 class="mt-0 h4">Egg with Garlic </h5>
-											<p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, similique, delectus blanditiis odit expedita amet.</p>
-
-											<p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Check Details</a></p>
-										</div>
-									</div>
-								</div>
-
-								<div class="item">
-									<div class="media d-block mb-4 text-center site-media site-animate border-0">
-										<img src="../../images/pastasalad.jpeg" alt="TastyByte" class="img-fluid" style="height: 250px;">
-										<div class="media-body p-md-5 p-4">
-											<h5 class="text-primary">Rs.50.00</h5>
-											<h5 class="mt-0 h4">Caprese Pasta Salad</h5>
-											<p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, similique, delectus blanditiis odit expedita amet.</p>
-
-											<p class="mb-0"><a href="#" class="btn btn-primary btn-sm">Check Details</a></p>
-										</div>
-									</div>
-								</div>
-
-
-
-							</div>
-						</div>
+            <!-- Modal -->
+            <div class="modal fade" id="1myModal2" role="dialog">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Wedding Bells Decorators</h4>
+                  </div>
+                  <div class="modal-body">
+                   <p>Address: Presidency zone ||</p>
+                   <p>Bendorewell,Kankanady(Below JustBake)</p>
+                 </div>
+                 <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </div>
 
 					</div>
 				</div>

@@ -24,6 +24,8 @@ session_start();
 
 	<link rel="stylesheet" href="../css/icomoon.css">
 	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/grid_layout.css">
+  <link rel="stylesheet" type="text/css" href="../css/deco.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>

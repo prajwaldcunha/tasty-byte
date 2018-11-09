@@ -11,10 +11,6 @@ session_start();
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href="../css/googleapis.css" rel="stylesheet">
-
-	<link rel="stylesheet" href="../css/grid_layout.css">
-	<link rel="stylesheet" type="text/css" href="../css/deco.css">
-	
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/open-iconic-bootstrap.min.css">
 	<link rel="stylesheet" href="../css/animate.css">
@@ -28,6 +24,8 @@ session_start();
 
 	<link rel="stylesheet" href="../css/icomoon.css">
 	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/grid_layout.css">
+	<link rel="stylesheet" type="text/css" href="../css/deco.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>

@@ -62,6 +62,15 @@ session_start();
 
 
 	<?php if (isset($_SESSION['username'])):?>
+	<div class="autosized autosized4">
+        <select name="Location">
+			<option value="Mangalore">Mangalore</option>
+			<option value="Bangalore">Bangalore</option>
+			<option value="Mumbai">Mumbai</option>
+			<option value="Hyderabad">Hyderabad</option>
+ 		 </select>
+    </div>
+	<hr>
 		<section class="site-section bg-light" id="section-order">
 			<div class="container">
 

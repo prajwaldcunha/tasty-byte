@@ -36,7 +36,7 @@ require 'functions.php';
 	<nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
 		<div class="container">
 			<a class="navbar-brand" href="../index.php"><div style="color: black;">TastyByte</div></a>
-			<li class="nav-item active"><a href="menu.php" class="nav-link active">Menu</a></li>
+		
 			
 			<div class="collapse navbar-collapse" id="site-nav">
 				<ul class="navbar-nav ml-auto">
@@ -60,25 +60,7 @@ require 'functions.php';
 			</div>
 		</nav>
 		<!-- END nav -->
-		<div class="container">
-			<ul>
-				<li class="drop">
-					<a href="#">You</a>
-					<div class="dropdownContain">
-						<div class="dropOut">
-							<div class="triangle"></div>
-							<ul>
-								<li>Plan</li>
-								<li>Account Settings</li>
-								<li>Switch Account</li>
-								<li>Sign Out</li>
-							</ul>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-
+		
 		<!--Actual Display-->
 
 						<div class="container">
@@ -88,10 +70,11 @@ require 'functions.php';
 							<option value="green">Green</option>
 							<option value="blue">Blue</option>
 						</select>
-					</div>
+					
 					<div class="red box">You have selected <strong>red option</strong> so i am here</div>
 					<div class="green box">You have selected <strong>green option</strong> so i am here</div>
 					<div class="blue box">You have selected <strong>blue option</strong> so i am here</div>
+					</div>
 
 		<!-- End of actual Display -->
 

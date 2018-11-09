@@ -35,7 +35,7 @@ require 'functions.php';
 
 	<nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="../index.php"><div style="color: black;">TastyByte</div></a>
+			<a class="navbar-brand" href="../index.php">TastyByte</a>
 		
 			
 			<div class="collapse navbar-collapse" id="site-nav">
@@ -62,7 +62,7 @@ require 'functions.php';
 		<!-- END nav -->
 		
 		<!--Actual Display-->
-		<section>
+		<section class="site-section bg-light" id="section-order">
 
 						<div class="container">
 						<select>

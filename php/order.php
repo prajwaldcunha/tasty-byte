@@ -1,4 +1,4 @@
-s<?php
+<?php
 require  'connect.php';
 require 'functions.php';
 session_start();
@@ -64,14 +64,14 @@ session_start();
 
 		<section class="site-section bg-light" id="section-order">
 			<div class="container">
-				<div class="card-deck card-margin">
+				<div class="card-deck ">
 
-					<div class="card">
+					<div class="card card-margin">
 						<img class="card-img-top" src="../images/offer_1.jpg" alt="Card image cap">
 						<div class="card-body">
 							<h5 class="card-title">Card title</h5>
 							<p class="card-text">Order date : 28/12/2018</p>
-							<a href="#" class="btn btn-primary"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetails">Details</button></a>
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetails">Details</button>
 						</div>
 
 

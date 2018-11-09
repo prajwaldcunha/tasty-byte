@@ -56,6 +56,21 @@ require 'functions.php';
 		</nav>
 		<!-- END nav -->
 
+		<!--Actual Display-->
+
+						<div>
+						<select>
+							<option>Choose Color</option>
+							<option value="red">Red</option>
+							<option value="green">Green</option>
+							<option value="blue">Blue</option>
+						</select>
+					</div>
+					<div class="red box">You have selected <strong>red option</strong> so i am here</div>
+					<div class="green box">You have selected <strong>green option</strong> so i am here</div>
+					<div class="blue box">You have selected <strong>blue option</strong> so i am here</div>
+
+		<!-- End of actual Display -->
 
 		<!-- loader -->
 	<div id="site-loader" class="show fullscreen">

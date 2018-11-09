@@ -136,6 +136,7 @@ require 'functions.php';
 						</div>
 					</div>
 		</div>
+            </div>
 	</section>
 		<!-- End of actual Display -->
 

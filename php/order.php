@@ -116,8 +116,8 @@ session_start();
 						</div>
 					</div>
 						<?php
-						endif;
 						endwhile;
+						endif;
 					 	?>
 					
 					</div>

@@ -67,9 +67,9 @@ session_start();
 				<div class="card-deck">
 					<?php
 					$i=0;
-					if ($result->num_rows > 0) {
+					if ($result->num_rows > 0):
    						 // output data of each row
-						while($row = $result->fetch_array()) {
+						while($row = $result->fetch_array()):
 							$i+=1;
 							if($i%3==0) echo "<br/>";
 					?>
@@ -116,7 +116,9 @@ session_start();
 						</div>
 					</div>
 						<?php
-					} ?>
+						endif;
+						endwhile;
+					 	?>
 					
 					</div>
 				</section>

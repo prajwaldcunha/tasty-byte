@@ -62,6 +62,7 @@ require 'functions.php';
 		<!-- END nav -->
 		
 		<!--Actual Display-->
+		<section>
 
 						<div class="container">
 						<select>
@@ -75,7 +76,7 @@ require 'functions.php';
 					<div class="green box">You have selected <strong>green option</strong> so i am here</div>
 					<div class="blue box">You have selected <strong>blue option</strong> so i am here</div>
 					</div>
-
+					</section>
 		<!-- End of actual Display -->
 
 		<!-- loader -->

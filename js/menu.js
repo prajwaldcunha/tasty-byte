@@ -1,13 +1,13 @@
-$(document).ready(function(){
-    $("select").change(function(){
-        $(this).find("option:selected").each(function(){
-            var optionValue = $(this).attr("value");
-            if(optionValue){
-                $(".box").not("." + optionValue).hide();
-                $("." + optionValue).show();
-            } else{
-                $(".box").hide();
-            }
+ $(document).ready(function(){
+            $('#myDropDown').change(function(){
+                //Selected value
+                var inputValue = $(this).val();
+                alert("value in js "+inputValue);
+
+                //Ajax for calling php function
+                $.post('menu.php', { dropdownValue: inputValue }, function(data){
+                    alert('ajax completed. Response:  '+data);
+                    
+                });
+            });
         });
-    }).change();
-});

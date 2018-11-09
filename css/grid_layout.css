@@ -93,7 +93,6 @@ svg:not(:root) {
 }
 
 code,kbd,pre,samp {
-  font-family: monospace,monospace;
   font-size: 1em;
 }
 
@@ -179,7 +178,6 @@ textarea {
 }
 /* End extract */
 html,body {
-  font-family: Verdana,sans-serif;
   font-size: 15px;
   line-height: 1.5;
 }

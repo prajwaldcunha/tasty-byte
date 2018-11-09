@@ -25,6 +25,9 @@ require 'functions.php';
 	<link rel="stylesheet" href="../css/icomoon.css">
 	<link rel="stylesheet" type="text/css" href="../css/selection.css">
 	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/menu.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="../js/menu.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
@@ -75,6 +78,22 @@ require 'functions.php';
 				</li>
 			</ul>
 		</div>
+
+		<!--Actual Display-->
+
+						<div>
+						<select>
+							<option>Choose Color</option>
+							<option value="red">Red</option>
+							<option value="green">Green</option>
+							<option value="blue">Blue</option>
+						</select>
+					</div>
+					<div class="red box">You have selected <strong>red option</strong> so i am here</div>
+					<div class="green box">You have selected <strong>green option</strong> so i am here</div>
+					<div class="blue box">You have selected <strong>blue option</strong> so i am here</div>
+
+		<!-- End of actual Display -->
 
 		<!-- loader -->
 	<div id="site-loader" class="show fullscreen">

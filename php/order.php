@@ -77,7 +77,7 @@ session_start();
 						<img class="card-img-top" src="../images/offer_1.jpg" alt="Card image cap">
 						<div class="card-body">
 							<h5 class="card-title"><?php echo $row['name']; ?></h5>
-							<p class="card-text">Order date : <?php echo $row['orderdate']; ?></p>
+							<p class="card-text">Order date : <?php echo date($row['orderdate']); ?></p>
 							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetails">Details</button>
 						</div>
 
@@ -100,12 +100,12 @@ session_start();
 											<li>Product Name : <?php echo $row['name']; ?></li>
 											<li>Price :  Rs. <?php echo $row['price']; ?></li>
 											<li>Quantity: <?php echo $row['quantity']; ?></li>
-											<li>Date of manufacture : <?php echo $row['manufacturedate']; ?></li>
+											<li>Date of manufacture : <?php echo date($row['manufacturedate']); ?></li>
 											<li>Seller Name : <?php echo $row['fname']." ".$row['lname']; ?></li>
 											<li>PickUp Address : <?php echo $row['']; ?></li>
 											<li>Phone number : <?php echo $row['phoneno']; ?></li>
 											<li>Email id: <?php echo $row['email']; ?></li>
-											<li>Order Date : <?php echo $row['orderdate']; ?> </li>
+											<li>Order Date : <?php echo date($row['orderdate']); ?> </li>
 										</ul>
 									</div>
 									<div class="modal-footer">
@@ -117,7 +117,10 @@ session_start();
 					</div>
 						<?php
 						endwhile;
+
 						endif;
+						else
+							echo "error";
 					 	?>
 					
 					</div>

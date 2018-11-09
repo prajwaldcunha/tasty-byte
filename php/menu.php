@@ -2,6 +2,16 @@
 session_start();
 require  'connect.php';
 require 'functions.php';
+
+
+function processDrpdown($selectedVal) {
+    echo "Selected value in php ".$selectedVal;
+}        
+
+if ($_POST['dropdownValue']){
+    //call the function or execute the code
+    processDrpdown($_POST['dropdownValue']);
+}
 ?>
 
 <!DOCTYPE html>
@@ -62,17 +72,14 @@ require 'functions.php';
 		<section class="site-section bg-light" id="section-order">
 
 						<div class="container">
-						<select>
+						<select id="myDropDown">
 							<option>Choose Color</option>
-							<option value="red">Red</option>
-							<option value="green">Green</option>
-							<option value="blue">Blue</option>
+							<option value="Mangalore">Mangalore</option>
+							<option value="Bangalore">Bangalore</option>
+							<option value="Mumbai">Mumbai</option>
 						</select>
 					
-					<div class="red box">You have selected <strong>red option</strong> so i am here</div>
-					<div class="green box">You have selected <strong>green option</strong> so i am here</div>
-					<div class="blue box">You have selected <strong>blue option</strong> so i am here</div>
-					</div>
+					
 					</section>
 		<!-- End of actual Display -->
 

@@ -134,7 +134,8 @@ session_start();
 						endwhile;
 
 					else:
-						echo "error";
+						echo "<p>You have not ordered anything</p>";
+						echo '<div class="button-section"><button onclick="menu.php">Order Now!</button></div>';
 					endif;
 					?>
 					

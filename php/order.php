@@ -11,6 +11,7 @@ session_start();
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href="../css/googleapis.css" rel="stylesheet">
+	
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/open-iconic-bootstrap.min.css">
 	<link rel="stylesheet" href="../css/animate.css">
@@ -21,11 +22,8 @@ session_start();
 
 	<link rel="stylesheet" href="../css/bootstrap-datepicker.css">
 	<link rel="stylesheet" href="../css/jquery.timepicker.css">
-
 	<link rel="stylesheet" href="../css/icomoon.css">
 	<link rel="stylesheet" href="../css/style.css">
-	<link rel="stylesheet" href="../css/grid_layout.css">
-	<link rel="stylesheet" type="text/css" href="../css/deco.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
@@ -33,14 +31,12 @@ session_start();
 
 	<nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="../index.php"><div style="color: black;">TastyByte</div></a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-nav" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="oi oi-menu"></span> Menu
-			</button>
+			<a class="navbar-brand" href="../index.php">TastyByte</a>
 
 			<div class="collapse navbar-collapse" id="site-nav">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active"><a href="../index.php" class="nav-link active">Home</a></li>
+					<li class="nav-item active"><a href="menu.php" class="nav-link active">Menu</a></li>
 
 					<?php if (isset($_SESSION['username'])):?>
 						<li class="nav-item dropdown">
@@ -62,57 +58,31 @@ session_start();
 
 
 	<?php if (isset($_SESSION['username'])):?>
-	<div class="autosized autosized4">
-        <select name="Location">
-			<option value="Mangalore">Mangalore</option>
-			<option value="Bangalore">Bangalore</option>
-			<option value="Mumbai">Mumbai</option>
-			<option value="Hyderabad">Hyderabad</option>
- 		 </select>
-    </div>
-	<hr>
 		<section class="site-section bg-light" id="section-order">
 			<div class="container">
-
-				<div class="row">
-					<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="thumbnail">
-								<a href="#"><img class="card-img-top" src="../images/menu_1.jpg" alt=""></a>
-								<h4 style="color: #fffff0;">Wedding Bells Decorators</h4>
-								<div class="container">
-
-									<!-- Trigger the modal with a button -->
-									<button type="button" class="btn btn-info btn-sm continfo" data-toggle="modal" data-target="#ModalDetails">Details</button>
-									<p style="color: white; display: inline; float: right;">Order Date: 08-11-2018</p>
-
-									<!-- Modal -->
-									<div class="modal fade" id="ModalDetails" role="dialog">
-										<div class="modal-dialog modal-md">
-											<div class="modal-content">
-												<div class="modal-header">
-													<button type="button" class="close" data-dismiss="modal">&times;</button>
-													<h4 class="modal-title">Wedding Bells Decorators</h4>
-												</div>
-												<div class="modal-body">
-													<p>Product Name: Pulav</p>
-													<p>Price: Rs. 50</p>
-													<p>Seller Name: Prajwal</p>
-													<p>Phone: 9874563210</p>
-													<p>Email: Weddingbellsmlr@gmail.com</p>
-													<p>Pickup Address: Derebail, Mangalore</p>
-													<p>Manufacture Date: 08-11-2018</p>
-												</div>
-												<div class="modal-footer">
-													<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+				<div class="card-deck">
+					  <div class="card">
+					    <img class="card-img-top" src="../images/offer_1.jpg" alt="Card image cap">
+					    <div class="card-body">
+					      <h5 class="card-title">Card title</h5>
+						  <a href="#" class="btn btn-primary">Details</a>
+					    </div>
+					  </div>
+					  <div class="card">
+					    <img class="card-img-top" src="../images/offer_2.jpg" alt="Card image cap">
+					    <div class="card-body">
+					      <h5 class="card-title">Card title</h5>
+						  <a href="#" class="btn btn-primary">Details</a>
+					    </div>
+					  </div>
+					  <div class="card">
+					    <img class="card-img-top" src="../images/offer_3.jpg" alt="Card image cap">
+					    <div class="card-body">
+					      <h5 class="card-title">Card title</h5>
+						  <a href="#" class="btn btn-primary">Details</a>
+					    </div>
+					  </div>
 					</div>
-
-				</div>
 			</div>
 		</section>
 		<!-- END section -->

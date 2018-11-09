@@ -224,8 +224,8 @@ body{
     display: block;
     margin-bottom: 20px;
     line-height: 1.42857143;
-    background-color: #be74d8;
-    border: 1px solid #423838;
+    background-color: #ef93e4;
+    border: 1px solid white;
     border-radius: 4px;
     transition: border .2s ease-in-out;
 }

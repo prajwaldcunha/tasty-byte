@@ -58,7 +58,7 @@ session_start();
 
 
 	<?php if (isset($_SESSION['username'])):
-		$sql = "SELECT name,price,imageurl,details,quantity,price,manufacturedate,pickup_address,city,fname,lname,email,phoneno,orderdate FROM products, users,orders WHERE uid=id AND orders.pid=products.id AND orders.uid=$_SESSION['uid']";
+		$sql = "SELECT name,price,imageurl,details,quantity,price,manufacturedate,pickup_address,city,fname,lname,email,phoneno,orderdate FROM products, users,orders WHERE uid=id AND orders.pid=products.id AND orders.uid = ".$_SESSION['uid'];
 		$result = $conn->query($sql);
 	?>	
 
@@ -115,7 +115,8 @@ session_start();
 							</div>
 						</div>
 					</div>
-
+						<?php
+					} ?>
 					
 					</div>
 				</section>

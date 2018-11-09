@@ -11,6 +11,8 @@ require 'functions.php';
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href="../css/googleapis.css" rel="stylesheet">
+	
+	<link rel="stylesheet" href="../css/menu.css">
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/open-iconic-bootstrap.min.css">
 	<link rel="stylesheet" href="../css/animate.css">
@@ -21,13 +23,8 @@ require 'functions.php';
 
 	<link rel="stylesheet" href="../css/bootstrap-datepicker.css">
 	<link rel="stylesheet" href="../css/jquery.timepicker.css">
-
 	<link rel="stylesheet" href="../css/icomoon.css">
-	<link rel="stylesheet" type="text/css" href="../css/selection.css">
 	<link rel="stylesheet" href="../css/style.css">
-	<link rel="stylesheet" href="../css/menu.css">
-	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-	<script src="../js/menu.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
@@ -35,7 +32,7 @@ require 'functions.php';
 
 	<nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="../index.php"><div style="color: black;">TastyByte</div></a>
+			<a class="navbar-brand" href="../index.php">TastyByte</a>
 		
 			
 			<div class="collapse navbar-collapse" id="site-nav">
@@ -62,7 +59,7 @@ require 'functions.php';
 		<!-- END nav -->
 		
 		<!--Actual Display-->
-		<section>
+		<section class="site-section bg-light" id="section-order">
 
 						<div class="container">
 						<select>
@@ -96,6 +93,6 @@ require 'functions.php';
 		<script src="../js/jquery.timepicker.min.js"></script>
 		<script src="../js/jquery.animateNumber.min.js"></script>
 		<script src="../js/main.js"></script>
-
+		<script src="../js/menu.js"></script>
 	</body>
 </html>	

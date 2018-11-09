@@ -25,6 +25,13 @@ session_start();
 	<link rel="stylesheet" href="../css/icomoon.css">
 	<link rel="stylesheet" href="../css/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	
+	<script>
+	function redir() {
+	    window.location = "https://tastybyte.azurewebsites.net/index.php";
+	  }
+	</script>
 
 </head>
 <body data-spy="scroll" data-target="#site-navbar" data-offset="200">
@@ -63,6 +70,7 @@ session_start();
 	?>	
 
 	<section class="site-section bg-light" id="section-order">
+		<center><h2 class="display-4">My Orders</h2></center>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="card-deck">
@@ -133,11 +141,12 @@ session_start();
 							
 						endwhile;
 
-					else:
-						echo "<p>You have not ordered anything</p>";
-						echo '<div class="button-section"><button onclick="menu.php">Order Now!</button></div>';
-					endif;
-					?>
+					else:?>
+							<p>You have not ordered anything</p>
+						<div class="container">
+							<button type="button" class="btn btn-primary" onclick="redir();">Order Now!</button>
+						</div>
+					<?php endif;?>
 					
 				</div>
 			</section>

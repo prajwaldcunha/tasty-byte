@@ -70,6 +70,7 @@ session_start();
 			<option value="Hyderabad">Hyderabad</option>
  		 </select>
     </div>
+	<hr>
 		<section class="site-section bg-light" id="section-order">
 			<div class="container">
 

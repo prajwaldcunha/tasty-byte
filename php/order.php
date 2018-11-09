@@ -67,7 +67,6 @@ session_start();
 
 				<div class="row">
 					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="backgroundcol">
 							<div class="thumbnail">
 								<a href="#"><img class="card-img-top" src="../images/menu_1.jpg" alt=""></a>
 								<hr>
@@ -121,7 +120,6 @@ session_start();
 									</div>
 								</div>
 							</div>
-						</div>
 					</div>
 
 				</div>

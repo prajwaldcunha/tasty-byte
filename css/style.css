@@ -1489,3 +1489,8 @@ em{
 
 
 /*add product modal styles end*/
+
+.orderdate {
+  display: inline;
+  color: white;
+}

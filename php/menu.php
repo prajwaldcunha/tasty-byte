@@ -44,6 +44,7 @@ require 'functions.php';
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="myProduct.php">My Products</a>
+								<a class="dropdown-item" href="order.php">My Orders</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="logout.php">Logout</a>
 							</div>

@@ -91,48 +91,29 @@ session_start();
 					<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="thumbnail">
 								<a href="#"><img class="card-img-top" src="../images/menu_1.jpg" alt=""></a>
-								<hr>
-								<h4 style="color: white;">Wedding Bells Decorators</h4>
+								<h4 style="color: #fffff0;">Wedding Bells Decorators</h4>
 								<div class="container">
 
 									<!-- Trigger the modal with a button -->
-									<button type="button" class="btn btn-info btn-sm continfo" data-toggle="modal" data-target="#1myModal">Contact Info</button>
-									<a href="Dream/dreamgal.html" class="btn btn-primary btn-sm disabled"   role="button">Gallery</a>
-									<button type="button" class="btn btn-success btn-sm " data-toggle="modal" data-target="#1myModal2">Address</button>
+									<button type="button" class="btn btn-info btn-sm continfo" data-toggle="modal" data-target="#ModalDetails">Details</button>
+									<p style="color: white; display: inline; float: right;">Order Date: 08-11-2018</p>
 
 									<!-- Modal -->
-									<div class="modal fade" id="1myModal" role="dialog">
-										<div class="modal-dialog modal-sm">
+									<div class="modal fade" id="ModalDetails" role="dialog">
+										<div class="modal-dialog modal-md">
 											<div class="modal-content">
 												<div class="modal-header">
 													<button type="button" class="close" data-dismiss="modal">&times;</button>
 													<h4 class="modal-title">Wedding Bells Decorators</h4>
 												</div>
 												<div class="modal-body">
-													<p>Owner Name: Lancy</p>
-													<p>Tel:  0824 4258077</p>
-													<p>Phone:      9343565457 (Lancy)</p>
-													<p>Phone:      9741529619 (Sonia)</p>
+													<p>Product Name: Pulav</p>
+													<p>Price: Rs. 50</p>
+													<p>Seller Name: Prajwal</p>
+													<p>Phone: 9874563210</p>
 													<p>Email: Weddingbellsmlr@gmail.com</p>
-												</div>
-												<div class="modal-footer">
-													<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-												</div>
-											</div>
-										</div>
-									</div>
-
-									<!-- Modal -->
-									<div class="modal fade" id="1myModal2" role="dialog">
-										<div class="modal-dialog modal-sm">
-											<div class="modal-content">
-												<div class="modal-header">
-													<button type="button" class="close" data-dismiss="modal">&times;</button>
-													<h4 class="modal-title">Wedding Bells Decorators</h4>
-												</div>
-												<div class="modal-body">
-													<p>Address: Presidency zone ||</p>
-													<p>Bendorewell,Kankanady(Below JustBake)</p>
+													<p>Pickup Address: Derebail, Mangalore</p>
+													<p>Manufacture Date: 08-11-2018</p>
 												</div>
 												<div class="modal-footer">
 													<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

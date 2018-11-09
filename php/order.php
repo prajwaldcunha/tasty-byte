@@ -57,10 +57,15 @@ session_start();
 	<!-- END nav -->
 
 
-	<?php if (isset($_SESSION['username'])):?>
+	<?php if (isset($_SESSION['username'])):
+		$sql = "SELECT name,price,imageurl,details,quantity,price,manufacturedate,pickup_address,city,fname,lname,email,phoneno FROM products, users WHERE uid=id";
+		$result = $conn->query($sql);
+	?>	
+
 		<section class="site-section bg-light" id="section-order">
 			<div class="container">
 				<div class="card-deck">
+					
 					<div class="card">
 						<img class="card-img-top" src="../images/offer_1.jpg" alt="Card image cap">
 						<div class="card-body">
@@ -94,35 +99,58 @@ session_start();
 											<li>Phone number : 7845693210</li>
 											<li>Email id: raghunov97@gmail.com</li>
 											<li>Order Date :  </li>
-									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-										<button type="button" class="btn btn-primary">Save changes</button>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+										</div>
 									</div>
 								</div>
-							</div>
-						</div></div>
+							</div></div>
 
 
-						<div class="card">
-							<img class="card-img-top" src="../images/offer_2.jpg" alt="Card image cap">
-							<div class="card-body">
-								<h5 class="card-title">Card title</h5>
-								<a href="#" class="btn btn-primary">Details</a>
+							<div class="card">
+								<img class="card-img-top" src="../images/offer_2.jpg" alt="Card image cap">
+								<div class="card-body">
+									<h5 class="card-title">Card title</h5>
+									<a href="#" class="btn btn-primary">Details</a>
+								</div>
+							</div><div class="card">
+								<img class="card-img-top" src="../images/offer_2.jpg" alt="Card image cap">
+								<div class="card-body">
+									<h5 class="card-title">Card title</h5>
+									<a href="#" class="btn btn-primary">Details</a>
+								</div>
+							</div><div class="card">
+								<img class="card-img-top" src="../images/offer_2.jpg" alt="Card image cap">
+								<div class="card-body">
+									<h5 class="card-title">Card title</h5>
+									<a href="#" class="btn btn-primary">Details</a>
+								</div>
+							</div><div class="card">
+								<img class="card-img-top" src="../images/offer_2.jpg" alt="Card image cap">
+								<div class="card-body">
+									<h5 class="card-title">Card title</h5>
+									<a href="#" class="btn btn-primary">Details</a>
+								</div>
+							</div><div class="card">
+								<img class="card-img-top" src="../images/offer_2.jpg" alt="Card image cap">
+								<div class="card-body">
+									<h5 class="card-title">Card title</h5>
+									<a href="#" class="btn btn-primary">Details</a>
+								</div>
 							</div>
-						</div>
-						<div class="card">
-							<img class="card-img-top" src="../images/offer_3.jpg" alt="Card image cap">
-							<div class="card-body">
-								<h5 class="card-title">Card title</h5>
-								<a href="#" class="btn btn-primary">Details</a>
+							<div class="card">
+								<img class="card-img-top" src="../images/offer_3.jpg" alt="Card image cap">
+								<div class="card-body">
+									<h5 class="card-title">Card title</h5>
+									<a href="#" class="btn btn-primary">Details</a>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</section>
-			<!-- END section -->
-		<?php endif; 
+				</section>
+				<!-- END section -->
+			<?php endif; 
 		// SELECT name, imageurl, details, quantity, price, manufacturedate, pickup_address, city, fname, lname, email, phoneno 
 		// FROM users u, products p
 		//  WHERE p.uid = u.id AND  p.pid = (SELECT pid 
@@ -134,25 +162,25 @@ session_start();
 
 
 
-		?>
+			?>
 
-		<!-- loader -->
-		<div id="site-loader" class="show fullscreen">
-			<svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
-			</svg>
-		</div>
-		<script src="../js/anime.min.js"></script>
-		<script src="../js/jquery.min.js"></script>
-		<script src="../js/popper.min.js"></script>
-		<script src="../js/bootstrap.min.js"></script>
-		<script src="../js/jquery.easing.1.3.js"></script>
-		<script src="../js/jquery.waypoints.min.js"></script>
-		<script src="../js/owl.carousel.min.js"></script>
-		<script src="../js/jquery.magnific-popup.min.js"></script>
-		<script src="../js/bootstrap-datepicker.js"></script>
-		<script src="../js/jquery.timepicker.min.js"></script>
-		<script src="../js/jquery.animateNumber.min.js"></script>
-		<script src="../js/main.js"></script>
+			<!-- loader -->
+			<div id="site-loader" class="show fullscreen">
+				<svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
+				</svg>
+			</div>
+			<script src="../js/anime.min.js"></script>
+			<script src="../js/jquery.min.js"></script>
+			<script src="../js/popper.min.js"></script>
+			<script src="../js/bootstrap.min.js"></script>
+			<script src="../js/jquery.easing.1.3.js"></script>
+			<script src="../js/jquery.waypoints.min.js"></script>
+			<script src="../js/owl.carousel.min.js"></script>
+			<script src="../js/jquery.magnific-popup.min.js"></script>
+			<script src="../js/bootstrap-datepicker.js"></script>
+			<script src="../js/jquery.timepicker.min.js"></script>
+			<script src="../js/jquery.animateNumber.min.js"></script>
+			<script src="../js/main.js"></script>
 
-	</body>
-	</html>	
+		</body>
+		</html>	

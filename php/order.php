@@ -75,11 +75,10 @@ session_start();
 
 				<div class="row">
 					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="backgroundcol">
 							<div class="thumbnail">
 								<a href="#"><img class="card-img-top" src="../images/menu_1.jpg" alt=""></a>
 								<hr>
-								<h4>Wedding Bells Decorators</h4>
+								<h4 style="color: white;">Wedding Bells Decorators</h4>
 								<div class="container">
 
 									<!-- Trigger the modal with a button -->
@@ -129,7 +128,6 @@ session_start();
 									</div>
 								</div>
 							</div>
-						</div>
 					</div>
 
 				</div>

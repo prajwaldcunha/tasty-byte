@@ -32,7 +32,11 @@ $result = $conn->query($sql);
 	<link rel="stylesheet" href="../css/product.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+	<script>
+		function redir() {
+			window.location = "https://tastybyte.azurewebsites.net/index.php";
+		}
+	</script>
 </head>
 
 <body data-spy="scroll" data-target="#site-navbar" data-offset="150">
@@ -69,100 +73,119 @@ $result = $conn->query($sql);
 	</nav>
 	<!-- END nav -->
 
-	<section class="site-section bg-light" >
 
+
+
+	<section class="site-section bg-light" id="section-order">
 		<div class="container">
 
 			<div class="row">
-				<h2>My products</h2>
+				<h2>My Products</h2>
 				
-				<button style="float:right; " type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProdModal">
-					Add Product
-				</button>
+				
 			</div>
+			<button style="float:right; " type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProdModal">
+				Add Product
+			</button>
 		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="card-deck">
+					<?php
+					$i=0;
+					if ($result->num_rows > 0):
+   						 // output data of each row
+						while($row = $result->fetch_array()):
+							$i++;
+							
+							$time=strtotime($row['manufacturedate']);
+							$mdate=date('m/d/Y',$time);
+							
+							
+							
+							?>
+							<div class="card">
+								<img class="card-img-top" src="<?php echo $row['imageurl'];?>" alt="Card image cap">
+								<div class="card-body">
+									<h5 class="card-title"><?php echo $row['name']; ?></h5>
+									<p class="card-text">Manufacture date : <?php echo $mdate; ?></p>
+									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetails<?php echo $i;?>">Details</button>
+								</div>
 
 
-		<?php
-
-		if ($result->num_rows > 0) {
-    // output data of each row
-			while($row = $result->fetch_array()) {
-
-				//var_dump($row . "</br>");
-			}
-		} else {
-			echo "0 results";
-		}
-
-		?>
-
-		
-		<div class="container-grid">
+								<!-- Button trigger modal -->
 
 
-			<div class="level">
-				<div class="level-name">
-					<h3 class="prodName">Product name</h3>
-				</div>
-				<img src="https://source.unsplash.com/230x160/?london,building">
-				<div class="prodDesc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</div>
-				<div class="quantity">Quantity : 1 Kg</div>
-				<div class="manuDate">Manuafavture Date : 25/12/2018</div>
-				<div class="Price">Rs 1500</div>
-				<div class="Pick up Address">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</div>
-				<div class="city">City : Mangalore</div>
+								<!-- Modal -->
+								<div class="modal fade" id="modalDetails<?php echo $i;?>" tabindex="-1" role="dialog" aria-labelledby="modalDetailsTitle" aria-hidden="true">
+									<div class="modal-dialog modal-dialog-centered" role="document">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title" id="exampleModalLongTitle">Product Details</h5>
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+											<div class="modal-body">
+												<ul>
+													<li>Product Name : <?php echo $row['name']; ?></li>
+													<li>Price :  Rs. <?php echo $row['price']; ?></li>
+													<li>Quantity: <?php echo $row['quantity']; ?></li>
+													<li>Date of manufacture : <?php echo $mdate; ?></li>
+													<li>PickUp Address : <?php echo $row['pickup_address']; ?></li>
+													
+												</ul>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<?php
+							if($i%3==0):
+								?>
+							</div>
+							<div class="row">
+								
+								<?php
+							endif;
+							
+						endwhile;
+
+						else:?>
+							<p>You have not Added any Product anything</p>
+							<div class="container">
+								<button type="button" class="btn btn-primary" onclick="redir();">Add Now!</button>
+							</div>
+						<?php endif;?>
+
+					</div>
+				</section>
+				<!-- END section -->
+			<?php endif; 
+
+			<div id="site-loader" class="show fullscreen">
+			<svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
+			</svg>
 			</div>
+			<script src="../js/anime.min.js"></script>
+			<script src="../js/jquery.min.js"></script>
+			<script src="../js/popper.min.js"></script>
+			<script src="../js/bootstrap.min.js"></script>
+			<script src="../js/jquery.easing.1.3.js"></script>
+			<script src="../js/jquery.waypoints.min.js"></script>
+			<script src="../js/owl.carousel.min.js"></script>
+			<script src="../js/jquery.magnific-popup.min.js"></script>
+			<script src="../js/bootstrap-datepicker.js"></script>
+			<script src="../js/jquery.timepicker.min.js"></script>
+			<script src="../js/jquery.animateNumber.min.js"></script>
+			<script src="../js/main.js"></script>
 
 
-			<div class="level">
-				<h3>Views of Paris</h3>
-				<img src="https://source.unsplash.com/230x160/?paris,building">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</p>
-			</div>
-			<div class="level">
-				<h3>Views of Madrid</h3>
-				<img src="https://source.unsplash.com/230x160/?madrid,building"> <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</div>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-			</div>
-			<div class="level">
-				<h3>Views of Berlin</h3>
-				<img src="https://source.unsplash.com/230x160/?berlin,building"> <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</div>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</p>
-			</div>
-			<div class="level">
-				<h3>Views of Brussels</h3>
-				<img src="https://source.unsplash.com/230x160/?brussels,building"> <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</div>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</p>
-			</div>
-			<div class="level">
-				<h3>Views of Rome</h3>
-				<img src="https://source.unsplash.com/230x160/?rome,building"> <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</div>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sapiente perferendis porro cumque, temporibus nobis sequi corporis beatae iste dolor dolores deserunt tempora, maxime debitis, velit, minima quod aut. Minima.</p>
-			</div>
-		</div>
-	</section>
 
-	<div id="site-loader" class="show fullscreen">
-		<svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
-		</svg>
-	</div>
-	<script src="../js/anime.min.js"></script>
-	<script src="../js/jquery.min.js"></script>
-	<script src="../js/popper.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
-	<script src="../js/jquery.easing.1.3.js"></script>
-	<script src="../js/jquery.waypoints.min.js"></script>
-	<script src="../js/owl.carousel.min.js"></script>
-	<script src="../js/jquery.magnific-popup.min.js"></script>
-	<script src="../js/bootstrap-datepicker.js"></script>
-	<script src="../js/jquery.timepicker.min.js"></script>
-	<script src="../js/jquery.animateNumber.min.js"></script>
-	<script src="../js/main.js"></script>
-
-
-	
-</body>
-</html>
+			</body>
+			</html>
 
 

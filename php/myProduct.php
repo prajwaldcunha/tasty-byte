@@ -51,8 +51,7 @@ $result = $conn->query($sql);
 					<li class="nav-item active"><a href="menu.php" class="nav-link active">Menu</a></li>
 
 					<?php if (isset($_SESSION['username'])):
-						$sql = "SELECT name,price,imageurl,details,quantity,price,manufacturedate,pickup_address FROM products WHERE products.uid = ".$_SESSION['uid'];
-						$result = $conn->query($sql);
+						
 
 						?>
 
@@ -72,7 +71,10 @@ $result = $conn->query($sql);
 		</div>
 	</nav>
 	<!-- END nav -->
-
+<?php if (isset($_SESSION['username'])):
+	$sql = "SELECT name,price,imageurl,details,quantity,price,manufacturedate,pickup_address FROM products WHERE products.uid = ".$_SESSION['uid'];
+						$result = $conn->query($sql);
+	?>	
 
 
 

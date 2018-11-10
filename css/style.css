@@ -1503,6 +1503,16 @@ em{
   height: 250px;
 }
 
-#headingBtn {
-  display: inline;
+.headingBtn {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.headingBtn h1 {
+  text-align: center;
+}
+.headingBtn button {
+  position: absolute;
+  right: 0;
 }

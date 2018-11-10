@@ -43,20 +43,17 @@ $result = $conn->query($sql);
 
 	<nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="../index.php"><div style="color: black;">TastyByte</div></a>
+			<a class="navbar-brand" href="../index.php">TastyByte</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-nav" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
-			</button
+			</button>
 
-			<div class="collapse navbar-collapse" id="site-nav">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a href="../index.php" class="nav-link active">Home</a></li>
-					<li class="nav-item active"><a href="menu.php" class="nav-link active">Menu</a></li>
+				<div class="collapse navbar-collapse" id="site-nav">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a href="../index.php" class="nav-link active">Home</a></li>
+						<li class="nav-item active"><a href="menu.php" class="nav-link active">Menu</a></li>
 
-					<?php if (isset($_SESSION['username'])):
-						
-
-						?>
+						<?php if (isset($_SESSION['username'])):?>
 
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -74,42 +71,39 @@ $result = $conn->query($sql);
 		</div>
 	</nav>
 	<!-- END nav -->
-<?php if (isset($_SESSION['username'])):
+	<?php if (isset($_SESSION['username'])):
 	$sql = "SELECT name,price,imageurl,details,quantity,price,manufacturedate,pickup_address FROM products WHERE products.uid = ".$_SESSION['uid'];
-						$result = $conn->query($sql);
+	$result = $conn->query($sql);
 	?>	
 
 
 
 	<section class="site-section bg-light" id="section-order">
 		<div class="container">
-
-			<div class="row">
-				<h2>My Products</h2>
-				
-				
+			<div id="headingBtn">
+				<center><h2>My Products</h2></center>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProdModal">
+					Add Product
+				</button>
 			</div>
-			<button style="float:right; " type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProdModal">
-				Add Product
-			</button>
-			<br/>
 		</div>
-		<div class="container-fluid">
+
+		<div class="container">
 			<div class="row">
-				<div class="card-deck">
-					<?php
-					$i=0;
-					if ($result->num_rows > 0):
+				<?php
+				$i=0;
+				if ($result->num_rows > 0):
    						 // output data of each row
-						while($row = $result->fetch_array()):
-							$i++;
-							
-							$time=strtotime($row['manufacturedate']);
-							$mdate=date('m/d/Y',$time);
-							
-							
-							
-							?>
+					while($row = $result->fetch_array()):
+						$i++;
+
+						$time=strtotime($row['manufacturedate']);
+						$mdate=date('m/d/Y',$time);
+
+
+
+						?>
+						<div class="col-sm-4">
 							<div class="card">
 								<img class="card-img-top" src="<?php echo $row['imageurl'];?>" alt="Card image cap">
 								<div class="card-body">
@@ -149,50 +143,51 @@ $result = $conn->query($sql);
 									</div>
 								</div>
 							</div>
-							<?php
-							if($i%3==0):
-								?>
-							</div>
-							<div class="row">
-								
-								<?php
-							endif;
-							
-						endwhile;
-
-						else:?>
-							<p>You have not Added any Product anything</p>
-							<div class="container">
-								<br/>
-								<button type="button" class="btn btn-primary" onclick="redir();">Add Now!</button>
-							</div>
-						<?php endif;?>
-
+						</div>
+				<?php if($i%3==0):?>
 					</div>
-				</section>
-				<!-- END section -->
-			<?php endif; ?>
+			<?php if($result->num_rows != $i):?>
+					<div class="row">
+				<?php
+					endif;
+					 
+					endif;
+							
+					endwhile;
 
-			<div id="site-loader" class="show fullscreen">
+					else:?>
+						<p>You have not Added any Product anything</p>
+						<div class="container">
+							<br/>
+							<button type="button" class="btn btn-primary" onclick="redir();">Add Now!</button>
+						</div>
+					<?php endif;?>
+
+				</div>
+			</section>
+			<!-- END section -->
+		<?php endif; ?>
+
+		<div id="site-loader" class="show fullscreen">
 			<svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
 			</svg>
-			</div>
-			<script src="../js/anime.min.js"></script>
-			<script src="../js/jquery.min.js"></script>
-			<script src="../js/popper.min.js"></script>
-			<script src="../js/bootstrap.min.js"></script>
-			<script src="../js/jquery.easing.1.3.js"></script>
-			<script src="../js/jquery.waypoints.min.js"></script>
-			<script src="../js/owl.carousel.min.js"></script>
-			<script src="../js/jquery.magnific-popup.min.js"></script>
-			<script src="../js/bootstrap-datepicker.js"></script>
-			<script src="../js/jquery.timepicker.min.js"></script>
-			<script src="../js/jquery.animateNumber.min.js"></script>
-			<script src="../js/main.js"></script>
+		</div>
+		<script src="../js/anime.min.js"></script>
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/popper.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/jquery.easing.1.3.js"></script>
+		<script src="../js/jquery.waypoints.min.js"></script>
+		<script src="../js/owl.carousel.min.js"></script>
+		<script src="../js/jquery.magnific-popup.min.js"></script>
+		<script src="../js/bootstrap-datepicker.js"></script>
+		<script src="../js/jquery.timepicker.min.js"></script>
+		<script src="../js/jquery.animateNumber.min.js"></script>
+		<script src="../js/main.js"></script>
 
 
 
-			</body>
-			</html>
+	</body>
+	</html>
 
 

@@ -1502,3 +1502,7 @@ em{
   width: 100%;
   height: 250px;
 }
+
+#headingBtn {
+  display: inline;
+}

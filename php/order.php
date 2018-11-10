@@ -88,7 +88,7 @@ session_start();
 							
 							
 							?>
-							<div class="card w-33.33">
+							<div class="card w-25">
 								<img class="card-img-top" src="<?php echo $row['imageurl'];?>" alt="Card image cap">
 								<div class="card-body">
 									<h5 class="card-title"><?php echo $row['name']; ?></h5>

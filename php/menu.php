@@ -139,6 +139,12 @@ require 'functions.php';
             </div>
 	</section>
 		<!-- End of actual Display -->
+		<?php
+			
+			
+						}
+						}
+		?>
 
 		<!-- loader -->
 	<div id="site-loader" class="show fullscreen">

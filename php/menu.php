@@ -35,6 +35,15 @@ session_start();
 				$("#channel").change(function(){
     			$.post( "menu.php", { channel: $(this).val() })
     			 .success(function(data) {
+	<script>
+		function redir() {
+			window.location = "https://tastybyte.azurewebsites.net/index.php";
+		}
+		
+				$(document).ready(function() { 
+				$("#channel").change(function(){
+    			$.post( "menu.php", { channel: $(this).val() })
+    			 .success(function(data) {
 
              $(".result").html(data);
          });
@@ -177,7 +186,10 @@ session_start();
 
 						else:?>
 							<p>There are no products in this area</p>
-							
+							<div class="container">
+								<br/>
+								<button type="button" class="btn btn-primary" onclick="redir();">Add Now!</button>
+							</div>
 						<?php endif;?>
 
 					</div>

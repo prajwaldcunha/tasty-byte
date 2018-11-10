@@ -80,8 +80,8 @@ $result = $conn->query($sql);
 
 	<section class="site-section bg-light" id="section-order">
 		<div class="container">
-			<div id="headingBtn">
-				<center><h2>My Products</h2></center>
+			<div class="headingBtn">
+				<h2>My Products</h2>
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProdModal">
 					Add Product
 				</button>

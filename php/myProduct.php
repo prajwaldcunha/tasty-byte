@@ -46,7 +46,12 @@ $result = $conn->query($sql);
 					<li class="nav-item active"><a href="../index.php" class="nav-link active">Home</a></li>
 					<li class="nav-item active"><a href="menu.php" class="nav-link active">Menu</a></li>
 
-					<?php if (isset($_SESSION['username'])):?>
+					<?php if (isset($_SESSION['username'])):
+						$sql = "SELECT name,price,imageurl,details,quantity,price,manufacturedate,pickup_address FROM products WHERE products.uid = ".$_SESSION['uid'];
+						$result = $conn->query($sql);
+
+						?>
+
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<?php echo $_SESSION['username'];?>
@@ -67,8 +72,13 @@ $result = $conn->query($sql);
 	<section class="site-section bg-light" >
 
 		<div class="container">
+
 			<div class="row">
 				<h2>My products</h2>
+				
+				<button style="float:right; " type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProdModal">
+					Add Product
+				</button>
 			</div>
 		</div>
 
@@ -79,7 +89,7 @@ $result = $conn->query($sql);
     // output data of each row
 			while($row = $result->fetch_array()) {
 
-				var_dump($row . "</br>");
+				//var_dump($row . "</br>");
 			}
 		} else {
 			echo "0 results";
@@ -137,18 +147,18 @@ $result = $conn->query($sql);
 		<svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
 		</svg>
 	</div>
-		<script src="../js/anime.min.js"></script>
-		<script src="../js/jquery.min.js"></script>
-		<script src="../js/popper.min.js"></script>
-		<script src="../js/bootstrap.min.js"></script>
-		<script src="../js/jquery.easing.1.3.js"></script>
-		<script src="../js/jquery.waypoints.min.js"></script>
-		<script src="../js/owl.carousel.min.js"></script>
-		<script src="../js/jquery.magnific-popup.min.js"></script>
-		<script src="../js/bootstrap-datepicker.js"></script>
-		<script src="../js/jquery.timepicker.min.js"></script>
-		<script src="../js/jquery.animateNumber.min.js"></script>
-		<script src="../js/main.js"></script>
+	<script src="../js/anime.min.js"></script>
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/popper.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/jquery.easing.1.3.js"></script>
+	<script src="../js/jquery.waypoints.min.js"></script>
+	<script src="../js/owl.carousel.min.js"></script>
+	<script src="../js/jquery.magnific-popup.min.js"></script>
+	<script src="../js/bootstrap-datepicker.js"></script>
+	<script src="../js/jquery.timepicker.min.js"></script>
+	<script src="../js/jquery.animateNumber.min.js"></script>
+	<script src="../js/main.js"></script>
 
 
 	

@@ -76,8 +76,7 @@ session_start();
 	<section class="site-section bg-light" id="section-order">
 		<center><h2 class="display-4">My Orders</h2></center>
 		<div class="container">
-			<div class="row">
-				<div class="card-deck">
+  			<div class="row">
 					<?php
 					$i=0;
 					if ($result->num_rows > 0):
@@ -92,6 +91,7 @@ session_start();
 							
 							
 							?>
+						<div class="col-sm-4">
 							<div class="card">
 								<img class="card-img-top" src="<?php echo $row['imageurl'];?>" alt="Card image cap">
 								<div class="card-body">
@@ -134,6 +134,7 @@ session_start();
 									</div>
 								</div>
 							</div>
+						</div>
 							<?php
 							if($i%3==0):
 								?>

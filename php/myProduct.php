@@ -89,6 +89,7 @@ $result = $conn->query($sql);
 			<button style="float:right; " type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProdModal">
 				Add Product
 			</button>
+			<br/>
 		</div>
 		<div class="container-fluid">
 			<div class="row">
@@ -159,6 +160,7 @@ $result = $conn->query($sql);
 						else:?>
 							<p>You have not Added any Product anything</p>
 							<div class="container">
+								<br/>
 								<button type="button" class="btn btn-primary" onclick="redir();">Add Now!</button>
 							</div>
 						<?php endif;?>

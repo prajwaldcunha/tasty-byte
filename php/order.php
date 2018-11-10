@@ -75,7 +75,7 @@ session_start();
 
 	<section class="site-section bg-light" id="section-order">
 		<center><h2 class="display-4">My Orders</h2></center>
-		<div class="container-fluid">
+		<div class="container">
 			<div class="row">
 				<div class="card-deck">
 					<?php
@@ -92,7 +92,7 @@ session_start();
 							
 							
 							?>
-							<div class="card w-25">
+							<div class="card">
 								<img class="card-img-top" src="<?php echo $row['imageurl'];?>" alt="Card image cap">
 								<div class="card-body">
 									<h5 class="card-title"><?php echo $row['name']; ?></h5>

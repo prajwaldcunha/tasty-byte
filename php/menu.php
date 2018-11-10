@@ -51,11 +51,13 @@ session_start();
 
 	<nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="../index.php"><div style="color: black;">TastyByte</div></a>
+				<span class="oi oi-menu"></span> Menu
+				</button>
+			<a class="navbar-brand" href="../index.php">TastyByte</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-nav" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
-			</button
-
+			</button>
+			
 			<div class="collapse navbar-collapse" id="site-nav">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active"><a href="../index.php" class="nav-link active">Home</a></li>

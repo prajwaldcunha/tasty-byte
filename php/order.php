@@ -40,6 +40,10 @@ session_start();
 		<div class="container">
 			<a class="navbar-brand" href="../index.php">TastyByte</a>
 
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-nav" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span> Menu
+			</button
+
 			<div class="collapse navbar-collapse" id="site-nav">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active"><a href="../index.php" class="nav-link active">Home</a></li>
@@ -71,9 +75,8 @@ session_start();
 
 	<section class="site-section bg-light" id="section-order">
 		<center><h2 class="display-4">My Orders</h2></center>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="card-deck">
+		<div class="container">
+  			<div class="row">
 					<?php
 					$i=0;
 					if ($result->num_rows > 0):
@@ -88,7 +91,8 @@ session_start();
 							
 							
 							?>
-							<div class="card w-25">
+						<div class="col-sm-4">
+							<div class="card">
 								<img class="card-img-top" src="<?php echo $row['imageurl'];?>" alt="Card image cap">
 								<div class="card-body">
 									<h5 class="card-title"><?php echo $row['name']; ?></h5>
@@ -130,6 +134,7 @@ session_start();
 									</div>
 								</div>
 							</div>
+						</div>
 							<?php
 							if($i%3==0):
 								?>

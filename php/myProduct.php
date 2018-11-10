@@ -103,7 +103,7 @@ $result = $conn->query($sql);
 
 						<div class="form-style-10">
 							<h1>Product details</h1>
-							<form action="php/addProduct.php" method="post" enctype="multipart/form-data">
+							<form action="addProduct.php" method="post" enctype="multipart/form-data">
 
 								<div class="section"><span>1</span>Item details</div>
 								<div class="inner-wrap">

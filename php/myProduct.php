@@ -48,12 +48,12 @@ $result = $conn->query($sql);
 				<span class="oi oi-menu"></span> Menu
 			</button>
 
-				<div class="collapse navbar-collapse" id="site-nav">
-					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active"><a href="../index.php" class="nav-link active">Home</a></li>
-						<li class="nav-item active"><a href="menu.php" class="nav-link active">Menu</a></li>
+			<div class="collapse navbar-collapse" id="site-nav">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active"><a href="../index.php" class="nav-link active">Home</a></li>
+					<li class="nav-item active"><a href="menu.php" class="nav-link active">Menu</a></li>
 
-						<?php if (isset($_SESSION['username'])):?>
+					<?php if (isset($_SESSION['username'])):?>
 
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -88,106 +88,194 @@ $result = $conn->query($sql);
 			</div>
 		</div>
 
-		<div class="container">
-			<div class="row">
-				<?php
-				$i=0;
-				if ($result->num_rows > 0):
-   						 // output data of each row
-					while($row = $result->fetch_array()):
-						$i++;
+		<div class="modal fade" id="addProdModal">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
 
-						$time=strtotime($row['manufacturedate']);
-						$mdate=date('m/d/Y',$time);
+					<!-- Modal Header -->
+					<div class="modal-header">
+						<h4 class="modal-title"> Add Product</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+
+					<!-- Modal body -->
+					<div class="modal-body">
+
+						<div class="form-style-10">
+							<h1>Product details</h1>
+							<form action="php/addProduct.php" method="post" enctype="multipart/form-data">
+
+								<div class="section"><span>1</span>Item details</div>
+								<div class="inner-wrap">
+									<label>Product name <input type="text" name="prodName" required="" maxlength="256" /></label>
+									<label>Product description <textarea name="prodDesc" required="" maxlength="150" rows="4"></textarea></label>
+									<label>Quantity<input type="number" name="quantity" required="" min="1" value="1"/></label>                  
+									<label>Date of manufacture <input type="date" name="dateOfManufacture" required=""  /></label>      
+									<label>Price <input type="text" name="price" required="" pattern="[0-9]+" /></label>
+									<label>Pickup Address <input type="text" name="pickup_address" required=""/></label>
+									<label>City 
+										<select name="city" required="">
+											<option selected><?php echo $_SESSION['city'];?></option>
+											<option>Bangalore</option>
+											<option>Mysore</option>
+											<option>Mumbai</option>
+											<option>Delhi</option>
+											<option>Hyderabad</option>
+											<option>Ahmedabad</option>
+											<option>Chennai</option>
+											<option>Kolkata</option>
+											<option>Surat</option>
+											<option>Pune</option>
+										</select>
+									</label>
+								</div>
+								<div class="section"><span>2</span>Item Photographs</div>
+								<div class="inner-wrap">
 
 
+									<div class="group">
+										<span class="errormessage"><?php 
+										if(isset($_SESSION['fileUploadFail'])) { 
+											echo $_SESSION['fileUploadFail']; 
+											unset($_SESSION['fileUploadFail']);
+										}
+										if(isset($_SESSION['fileUploadError_1'])){
+											echo $_SESSION['fileUploadError_1']; 
+											unset($_SESSION['fileUploadError_1']);
 
-						?>
-						<div class="col-sm-4">
-							<div class="card">
-								<img class="card-img-top" src="<?php echo $row['imageurl'];?>" alt="Card image cap">
-								<div class="card-body">
-									<h5 class="card-title"><?php echo $row['name']; ?></h5>
-									<p class="card-text">Manufacture date : <?php echo $mdate; ?></p>
-									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetails<?php echo $i;?>">Details</button>
+										}
+										if(isset($_SESSION['fileUploadError'])){
+											echo $_SESSION['fileUploadError']; 
+											unset($_SESSION['fileUploadError']);
+
+										}
+
+										?>
+
+										</span>
+									</div>
+
+									<label>Product images <input type="file" name="imageToUpload" required="" /></label>
 								</div>
 
+								<div class="button-section">
+									<input type="submit" name="submit" value="Submit" />
+								</div>
+							</form>
+							<?php if(isset($_SESSION['script_addProd_modal'])) { echo $_SESSION['script_addProd_modal']; 
+							$_SESSION['script_addProd_modal'] = null;
+							} ?>
+						</div>
+					</div>
 
-								<!-- Button trigger modal -->
+					<!-- Modal footer -->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<div class="container">
+	<div class="row">
+		<?php
+		$i=0;
+		if ($result->num_rows > 0):
+   						 // output data of each row
+			while($row = $result->fetch_array()):
+				$i++;
+
+				$time=strtotime($row['manufacturedate']);
+				$mdate=date('m/d/Y',$time);
 
 
-								<!-- Modal -->
-								<div class="modal fade" id="modalDetails<?php echo $i;?>" tabindex="-1" role="dialog" aria-labelledby="modalDetailsTitle" aria-hidden="true">
-									<div class="modal-dialog modal-dialog-centered" role="document">
-										<div class="modal-content">
-											<div class="modal-header">
-												<h5 class="modal-title" id="exampleModalLongTitle">Product Details</h5>
-												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-													<span aria-hidden="true">&times;</span>
-												</button>
-											</div>
-											<div class="modal-body">
-												<ul>
-													<li>Product Name : <?php echo $row['name']; ?></li>
-													<li>Price :  Rs. <?php echo $row['price']; ?></li>
-													<li>Quantity: <?php echo $row['quantity']; ?></li>
-													<li>Date of manufacture : <?php echo $mdate; ?></li>
-													<li>PickUp Address : <?php echo $row['pickup_address']; ?></li>
-													
-												</ul>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-											</div>
-										</div>
+
+				?>
+				<div class="col-sm-4">
+					<div class="card">
+						<img class="card-img-top" src="<?php echo $row['imageurl'];?>" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title"><?php echo $row['name']; ?></h5>
+							<p class="card-text">Manufacture date : <?php echo $mdate; ?></p>
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetails<?php echo $i;?>">Details</button>
+						</div>
+
+
+						<!-- Button trigger modal -->
+
+
+						<!-- Modal -->
+						<div class="modal fade" id="modalDetails<?php echo $i;?>" tabindex="-1" role="dialog" aria-labelledby="modalDetailsTitle" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-centered" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLongTitle">Product Details</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<ul>
+											<li>Product Name : <?php echo $row['name']; ?></li>
+											<li>Price :  Rs. <?php echo $row['price']; ?></li>
+											<li>Quantity: <?php echo $row['quantity']; ?></li>
+											<li>Date of manufacture : <?php echo $mdate; ?></li>
+											<li>PickUp Address : <?php echo $row['pickup_address']; ?></li>
+
+										</ul>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 									</div>
 								</div>
 							</div>
 						</div>
-				<?php if($i%3==0):?>
 					</div>
-			<?php if($result->num_rows != $i):?>
-					<div class="row">
-				<?php
-					endif;
-					 
-					endif;
-							
-					endwhile;
-
-					else:?>
-						<p>You have not Added any Product anything</p>
-						<div class="container">
-							<br/>
-							<button type="button" class="btn btn-primary" onclick="redir();">Add Now!</button>
-						</div>
-					<?php endif;?>
-
 				</div>
-			</section>
-			<!-- END section -->
-		<?php endif; ?>
+				<?php if($i%3==0):?>
+				</div>
+				<?php if($result->num_rows != $i):?>
+					<div class="row">
+						<?php
+					endif;
 
-		<div id="site-loader" class="show fullscreen">
-			<svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
-			</svg>
-		</div>
-		<script src="../js/anime.min.js"></script>
-		<script src="../js/jquery.min.js"></script>
-		<script src="../js/popper.min.js"></script>
-		<script src="../js/bootstrap.min.js"></script>
-		<script src="../js/jquery.easing.1.3.js"></script>
-		<script src="../js/jquery.waypoints.min.js"></script>
-		<script src="../js/owl.carousel.min.js"></script>
-		<script src="../js/jquery.magnific-popup.min.js"></script>
-		<script src="../js/bootstrap-datepicker.js"></script>
-		<script src="../js/jquery.timepicker.min.js"></script>
-		<script src="../js/jquery.animateNumber.min.js"></script>
-		<script src="../js/main.js"></script>
+				endif;
+
+			endwhile;
+
+			else:?>
+			<p>You have not Added any Product anything</p>
+			<div class="container">
+				<br/>
+				<button type="button" class="btn btn-primary" onclick="redir();">Add Now!</button>
+			</div>
+		<?php endif;?>
+
+	</div>
+</section>
+<!-- END section -->
+<?php endif; ?>
+
+<div id="site-loader" class="show fullscreen">
+	<svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
+	</svg>
+</div>
+<script src="../js/anime.min.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/popper.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/jquery.easing.1.3.js"></script>
+<script src="../js/jquery.waypoints.min.js"></script>
+<script src="../js/owl.carousel.min.js"></script>
+<script src="../js/jquery.magnific-popup.min.js"></script>
+<script src="../js/bootstrap-datepicker.js"></script>
+<script src="../js/jquery.timepicker.min.js"></script>
+<script src="../js/jquery.animateNumber.min.js"></script>
+<script src="../js/main.js"></script>
 
 
 
-	</body>
-	</html>
+</body>
+</html>
 
 

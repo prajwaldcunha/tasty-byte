@@ -28,9 +28,9 @@ session_start();
 	
 	
 	<script>
-	function redir() {
-	    window.location = "https://tastybyte.azurewebsites.net/index.php";
-	  }
+		function redir() {
+			window.location = "https://tastybyte.azurewebsites.net/index.php";
+		}
 	</script>
 
 </head>
@@ -42,7 +42,7 @@ session_start();
 
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-nav" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
-			</button
+			</button>
 
 			<div class="collapse navbar-collapse" id="site-nav">
 				<ul class="navbar-nav ml-auto">
@@ -76,21 +76,21 @@ session_start();
 	<section class="site-section bg-light" id="section-order">
 		<center><h2 class="display-4">My Orders</h2></center>
 		<div class="container">
-  			<div class="row">
-					<?php
-					$i=0;
-					if ($result->num_rows > 0):
+			<div class="row">
+				<?php
+				$i=0;
+				if ($result->num_rows > 0):
    						 // output data of each row
-						while($row = $result->fetch_array()):
-							$i++;
-							
-							$time=strtotime($row['manufacturedate']);
-							$mdate=date('m/d/Y',$time);
-							$time=strtotime($row['orderdate']);
-							$ordate=date('m/d/Y',$time);
-							
-							
-							?>
+					while($row = $result->fetch_array()):
+						$i++;
+						
+						$time=strtotime($row['manufacturedate']);
+						$mdate=date('m/d/Y',$time);
+						$time=strtotime($row['orderdate']);
+						$ordate=date('m/d/Y',$time);
+						
+						
+						?>
 						<div class="col-sm-4">
 							<div class="card">
 								<img class="card-img-top" src="<?php echo $row['imageurl'];?>" alt="Card image cap">
@@ -135,28 +135,28 @@ session_start();
 								</div>
 							</div>
 						</div>
-							<?php
-							if($i%3==0):
-								?>
-							</div>
-							<div class="row">
-								
-								<?php
-							endif;
+						<?php
+						if($i%3==0):
+							?>
+						</div>
+						<div class="row">
 							
-						endwhile;
+							<?php
+						endif;
+						
+					endwhile;
 
 					else:?>
-							<p>You have not ordered anything</p>
-						<div class="container">
-							<button type="button" class="btn btn-primary" onclick="redir();">Order Now!</button>
-						</div>
-					<?php endif;?>
-					
-				</div>
-			</section>
-			<!-- END section -->
-		<?php endif; 
+					<p>You have not ordered anything</p>
+					<div class="container">
+						<button type="button" class="btn btn-primary" onclick="redir();">Order Now!</button>
+					</div>
+				<?php endif;?>
+				
+			</div>
+		</section>
+		<!-- END section -->
+	<?php endif; 
 		// SELECT name, imageurl, details, quantity, price, manufacturedate, pickup_address, city, fname, lname, email, phoneno 
 		// FROM users u, products p
 		//  WHERE p.uid = u.id AND  p.pid = (SELECT pid 
@@ -168,25 +168,25 @@ session_start();
 
 
 
-		?>
+	?>
 
-		<!-- loader -->
-		<div id="site-loader" class="show fullscreen">
-			<svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
-			</svg>
-		</div>
-		<script src="../js/anime.min.js"></script>
-		<script src="../js/jquery.min.js"></script>
-		<script src="../js/popper.min.js"></script>
-		<script src="../js/bootstrap.min.js"></script>
-		<script src="../js/jquery.easing.1.3.js"></script>
-		<script src="../js/jquery.waypoints.min.js"></script>
-		<script src="../js/owl.carousel.min.js"></script>
-		<script src="../js/jquery.magnific-popup.min.js"></script>
-		<script src="../js/bootstrap-datepicker.js"></script>
-		<script src="../js/jquery.timepicker.min.js"></script>
-		<script src="../js/jquery.animateNumber.min.js"></script>
-		<script src="../js/main.js"></script>
+	<!-- loader -->
+	<div id="site-loader" class="show fullscreen">
+		<svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
+		</svg>
+	</div>
+	<script src="../js/anime.min.js"></script>
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/popper.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/jquery.easing.1.3.js"></script>
+	<script src="../js/jquery.waypoints.min.js"></script>
+	<script src="../js/owl.carousel.min.js"></script>
+	<script src="../js/jquery.magnific-popup.min.js"></script>
+	<script src="../js/bootstrap-datepicker.js"></script>
+	<script src="../js/jquery.timepicker.min.js"></script>
+	<script src="../js/jquery.animateNumber.min.js"></script>
+	<script src="../js/main.js"></script>
 
-	</body>
-	</html>	
+</body>
+</html>	

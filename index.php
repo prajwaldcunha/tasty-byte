@@ -123,15 +123,15 @@ session_start();
 						<form method="post" action="php/queries.php">
 							<div class="form-group">
 								<label for="name" class="sr-only">Name</label>
-								<input type="text" class="form-control" id="name" placeholder="Name">
+								<input type="text" class="form-control" name="name" id="name" placeholder="Name" required="">
 							</div>
 							<div class="form-group">
 								<label for="email" class="sr-only">Email</label>
-								<input type="text" class="form-control" id="email" placeholder="Email">
+								<input type="email" class="form-control" name="email" id="email" placeholder="Email" required="">
 							</div>
 							<div class="form-group">
 								<label for="message" class="sr-only">Message</label>
-								<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Write your message"></textarea>
+								<textarea id="message" cols="30" rows="10" class="form-control" name="message" placeholder="Write your message" required=""></textarea>
 							</div>
 							<div class="form-group">
 								<input type="submit" class="btn btn-primary btn-lg" value="Send Message">
@@ -170,231 +170,231 @@ session_start();
 								<p>Vamanjoor, Mangaluru<br/>+91 9911223344</p>
 							</div>
 						</div>
-						</div>
-						</div>
-						<div class="row site-animate">
-							<div class="col-md-12 text-center">
-								<div class="site-footer-widget mb-4">
-									<ul class="site-footer-social list-unstyled ">
-										<li class="site-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-										<li class="site-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-										<li class="site-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-									</ul>
-								</div>
-							</div> 
-						</div>
 					</div>
-				</footer>
+				</div>
+				<div class="row site-animate">
+					<div class="col-md-12 text-center">
+						<div class="site-footer-widget mb-4">
+							<ul class="site-footer-social list-unstyled ">
+								<li class="site-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+								<li class="site-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+								<li class="site-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+							</ul>
+						</div>
+					</div> 
+				</div>
+			</div>
+		</footer>
 
-				<!-- Modal -->
-				<div class="modal fade bs-modal-sm log-sign" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-					<div class="modal-dialog modal-lg">
-						<div class="modal-content">
+		<!-- Modal -->
+		<div class="modal fade bs-modal-sm log-sign" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
 
-							<div class="bs-example bs-example-tabs">
-								<ul id="myTab" class="nav nav-tabs">
-									<li id="tab1" class=" active tab-style login-shadow "><a href="#signin" class="active" data-toggle="tab">Log In</a></li>
-									<li id="tab2" class=" tab-style "><a href="#signup" data-toggle="tab">Sign Up</a></li>
+					<div class="bs-example bs-example-tabs">
+						<ul id="myTab" class="nav nav-tabs">
+							<li id="tab1" class=" active tab-style login-shadow "><a href="#signin" class="active" data-toggle="tab">Log In</a></li>
+							<li id="tab2" class=" tab-style "><a href="#signup" data-toggle="tab">Sign Up</a></li>
 
-								</ul>
+						</ul>
+					</div>
+					<div class="modal-body modal-body-login">
+						<div id="myTabContent" class="tab-content">
+
+							<div class="tab-pane fade active in show" id="signin">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<small>CLOSE </small><span aria-hidden="true">&times;</span>
+								</button>
+								<form class="form-horizontal" action="php/login.php" method="post">
+									<fieldset>
+										<!-- Sign In Form -->
+										<!-- Text input-->
+
+										<div class="group">
+											<input required="" class="input" type="text" name="email"><span class="highlight"></span><span class="bar"></span>
+											<label class="label" for="date">Email address</label></div>
+
+
+											<!-- Password input-->
+											<div class="group">
+												<input required="" class="input" type="password" name="password"><span class="highlight"></span><span class="bar"></span>
+												<label class="label" for="date">Password</label>
+											</div>
+											<em>minimum 6 characters</em>
+
+											<!-- display error message-->
+											<div class="group">
+												<span class="errormessage"><?php if(isset($_SESSION['validation_error'])) { echo $_SESSION['validation_error']; }?></span>
+											</div>
+
+											<div class="forgot-link">
+												<a href="#forgot" data-toggle="modal" data-dismiss="modal" data-target="#forgot-password"> I forgot my password</a>
+											</div>
+
+
+											<!-- Button -->
+											<div class="control-group">
+												<label class="control-label" for="signin"></label>
+												<div class="controls">
+													<button id="signin" name="signin" class="btn btn-primary btn-block" type="submit">Log In</button>
+												</div>
+											</div>
+										</fieldset>
+									</form>
+
+									<?php if(isset($_SESSION['script'])) { echo $_SESSION['script']; 
+									$_SESSION['script'] = null;
+								} ?>
+
 							</div>
-							<div class="modal-body modal-body-login">
-								<div id="myTabContent" class="tab-content">
 
-									<div class="tab-pane fade active in show" id="signin">
-										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-											<small>CLOSE </small><span aria-hidden="true">&times;</span>
-										</button>
-										<form class="form-horizontal" action="php/login.php" method="post">
-											<fieldset>
-												<!-- Sign In Form -->
-												<!-- Text input-->
 
+							<div class="tab-pane fade" id="signup">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<small>CLOSE </small><span aria-hidden="true">&times;</span>
+								</button>
+								<form class="form-horizontal" id="myform" action="php/register.php" method="post">
+									<fieldset>
+										<!-- Sign Up Form -->
+										<!-- Text input-->
+										<div class="group">
+											<input required="" class="input" type="text" name="fname" value="<?php echo isset($_POST['fname']) ? $_POST['fname'] : "";  ?>"><span class="highlight"></span><span class="bar"></span>
+											<label class="label" for="date">First Name</label></div>
+
+											<!-- Text input-->
+											<div class="group">
+												<input required="" class="input" type="text" name="lname" value="<?php if(isset($_POST['lname'])) { echo $_POST['lname']; }  ?>"><span class="highlight"></span><span class="bar"></span>
+												<label class="label" for="date">Last Name</label></div>
+
+												<!-- display error message-->
 												<div class="group">
-													<input required="" class="input" type="text" name="email"><span class="highlight"></span><span class="bar"></span>
-													<label class="label" for="date">Email address</label></div>
-
-
-													<!-- Password input-->
-													<div class="group">
-														<input required="" class="input" type="password" name="password"><span class="highlight"></span><span class="bar"></span>
-														<label class="label" for="date">Password</label>
-													</div>
-													<em>minimum 6 characters</em>
-
-													<!-- display error message-->
-													<div class="group">
-														<span class="errormessage"><?php if(isset($_SESSION['validation_error'])) { echo $_SESSION['validation_error']; }?></span>
-													</div>
-
-													<div class="forgot-link">
-														<a href="#forgot" data-toggle="modal" data-dismiss="modal" data-target="#forgot-password"> I forgot my password</a>
-													</div>
-
-
-													<!-- Button -->
-													<div class="control-group">
-														<label class="control-label" for="signin"></label>
-														<div class="controls">
-															<button id="signin" name="signin" class="btn btn-primary btn-block" type="submit">Log In</button>
-														</div>
-													</div>
-												</fieldset>
-											</form>
-
-											<?php if(isset($_SESSION['script'])) { echo $_SESSION['script']; 
-											$_SESSION['script'] = null;
-										} ?>
-
-									</div>
-
-
-									<div class="tab-pane fade" id="signup">
-										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-											<small>CLOSE </small><span aria-hidden="true">&times;</span>
-										</button>
-										<form class="form-horizontal" id="myform" action="php/register.php" method="post">
-											<fieldset>
-												<!-- Sign Up Form -->
-												<!-- Text input-->
-												<div class="group">
-													<input required="" class="input" type="text" name="fname" value="<?php echo isset($_POST['fname']) ? $_POST['fname'] : "";  ?>"><span class="highlight"></span><span class="bar"></span>
-													<label class="label" for="date">First Name</label></div>
-
-													<!-- Text input-->
-													<div class="group">
-														<input required="" class="input" type="text" name="lname" value="<?php if(isset($_POST['lname'])) { echo $_POST['lname']; }  ?>"><span class="highlight"></span><span class="bar"></span>
-														<label class="label" for="date">Last Name</label></div>
-
-													<!-- display error message-->
-													<div class="group">
-														<span class="errormessage"><?php if(isset($_SESSION['email_unique_error'])) { echo $_SESSION['email_unique_error']; 
-																																	  $_SESSION['email_unique_error']=null;
-																																	}?></span>
-													</div>
-														<!-- email input-->
-														<div class="group">
-															<input required="" class="input" type="email" name="email"><span class="highlight"></span><span class="bar"></span>
-															<label class="label" for="date">Email</label></div>
-
-															<!-- Text input-->
-															<div class="group">
-																<input required="" class="input" type="password" name="password"><span class="highlight"></span><span class="bar"></span>
-																<label class="label" for="date">Password(minimum 8 characters)</label></div>
-																<em>1-8 Characters</em>
-																
-																<!-- phone number input-->
-														<div class="group">
-															<input required="" class="input" type="text" pattern="[1-9]{1}[0-9]{9}" title="Enter 10 digit number"  name="phoneno" value="<?php echo isset($_POST['phoneno']) ? $_POST['phoneno'] : "" ;?>"><span class="highlight"></span><span class="bar"></span>
-															<label class="label" for="date">Phone Number</label></div>
-
-
-																<!-- Set State-->
-
-																<div class="group2">
-																	<span class="highlight"></span><span class="bar"></span>
-																	<!--<label class="label" for="date">State</label>-->
-																	<select name="state" required="" class="input" id="state" onchange="setcity()">
-																		<option value="Karnataka">Karnataka</option>
-																		<option value="Kerala">Kerala</option>
-																		<option value="Maharashtra">Maharashtra</option>
-																		</select>
-																	</div>
-																	
-																	<div class="group2">
-																	<span class="highlight"></span><span class="bar"></span>
-																	<!--<label class="label" for="date">State</label>-->
-																	<select name="city"  id="city"  required="" class="input">
-																		<option value="">Please select a city</option>
-																		</select>
-																	</div>
-
-																	<!-- Text input-->
-																<div class="group">
-																	<input required="" class="input" type="text" name="locality" ><span class="highlight"></span><span class="bar"></span>
-																	<label class="label" for="date">Locality</label></div>
-
-
-
-																	<!-- Button -->
-																	<div class="control-group">
-																		<label class="control-label" for="confirmsignup"></label>
-																		<div class="controls">
-																			<button id="confirmsignup" name="confirmsignup" class="btn btn-primary btn-block">Sign Up</button>
-																		</div>
-																	</div>
-																</fieldset>
-															</form>
-															<?php if(isset($_SESSION['email_script'])) { 
-																			echo $_SESSION['email_script']; 
-																			$_SESSION['email_script'] = null;
-																		} ?>
-														</div>
-													</div>
-												</div>
-												<div class="modal-footer">
-													<center>
-														<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-													</center>
-												</div>
+													<span class="errormessage"><?php if(isset($_SESSION['email_unique_error'])) { echo $_SESSION['email_unique_error']; 
+													$_SESSION['email_unique_error']=null;
+												}?></span>
 											</div>
-										</div>
-									</div>
+											<!-- email input-->
+											<div class="group">
+												<input required="" class="input" type="email" name="email"><span class="highlight"></span><span class="bar"></span>
+												<label class="label" for="date">Email</label></div>
+
+												<!-- Text input-->
+												<div class="group">
+													<input required="" class="input" type="password" name="password"><span class="highlight"></span><span class="bar"></span>
+													<label class="label" for="date">Password(minimum 8 characters)</label></div>
+													<em>1-8 Characters</em>
+
+													<!-- phone number input-->
+													<div class="group">
+														<input required="" class="input" type="text" pattern="[1-9]{1}[0-9]{9}" title="Enter 10 digit number"  name="phoneno" value="<?php echo isset($_POST['phoneno']) ? $_POST['phoneno'] : "" ;?>"><span class="highlight"></span><span class="bar"></span>
+														<label class="label" for="date">Phone Number</label></div>
+
+
+														<!-- Set State-->
+
+														<div class="group2">
+															<span class="highlight"></span><span class="bar"></span>
+															<!--<label class="label" for="date">State</label>-->
+															<select name="state" required="" class="input" id="state" onchange="setcity()">
+																<option value="Karnataka">Karnataka</option>
+																<option value="Kerala">Kerala</option>
+																<option value="Maharashtra">Maharashtra</option>
+															</select>
+														</div>
+
+														<div class="group2">
+															<span class="highlight"></span><span class="bar"></span>
+															<!--<label class="label" for="date">State</label>-->
+															<select name="city"  id="city"  required="" class="input">
+																<option value="">Please select a city</option>
+															</select>
+														</div>
+
+														<!-- Text input-->
+														<div class="group">
+															<input required="" class="input" type="text" name="locality" ><span class="highlight"></span><span class="bar"></span>
+															<label class="label" for="date">Locality</label></div>
 
 
 
-									<!--modal2-->
-
-									<div class="modal fade bs-modal-sm" id="forgot-password" tabindex="0" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-										<div class="modal-dialog modal-lg">
-											<div class="modal-content">
-												<div class="modal-header">
-													<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-													<h4 class="modal-title" id="myModalLabel">Password will be sent to your email</h4>
-												</div>
-												<div class="modal-body">
-													<form class="form-horizontal" action="/php/connect.php">
-														<fieldset>
-															<div class="group">
-																<input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
-																<label class="label" for="date">Email address</label></div>
-
-
-																<div class="control-group">
-																	<label class="control-label" for="forpassword"></label>
-																	<div class="controls">
-																		<button id="forpassword" name="forpassword" class="btn btn-primary btn-block">Send</button>
-																	</div>
+															<!-- Button -->
+															<div class="control-group">
+																<label class="control-label" for="confirmsignup"></label>
+																<div class="controls">
+																	<button id="confirmsignup" name="confirmsignup" class="btn btn-primary btn-block">Sign Up</button>
 																</div>
-															</fieldset>
-														</form>
-
-													</div>
+															</div>
+														</fieldset>
+													</form>
+													<?php if(isset($_SESSION['email_script'])) { 
+														echo $_SESSION['email_script']; 
+														$_SESSION['email_script'] = null;
+													} ?>
 												</div>
+											</div>
+										</div>
+										<div class="modal-footer">
+											<center>
+												<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+											</center>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+
+							<!--modal2-->
+
+							<div class="modal fade bs-modal-sm" id="forgot-password" tabindex="0" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+								<div class="modal-dialog modal-lg">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											<h4 class="modal-title" id="myModalLabel">Password will be sent to your email</h4>
+										</div>
+										<div class="modal-body">
+											<form class="form-horizontal" action="/php/connect.php">
+												<fieldset>
+													<div class="group">
+														<input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+														<label class="label" for="date">Email address</label></div>
+
+
+														<div class="control-group">
+															<label class="control-label" for="forpassword"></label>
+															<div class="controls">
+																<button id="forpassword" name="forpassword" class="btn btn-primary btn-block">Send</button>
+															</div>
+														</div>
+													</fieldset>
+												</form>
 
 											</div>
 										</div>
 
-
-										<!-- loader -->
-										<div id="site-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
-										<script src="js/anime.min.js"></script>
-										<script src="js/jquery.min.js"></script>
-										<script src="js/popper.min.js"></script>
-										<script src="js/bootstrap.min.js"></script>
-										<script src="js/jquery.easing.1.3.js"></script>
-										<script src="js/jquery.waypoints.min.js"></script>
-										<script src="js/owl.carousel.min.js"></script>
-										<script src="js/jquery.magnific-popup.min.js"></script>
-
-										<script src="js/bootstrap-datepicker.js"></script>
-										<script src="js/jquery.timepicker.min.js"></script>
-
-										<script src="js/jquery.animateNumber.min.js"></script>
-
-										<script src="js/main.js"></script>
+									</div>
+								</div>
 
 
-									</body>
-									</html>
+								<!-- loader -->
+								<div id="site-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+								<script src="js/anime.min.js"></script>
+								<script src="js/jquery.min.js"></script>
+								<script src="js/popper.min.js"></script>
+								<script src="js/bootstrap.min.js"></script>
+								<script src="js/jquery.easing.1.3.js"></script>
+								<script src="js/jquery.waypoints.min.js"></script>
+								<script src="js/owl.carousel.min.js"></script>
+								<script src="js/jquery.magnific-popup.min.js"></script>
+
+								<script src="js/bootstrap-datepicker.js"></script>
+								<script src="js/jquery.timepicker.min.js"></script>
+
+								<script src="js/jquery.animateNumber.min.js"></script>
+
+								<script src="js/main.js"></script>
+
+
+</body>
+</html>

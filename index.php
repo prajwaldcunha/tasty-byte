@@ -60,9 +60,14 @@ session_start();
 		</nav>
 		<!-- END nav -->
 
-
 		<section class="site-cover" style="background-image: url(images/background1.jpg);" id="section-home">
 			<div class="container">
+				<!-- If any feedback is given by user-->
+				<?php if(isset($_SESSION['querysuccess'])) { 
+						echo $_SESSION['querysuccess'];
+						$_SESSION['querysuccess'] = null;
+					  }?>
+
 				<div class="row align-items-center justify-content-center text-center site-vh-100">
 					<div class="col-md-12">
 						<h1 class="ml5">
@@ -123,11 +128,11 @@ session_start();
 						<form method="post" action="php/queries.php">
 							<div class="form-group">
 								<label for="name" class="sr-only">Name</label>
-								<input type="text" class="form-control" name="name" id="name" placeholder="Name" required="">
+								<input type="text" class="form-control" name="name" id="name" placeholder="Name" <?php if(isset($_SESSION['username'])):?> value="<?php echo $_SESSION['username']; endif;?>" required="">
 							</div>
 							<div class="form-group">
 								<label for="email" class="sr-only">Email</label>
-								<input type="email" class="form-control" name="email" id="email" placeholder="Email" required="">
+								<input type="email" class="form-control" name="email" id="email" placeholder="Email" <?php if(isset($_SESSION['email_id'])):?> value="<?php echo $_SESSION['email_id']; endif;?>" required="">
 							</div>
 							<div class="form-group">
 								<label for="message" class="sr-only">Message</label>
@@ -378,7 +383,7 @@ session_start();
 
 								<!-- loader -->
 								<div id="site-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
+								
 								<script src="js/anime.min.js"></script>
 								<script src="js/jquery.min.js"></script>
 								<script src="js/popper.min.js"></script>
@@ -394,7 +399,7 @@ session_start();
 								<script src="js/jquery.animateNumber.min.js"></script>
 
 								<script src="js/main.js"></script>
-
+								
 
 </body>
 </html>

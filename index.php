@@ -62,6 +62,7 @@ session_start();
 
 		<section class="site-cover" style="background-image: url(images/background1.jpg);" id="section-home">
 			<div class="container">
+			
 				<!-- If any feedback is given by user-->
 				<?php if(isset($_SESSION['querysuccess'])) { 
 						echo $_SESSION['querysuccess'];

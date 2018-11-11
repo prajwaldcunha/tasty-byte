@@ -8,7 +8,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>My Products</title>
+	<title>Menu</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href="../css/googleapis.css" rel="stylesheet">
@@ -29,28 +29,33 @@ session_start();
 	<link rel="stylesheet" href="../css/product.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
 	<script>
-		
-				$(document).ready(function() { 
-				$("#channel").change(function(){
-    			$.post( "menu.php", { channel: $(this).val() })
-    			 .success(function(data) {
-	<script>
-		function redir() {
-			window.location = "https://tastybyte.azurewebsites.net/index.php";
-		}
-		
-				$(document).ready(function() { 
-				$("#channel").change(function(){
-    			$.post( "menu.php", { channel: $(this).val() })
-    			 .success(function(data) {
-
-             $(".result").html(data);
-         });
-   });
-});
-</script>
+	function showCity(str) {
+	    if (str == "") {
+	        document.getElementById("cities").innerHTML = "";
+	        return;
+	    } else { 
+	        if (window.XMLHttpRequest) {
+	            // code for IE7+, Firefox, Chrome, Opera, Safari
+	            xmlhttp = new XMLHttpRequest();
+	        } else {
+	            // code for IE6, IE5
+	            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	        }
+	        xmlhttp.onreadystatechange = function() {
+	            if (this.readyState == 4 && this.status == 200) {
+	                document.getElementById("cities").innerHTML = this.responseText;
+	            }
+	        };
+	        xmlhttp.open("GET","displayMenu.php?city="+str,true);
+	        xmlhttp.send();
+	    }
+	}
 	</script>
+	
+	
+	
 </head>
 
 <body data-spy="scroll" data-target="#site-navbar" data-offset="150">
@@ -69,10 +74,7 @@ session_start();
 					<li class="nav-item active"><a href="../index.php" class="nav-link active">Home</a></li>
 					<li class="nav-item active"><a href="menu.php" class="nav-link active">Menu</a></li>
 
-					<?php if (isset($_SESSION['username'])):
-						
-
-						?>
+					<?php if (isset($_SESSION['username'])):?>
 
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -98,104 +100,24 @@ session_start();
 		<div class="container">
 			<div class="row">
 				<h2>Menu</h2>	
-				<p>
-							<select name='channel'>
-   							<option selected='true' disabled='true'> Choose one channel </option>
+					<p>
+						<form>
+							<select name="users" onchange="showCity(this.value)">
+							<option value="">Select a city:</option>
 							<option value="Mangalore">Mangalore</option>
+							<option value="Mysore">Mysore</option>
+							<option value="Hubli">Hubli</option>
 							<option value="Bangalore">Bangalore</option>
-							<option value="Mumbai">Mumbai</option>
-						</select>
-					
-						</p>
-						<?php 
-								if (isset($_SESSION['username'])):
-								if(isset($_POST['channel'])){
-														$city =cleanInput( $_POST['channel']);
-								$sql  = "SELECT name,price,imageurl,details,quantity,price,manufacturedate,pickup_address,products.city,fname,lname,email,phoneno,orderdate FROM products, users,orders WHERE products.uid=users.id AND orders.pid=products.id AND products.city=".$city;
-													$result = $conn->query($sql);
-								}
-							?>	
+							</select>
+						</form>
+						<br>
+						<div id="cities"><b>Person info will be listed here.</b></div>
+					</p>
 			</div>
 			<br/>
 		</div>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="card-deck">
-					<?php
-					$i=0;
-					if ($result->num_rows > 0):
-   						 // output data of each row
-						while($row = $result->fetch_array()):
-							$i++;
-							
-							$time=strtotime($row['manufacturedate']);
-							$mdate=date('m/d/Y',$time);
-							
-							
-							
-							?>
-							<div class="card">
-								<img class="card-img-top" src="<?php echo $row['imageurl'];?>" alt="Card image cap">
-								<div class="card-body">
-									<h5 class="card-title"><?php echo $row['name']; ?></h5>
-									<p class="card-text">Manufacture date : <?php echo $mdate; ?></p>
-									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetails<?php echo $i;?>">Details</button>
-								</div>
-
-
-								<!-- Button trigger modal -->
-
-
-								<!-- Modal -->
-								<div class="modal fade" id="modalDetails<?php echo $i;?>" tabindex="-1" role="dialog" aria-labelledby="modalDetailsTitle" aria-hidden="true">
-									<div class="modal-dialog modal-dialog-centered" role="document">
-										<div class="modal-content">
-											<div class="modal-header">
-												<h5 class="modal-title" id="exampleModalLongTitle">Product Details</h5>
-												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-													<span aria-hidden="true">&times;</span>
-												</button>
-											</div>
-											<div class="modal-body">
-												<ul>
-													<li>Product Name : <?php echo $row['name']; ?></li>
-													<li>Price :  Rs. <?php echo $row['price']; ?></li>
-													<li>Quantity: <?php echo $row['quantity']; ?></li>
-													<li>Date of manufacture : <?php echo $mdate; ?></li>
-													<li>PickUp Address : <?php echo $row['pickup_address']; ?></li>
-													
-												</ul>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<?php
-							if($i%3==0):
-								?>
-							</div>
-							<div class="row">
-								
-								<?php
-							endif;
-							
-						endwhile;
-
-						else:?>
-							<p>There are no products in this area</p>
-							<div class="container">
-								<br/>
-								<button type="button" class="btn btn-primary" onclick="redir();">Add Now!</button>
-							</div>
-						<?php endif;?>
-
-					</div>
-				</section>
-				<!-- END section -->
-			<?php endif; ?>
+	</section>
+	<!-- END section -->
 
 			<div id="site-loader" class="show fullscreen">
 			<svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>

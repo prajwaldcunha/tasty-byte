@@ -31,12 +31,12 @@ session_start();
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	
 	<script>
-	function showCity(str) {
-	    if (str == "") {
-	        document.getElementById("cities").innerHTML = "";
-	        return;
-	    } else { 
-	        if (window.XMLHttpRequest) {
+		function showCity(str) {
+			if (str == "") {
+				document.getElementById("cities").innerHTML = "";
+				return;
+			} else { 
+				if (window.XMLHttpRequest) {
 	            // code for IE7+, Firefox, Chrome, Opera, Safari
 	            xmlhttp = new XMLHttpRequest();
 	        } else {
@@ -44,30 +44,25 @@ session_start();
 	            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 	        }
 	        xmlhttp.onreadystatechange = function() {
-	            if (this.readyState == 4 && this.status == 200) {
-	                document.getElementById("cities").innerHTML = this.responseText;
-	            }
+	        	if (this.readyState == 4 && this.status == 200) {
+	        		document.getElementById("cities").innerHTML = this.responseText;
+	        	}
 	        };
 	        xmlhttp.open("GET","displayMenu.php?city="+str,true);
 	        xmlhttp.send();
 	    }
 	}
-	</script>
-	
-	
-	
+</script>
+
+
+
 </head>
 
 <body data-spy="scroll" data-target="#site-navbar" data-offset="150">
 
 	<nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
 		<div class="container">
-				<span class="oi oi-menu"></span> Menu
-				</button>
 			<a class="navbar-brand" href="../index.php">TastyByte</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-nav" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="oi oi-menu"></span> Menu
-			</button>
 			
 			<div class="collapse navbar-collapse" id="site-nav">
 				<ul class="navbar-nav ml-auto">
@@ -101,15 +96,15 @@ session_start();
 		<div class="container">
 			<div class="headingBtn">
 				<h2>Menu</h2>
-						<form>
-							<select name="users" onchange="showCity(this.value)">
-							<option value="">Select a city:</option>
-							<option value="Mangalore">Mangalore</option>
-							<option value="Mysore">Mysore</option>
-							<option value="Hubli">Hubli</option>
-							<option value="Bangalore">Bangalore</option>
-							</select>
-						</form>
+				<form>
+					<select name="users" onchange="showCity(this.value)">
+						<option value="">Select a city:</option>
+						<option value="Mangalore">Mangalore</option>
+						<option value="Mysore">Mysore</option>
+						<option value="Hubli">Hubli</option>
+						<option value="Bangalore">Bangalore</option>
+					</select>
+				</form>
 			</div>
 			<br/>
 		</div>
@@ -120,26 +115,26 @@ session_start();
 	</section>
 	<!-- END section -->
 
-			<div id="site-loader" class="show fullscreen">
-			<svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
-			</svg>
-			</div>
-			<script src="../js/anime.min.js"></script>
-			<script src="../js/jquery.min.js"></script>
-			<script src="../js/popper.min.js"></script>
-			<script src="../js/bootstrap.min.js"></script>
-			<script src="../js/jquery.easing.1.3.js"></script>
-			<script src="../js/jquery.waypoints.min.js"></script>
-			<script src="../js/owl.carousel.min.js"></script>
-			<script src="../js/jquery.magnific-popup.min.js"></script>
-			<script src="../js/bootstrap-datepicker.js"></script>
-			<script src="../js/jquery.timepicker.min.js"></script>
-			<script src="../js/jquery.animateNumber.min.js"></script>
-			<script src="../js/main.js"></script>
+	<div id="site-loader" class="show fullscreen">
+		<svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
+		</svg>
+	</div>
+	<script src="../js/anime.min.js"></script>
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/popper.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/jquery.easing.1.3.js"></script>
+	<script src="../js/jquery.waypoints.min.js"></script>
+	<script src="../js/owl.carousel.min.js"></script>
+	<script src="../js/jquery.magnific-popup.min.js"></script>
+	<script src="../js/bootstrap-datepicker.js"></script>
+	<script src="../js/jquery.timepicker.min.js"></script>
+	<script src="../js/jquery.animateNumber.min.js"></script>
+	<script src="../js/main.js"></script>
 
 
 
-			</body>
-			</html>
+</body>
+</html>
 
 

@@ -72,7 +72,7 @@ session_start();
 			<div class="collapse navbar-collapse" id="site-nav">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active"><a href="../index.php" class="nav-link active">Home</a></li>
-					<li class="nav-item active"><a href="menu.php" class="nav-link active">Menu</a></li>
+					
 
 					<?php if (isset($_SESSION['username'])):?>
 
@@ -82,6 +82,7 @@ session_start();
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="order.php">My Orders</a>
+								<a class="dropdown-item" href="myProduct.php">My Products</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="logout.php">Logout</a>
 							</div>

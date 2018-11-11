@@ -120,7 +120,7 @@ session_start();
 					</div>
 
 					<div class="col-md-7 mb-5 site-animate">
-						<form method="post">
+						<form method="post" action="php/queries.php">
 							<div class="form-group">
 								<label for="name" class="sr-only">Name</label>
 								<input type="text" class="form-control" id="name" placeholder="Name">
@@ -169,19 +169,8 @@ session_start();
 								<h2 class="site-heading-2">Contact</h2>
 								<p>Vamanjoor, Mangaluru<br/>+91 9911223344</p>
 							</div>
-							<div class="col-md-2 site-animate">
-								<div class="site-footer-widget mb-4">
-									<h2 class="site-heading-2">Useful links</h2>
-									<ul class="list-unstyled">
-										<li><a href="#" class="py-2 d-block">Foods</a></li>
-										<li><a href="#" class="py-2 d-block">Drinks</a></li>
-										<li><a href="#" class="py-2 d-block">Breakfast</a></li>
-										<li><a href="#" class="py-2 d-block">Brunch</a></li>
-										<li><a href="#" class="py-2 d-block">Dinner</a></li>
-									</ul>
-								</div>
-							</div>
-
+						</div>
+						</div>
 						</div>
 						<div class="row site-animate">
 							<div class="col-md-12 text-center">

@@ -95,7 +95,7 @@ session_start();
 					<div class="col-md-5 site-animate mb-5">
 						<h4 class="site-sub-title">Our Story</h4>
 						<h2 class="site-primary-title display-4">Welcome</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, similique, delectus blanditiis odit expedita amet. Sed labore ipsum vel dolore, quis, culpa et magni autem sequi facere eos tenetur, ex?</p>
+						<p>TastyByte connects neighbours and relatives by helping them to share the delicious and healthy food with each other. If you love food and hate waste, care about the environment or want to connect with your community, TastyByte is for you.</p>
 					</div>
 					<div class="col-md-1"></div>
 					<div class="col-md-6 site-animate img" data-animate-effect="fadeInRight">
@@ -114,7 +114,7 @@ session_start();
 						<h2 class="display-4">Get In Touch</h2>
 						<div class="row justify-content-center">
 							<div class="col-md-7">
-								<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, similique, delectus blanditiis odit expedita amet.</p>
+								<p class="lead">Fill this out so we can learn more about you and your needs.</p>
 							</div>
 						</div>
 					</div>
@@ -162,7 +162,7 @@ session_start();
 						<div class="row">
 							<div class="col-md-4 site-animate">
 								<h2 class="site-heading-2">About Us</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, similique, delectus blanditiis odit expedita amet. Sed labore ipsum vel dolore, quis, culpa et magni autem sequi facere eos tenetur, ex?</p>
+								<p>TastyByte connects neighbours and relatives by helping them to share the delicious and healthy food with each other. If you love food and hate waste, care about the environment or want to connect with your community, TastyByte is for you.</p>
 							</div>
 
 							<div class="col-md-4 site-animate">

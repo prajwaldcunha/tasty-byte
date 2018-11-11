@@ -98,9 +98,8 @@ session_start();
 
 	<section class="site-section bg-light" id="section-order">
 		<div class="container">
-			<div class="row">
-				<h2>Menu</h2>	
-					<p>
+			<div class="headingBtn">
+				<h2>Menu</h2>
 						<form>
 							<select name="users" onchange="showCity(this.value)">
 							<option value="">Select a city:</option>
@@ -110,11 +109,12 @@ session_start();
 							<option value="Bangalore">Bangalore</option>
 							</select>
 						</form>
-						<br>
-						<div id="cities"><b>Person info will be listed here.</b></div>
-					</p>
 			</div>
 			<br/>
+		</div>
+
+		<div class="container">
+			<div id="cities"><b>Person info will be listed here.</b></div>
 		</div>
 	</section>
 	<!-- END section -->

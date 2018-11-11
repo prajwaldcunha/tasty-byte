@@ -1509,10 +1509,15 @@ em{
   position: relative;
 }
 
-.headingBtn h1 {
+.headingBtn h2 {
   text-align: center;
 }
 .headingBtn button {
+  position: absolute;
+  right: 0;
+}
+
+.headingBtn select {
   position: absolute;
   right: 0;
 }

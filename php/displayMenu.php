@@ -23,7 +23,8 @@ session_start();
 
 	<link rel="stylesheet" href="../css/product.css">
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
 </head>
 
 <body>
@@ -51,15 +52,28 @@ session_start();
 							<div class="card-body">
 								<h5 class="card-title"><?php echo $row['name']; ?></h5>
 								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetails<?php echo $i;?>">Details</button>
-								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEnterOrder">Order now</button>
+								<?php
+								if (isset($_SESSION['username'])):
+								?>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEnterOrder1" >Order now</button>
+								<?php
+									else:
+									?>
+								<button type="button" id="myBtn" onclick="alertfunc()">Order now</button>
+								
+								<?php
+									endif;
+								?>
+								
 							</div>
 							
 							<!--Order food modal-->
 							<?php
-								#if()
+								if (isset($_SESSION['username'])):
 								
 								?>
-							<div class="modal fade" id="modalEnterOrder" tabindex="-1" role="dialog" aria-labelledby="modalDetailsTitle" aria-hidden="true">
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEnterOrder1" id="myBtn">Order now</button>
+							<div class="modal fade" id="modalEnterOrde" tabindex="-1" role="dialog" aria-labelledby="modalDetailsTitle" aria-hidden="true">
 								<div class="modal-dialog modal-dialog-centered" role="document">
 									<div class="modal-content">
 										<div class="modal-header">
@@ -73,11 +87,14 @@ session_start();
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-											<?php ?>
+											
 										</div>
 									</div>
 								</div>
 							</div>
+							
+							
+							<?php endif; ?>
 							<!--end-->
 
 

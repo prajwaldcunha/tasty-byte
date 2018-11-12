@@ -52,6 +52,11 @@ session_start();
 	        xmlhttp.send();
 	    }
 	}
+		function alertfunc(){
+			alert("Please Login/Register to continue");
+			window.location.href = "../index.php";
+			
+		}
 </script>
 
 

@@ -245,11 +245,7 @@ $result = $conn->query($sql);
 			endwhile;
 
 			else:?>
-			<p>You have not Added any Product anything</p>
-			<div class="container">
-				<br/>
-				<button type="button" class="btn btn-primary" onclick="redir();">Add Now!</button>
-			</div>
+			<p>You have not Added any Product!</p>
 		<?php endif;?>
 
 	</div>

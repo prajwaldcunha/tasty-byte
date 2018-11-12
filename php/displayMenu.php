@@ -59,7 +59,7 @@ session_start();
 								<?php
 									else:
 									?>
-								<button type="button" id="myBtn" onclick="alertfunc()">Order now</button>
+								<button type="button" class="btn btn-primary" id="myBtn" onclick="alertfunc()">Order now</button>
 								
 								<?php
 									endif;
@@ -68,12 +68,7 @@ session_start();
 							</div>
 							
 							<!--Order food modal-->
-							<?php
-								if (isset($_SESSION['username'])):
-								
-								?>
-								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEnterOrder1" id="myBtn">Order now</button>
-							<div class="modal fade" id="modalEnterOrde" tabindex="-1" role="dialog" aria-labelledby="modalDetailsTitle" aria-hidden="true">
+							<div class="modal fade" id="modalEnterOrder1" tabindex="-1" role="dialog" aria-labelledby="modalDetailsTitle" aria-hidden="true">
 								<div class="modal-dialog modal-dialog-centered" role="document">
 									<div class="modal-content">
 										<div class="modal-header">
@@ -92,9 +87,6 @@ session_start();
 									</div>
 								</div>
 							</div>
-							
-							
-							<?php endif; ?>
 							<!--end-->
 
 

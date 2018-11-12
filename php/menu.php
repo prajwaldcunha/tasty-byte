@@ -117,7 +117,7 @@ session_start();
 		</div>
 
 		<div class="container">
-			<div id="cities"><b>Person info will be listed here.</b></div>
+			<div id="cities"></div>
 		</div>
 	</section>
 	<!-- END section -->

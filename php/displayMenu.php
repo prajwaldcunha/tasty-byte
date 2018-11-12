@@ -51,7 +51,34 @@ session_start();
 							<div class="card-body">
 								<h5 class="card-title"><?php echo $row['name']; ?></h5>
 								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetails<?php echo $i;?>">Details</button>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEnterOrder">Order now</button>
 							</div>
+							
+							<!--Order food modal-->
+							<?php
+								#if()
+								
+								?>
+							<div class="modal fade" id="modalEnterOrder" tabindex="-1" role="dialog" aria-labelledby="modalDetailsTitle" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-centered" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLongTitle">Product Details</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<p>Your food is ordered!</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+											<?php ?>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--end-->
 
 
 							<!-- Button trigger modal -->

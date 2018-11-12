@@ -234,6 +234,7 @@ $result = $conn->query($sql);
 				</div>
 				<?php if($i%3==0):?>
 				</div>
+				</br>
 				<?php if($result->num_rows != $i):?>
 					<div class="row">
 						<?php

@@ -29,7 +29,7 @@ session_start();
 	
 	<script>
 		function redir() {
-			window.location = "https://tastybyte.azurewebsites.net/index.php";
+			window.location = "https://tastybyte.azurewebsites.net/php/menu.php";
 		}
 	</script>
 
@@ -157,17 +157,6 @@ session_start();
 		</section>
 		<!-- END section -->
 	<?php endif; 
-		// SELECT name, imageurl, details, quantity, price, manufacturedate, pickup_address, city, fname, lname, email, phoneno 
-		// FROM users u, products p
-		//  WHERE p.uid = u.id AND  p.pid = (SELECT pid 
-		//									FROM orders o
-		//                                  WHERE o.uid = $_SESSION['uid'] )
-
-
-
-
-
-
 	?>
 
 	<!-- loader -->

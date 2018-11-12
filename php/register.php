@@ -20,21 +20,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $password =md5(cleanInput($_POST["password"]));
 
   if(isempty($email)) {
-		$_SESSION['email_empty_error'] = "email address is empty";
-		// header("Location: https://tastybyte.azurewebsites.net");
-	}
+    $_SESSION['email_empty_error'] = "email address is empty";
+    // header("Location: https://tastybyte.azurewebsites.net");
+  }
 
   if(isempty($password)) {
-		$_SESSION['password_empty_error'] = "password is empty";
-		// header("Location: https://tastybyte.azurewebsites.net");
-	}
+    $_SESSION['password_empty_error'] = "password is empty";
+    // header("Location: https://tastybyte.azurewebsites.net");
+  }
   
   
   if(!$stmt->execute())
   {
   
     $_SESSION['email_unique_error'] = "Email has already been taken";
-		$_SESSION['email_script'] = "<script> $(document).ready(function(){ 
+    $_SESSION['email_script'] = "<script> $(document).ready(function(){ 
                                                                        $('#myModal').modal('show');
                                                                        $('#tab2').addClass('signup-shadow');
                                                                        $('#signup').addClass('active');
@@ -43,16 +43,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                                        $('#signin').removeClass('active');
                                                                        $('#signin').removeClass('show');
                                                                   }); </script>";
-	 header("Location: https://tastybyte.azurewebsites.net/index.php"); 
+   header("Location: https://tastybyte.azurewebsites.net/index.php"); 
   }
   else 
   {
     $_SESSION['username'] = $fname;
     $_SESSION['name'] = $fname . " " . $lname; //Full name of user
-    //$_SESSION['uid'] = $row['id'];
+    
+    $sql = 'SELECT id FROM users where email = "' . $email . '" and password = "' . $password . '"';
+    $result = $conn->query($sql);
+    $row = $result->fetch_array();
+    
+    $_SESSION['uid'] = $row['id'];
     header("Location: https://tastybyte.azurewebsites.net/index.php");
   }
-	
+  
 }
 ?>
 

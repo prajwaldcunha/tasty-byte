@@ -49,6 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   {
     $_SESSION['username'] = $fname;
     $_SESSION['name'] = $fname . " " . $lname; //Full name of user
+    $_SESSION['email_id']=$row['email'];
+    $_SESSION['city'] = $row['city'];
     
     $sql = 'SELECT id FROM users where email = "' . $email . '" and password = "' . $password . '"';
     $result = $conn->query($sql);
@@ -60,4 +62,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
 }
 ?>
-

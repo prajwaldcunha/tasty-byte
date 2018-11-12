@@ -104,6 +104,7 @@ session_start();
 			<div class="headingBtn">
 				<h2>Menu</h2>
 				<form>
+				  <div class="styled-select yellow rounded">
 					<select name="users" onchange="showCity(this.value)">
 						<option value="">Select a city:</option>
 						<option value="Mangalore">Mangalore</option>
@@ -111,6 +112,7 @@ session_start();
 						<option value="Hubli">Hubli</option>
 						<option value="Bangalore">Bangalore</option>
 					</select>
+				  </div>
 				</form>
 			</div>
 			<br/>

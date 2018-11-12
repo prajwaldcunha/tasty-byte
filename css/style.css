@@ -1517,11 +1517,6 @@ em{
   right: 0;
 }
 
-.headingBtn select {
-  position: absolute;
-  right: 0;
-}
-
 .styled-select {
    position: absolute;
    background: url(../images/dropdown.png) no-repeat 96% 0;

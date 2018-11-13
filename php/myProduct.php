@@ -72,85 +72,85 @@ $result = $conn->query($sql);
 	</nav>
 	<!-- END nav -->
 	<?php if (isset($_SESSION['username'])):
-	$sql = "SELECT name,price,imageurl,details,quantity,price,manufacturedate,pickup_address FROM products WHERE products.uid = ".$_SESSION['uid'];
-	$result = $conn->query($sql);
-	?>	
+		$sql = "SELECT name,price,imageurl,details,quantity,price,manufacturedate,pickup_address FROM products WHERE products.uid = ".$_SESSION['uid'];
+		$result = $conn->query($sql);
+		?>	
 
 
 
-	<section class="site-section bg-light" id="section-order">
-		<div class="container">
-			<div class="headingBtn">
-				<h2>My Products</h2>
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProdModal">
-					Add Product
-				</button>
+		<section class="site-section bg-light" id="section-order">
+			<div class="container">
+				<div class="headingBtn">
+					<h2>My Products</h2>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProdModal">
+						Add Product
+					</button>
+				</div>
 			</div>
-		</div>
 
-		<div class="modal fade" id="addProdModal">
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
+			<div class="modal fade" id="addProdModal">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
 
-					<!-- Modal Header -->
-					<div class="modal-header">
-						<h4 class="modal-title"> Add Product</h4>
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-					</div>
+						<!-- Modal Header -->
+						<div class="modal-header">
+							<h4 class="modal-title"> Add Product</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
 
-					<!-- Modal body -->
-					<div class="modal-body">
+						<!-- Modal body -->
+						<div class="modal-body">
 
-						<div class="form-style-10">
-							<h1>Product details</h1>
-							<form action="addProduct.php" method="post" enctype="multipart/form-data">
+							<div class="form-style-10">
+								<h1>Product details</h1>
+								<form action="addProduct.php" method="post" enctype="multipart/form-data">
 
-								<div class="section"><span>1</span>Item details</div>
-								<div class="inner-wrap">
-									<label>Product name <input type="text" name="prodName" required="" maxlength="256" /></label>
-									<label>Product description <textarea name="prodDesc" required="" maxlength="150" rows="4"></textarea></label>
-									<label>Quantity<input type="number" name="quantity" required="" min="1" value="1"/></label>                  
-									<label>Date of manufacture <input type="date" name="dateOfManufacture" required=""  /></label>      
-									<label>Price <input type="text" name="price" required="" pattern="[0-9]+" /></label>
-									<label>Pickup Address <input type="text" name="pickup_address" required=""/></label>
-									<label>City 
-										<select name="city" required="">
-											<option selected><?php echo $_SESSION['city'];?></option>
-											<option>Bangalore</option>
-											<option>Mysore</option>
-											<option>Mumbai</option>
-											<option>Delhi</option>
-											<option>Hyderabad</option>
-											<option>Ahmedabad</option>
-											<option>Chennai</option>
-											<option>Kolkata</option>
-											<option>Surat</option>
-											<option>Pune</option>
-										</select>
-									</label>
-								</div>
-								<div class="section"><span>2</span>Item Photographs</div>
-								<div class="inner-wrap">
+									<div class="section"><span>1</span>Item details</div>
+									<div class="inner-wrap">
+										<label>Product name <input type="text" name="prodName" required="" maxlength="256" /></label>
+										<label>Product description <textarea name="prodDesc" required="" maxlength="150" rows="4"></textarea></label>
+										<label>Quantity<input type="number" name="quantity" required="" min="1" value="1"/></label>                  
+										<label>Date of manufacture <input type="date" name="dateOfManufacture" required=""  /></label>      
+										<label>Price <input type="text" name="price" required="" pattern="[0-9]+" /></label>
+										<label>Pickup Address <input type="text" name="pickup_address" required=""/></label>
+										<label>City 
+											<select name="city" required="">
+												<option selected><?php echo $_SESSION['city'];?></option>
+												<option>Bangalore</option>
+												<option>Mysore</option>
+												<option>Mumbai</option>
+												<option>Delhi</option>
+												<option>Hyderabad</option>
+												<option>Ahmedabad</option>
+												<option>Chennai</option>
+												<option>Kolkata</option>
+												<option>Surat</option>
+												<option>Pune</option>
+											</select>
+										</label>
+									</div>
+									<div class="section"><span>2</span>Item Photographs</div>
+									<div class="inner-wrap">
 
 
-									<div class="group">
-										<span class="errormessage"><?php 
-										if(isset($_SESSION['fileUploadFail'])) { 
-											echo $_SESSION['fileUploadFail']; 
-											unset($_SESSION['fileUploadFail']);
-										}
-										if(isset($_SESSION['fileUploadError_1'])){
-											echo $_SESSION['fileUploadError_1']; 
-											unset($_SESSION['fileUploadError_1']);
+										<div class="group">
+											<span class="errormessage"><?php 
+											if(isset($_SESSION['fileUploadFail'])) { 
+												echo $_SESSION['fileUploadFail']; 
+												unset($_SESSION['fileUploadFail']);
+											}
+											if(isset($_SESSION['fileUploadError_1'])){
+												echo $_SESSION['fileUploadError_1']; 
+												unset($_SESSION['fileUploadError_1']);
 
-										}
-										if(isset($_SESSION['fileUploadError'])){
-											echo $_SESSION['fileUploadError']; 
-											unset($_SESSION['fileUploadError']);
+											}
+											if(isset($_SESSION['fileUploadError'])){
+												echo $_SESSION['fileUploadError']; 
+												unset($_SESSION['fileUploadError']);
 
-										}
+											}
 
-										?>
+											?>
 
 										</span>
 									</div>
@@ -164,76 +164,76 @@ $result = $conn->query($sql);
 							</form>
 							<?php if(isset($_SESSION['script_addProd_modal'])) { echo $_SESSION['script_addProd_modal']; 
 							$_SESSION['script_addProd_modal'] = null;
-							} ?>
-						</div>
+						} ?>
 					</div>
+				</div>
 
-					<!-- Modal footer -->
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					</div>
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>
+	</div>
 
-<div class="container">
-	<div class="row">
-		<?php
-		$i=0;
-		if ($result->num_rows > 0):
+	<div class="container">
+		<div class="row">
+			<?php
+			$i=0;
+			if ($result->num_rows > 0):
    						 // output data of each row
-			while($row = $result->fetch_array()):
-				$i++;
+				while($row = $result->fetch_array()):
+					$i++;
 
-				$time=strtotime($row['manufacturedate']);
-				$mdate=date('m/d/Y',$time);
-
-
-
-				?>
-				<div class="col-sm-4">
-					<div class="card">
-						<img class="card-img-top" src="<?php echo $row['imageurl'];?>" alt="Card image cap">
-						<div class="card-body">
-							<h5 class="card-title"><?php echo $row['name']; ?></h5>
-							<p class="card-text">Manufacture date : <?php echo $mdate; ?></p>
-							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetails<?php echo $i;?>">Details</button>
-						</div>
+					$time=strtotime($row['manufacturedate']);
+					$mdate=date('m/d/Y',$time);
 
 
-						<!-- Button trigger modal -->
+
+					?>
+					<div class="col-sm-4">
+						<div class="card">
+							<img class="card-img-top" src="<?php echo $row['imageurl'];?>" alt="Card image cap">
+							<div class="card-body">
+								<h5 class="card-title"><?php echo $row['name']; ?></h5>
+								<p class="card-text">Manufacture date : <?php echo $mdate; ?></p>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetails<?php echo $i;?>">Details</button>
+							</div>
 
 
-						<!-- Modal -->
-						<div class="modal fade" id="modalDetails<?php echo $i;?>" tabindex="-1" role="dialog" aria-labelledby="modalDetailsTitle" aria-hidden="true">
-							<div class="modal-dialog modal-dialog-centered" role="document">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h5 class="modal-title" id="exampleModalLongTitle">Product Details</h5>
-										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-											<span aria-hidden="true">&times;</span>
-										</button>
-									</div>
-									<div class="modal-body">
-										<ul>
-											<li>Product Name : <?php echo $row['name']; ?></li>
-											<li>Price :  Rs. <?php echo $row['price']; ?></li>
-											<li>Quantity: <?php echo $row['quantity']; ?></li>
-											<li>Date of manufacture : <?php echo $mdate; ?></li>
-											<li>PickUp Address : <?php echo $row['pickup_address']; ?></li>
+							<!-- Button trigger modal -->
 
-										</ul>
-									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+							<!-- Modal -->
+							<div class="modal fade" id="modalDetails<?php echo $i;?>" tabindex="-1" role="dialog" aria-labelledby="modalDetailsTitle" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-centered" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLongTitle">Product Details</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<ul>
+												<li>Product Name : <?php echo $row['name']; ?></li>
+												<li>Price :  Rs. <?php echo $row['price']; ?></li>
+												<li>Quantity: <?php echo $row['quantity']; ?></li>
+												<li>Date of manufacture : <?php echo $mdate; ?></li>
+												<li>PickUp Address : <?php echo $row['pickup_address']; ?></li>
+
+											</ul>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<?php if($i%3==0):?>
-				</div>
+					<?php if($i%3==0):?>
+					</div>
 				</br>
 				<?php if($result->num_rows != $i):?>
 					<div class="row">
@@ -245,12 +245,14 @@ $result = $conn->query($sql);
 			endwhile;
 
 			else:?>
-			<p>You have not Added any Product!</p>
-		<?php endif;?>
+				<div class="noProd">
+					<p>You have not Added any Product!</p>
+				</div>
+			<?php endif;?>
 
-	</div>
-</section>
-<!-- END section -->
+		</div>
+	</section>
+	<!-- END section -->
 <?php endif; ?>
 
 <div id="site-loader" class="show fullscreen">

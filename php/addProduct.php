@@ -13,6 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
 	if ($_FILES["imageToUpload"]["size"] > 500000) {
 		$_SESSION['fileUploadError']='large file';
 		$uploadOk = 0;
+		$_SESSION['script_addProd_modal'] = "<script> $(document).ready(function(){ $('#addProdModal').modal('show'); }); </script>";
+		header("Location: https://tastybyte.azurewebsites.net/php/myProduct.php");
+		
 	}
 
 	// Allow certain file formats
@@ -23,12 +26,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
 	$extension = end($ext_array);
 	
 	if (in_array($_FILES["imageToUpload"]["type"],$validMime) && in_array($extension, $validExt)) {
-	 	echo "Extension and mime types are valid";
-	 	$uploadOk=1;
+		
+		$uploadOk=1;
 	}
 	else {
 		$uploadOk = 0;
 		$_SESSION['fileUploadError_1']='Has an invalid mime type or extension';
+		$_SESSION['script_addProd_modal'] = "<script> $(document).ready(function(){ $('#addProdModal').modal('show'); }); </script>";
+		header("Location: https://tastybyte.azurewebsites.net/php/myProduct.php");
+		
 	}
 
 	// Check if $uploadOk is set to 0 by an error
@@ -58,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
 
 			$stmt->bind_param("ssssisssi",$productName,$target_file,$productDesc,$quantity,$price, $dateOfManufacture, $pickup_address, $city, $userid);
 			if(!($stmt->execute())) {
-				echo "Error Insert";
+				echo "Error has occured";
 			}
 
 			header("Location: https://tastybyte.azurewebsites.net/php/myProduct.php");

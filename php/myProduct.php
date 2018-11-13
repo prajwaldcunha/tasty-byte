@@ -245,8 +245,8 @@ $result = $conn->query($sql);
 			endwhile;
 
 			else:?>
-				<div class="noProd">
-					<p>You have not Added any Product!</p>
+				<div>
+					<p id="noProd">You have not Added any Product!</p>
 				</div>
 			<?php endif;?>
 

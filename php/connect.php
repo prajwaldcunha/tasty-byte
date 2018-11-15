@@ -1,8 +1,8 @@
 <?php
-$host = 'db4free.net';
-$username = 'tastybyte';
-$password = 'q1w2e3r4';
-$dbname = 'tastybytedb';
+$host = 'sql12.freemysqlhosting.net';
+$username = 'sql12265606';
+$password = 'LpJJbn34q3';
+$dbname = 'sql12265606';
 
 // Create connection
 $conn = new mysqli($host, $username, $password, $dbname);

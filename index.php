@@ -248,9 +248,10 @@ session_start();
 										</fieldset>
 									</form>
 
-									<?php if(isset($_SESSION['script'])) { echo $_SESSION['script']; 
-									$_SESSION['script'] = null;
-								} ?>
+									<?php if(isset($_SESSION['script'])) { 
+											echo $_SESSION['script']; 
+											$_SESSION['script'] = null;
+										} ?>
 
 							</div>
 

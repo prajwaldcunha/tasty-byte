@@ -114,8 +114,12 @@ session_start();
 					</select>
 				  </div>
 				</form>
+				
+				<?php if(isset($_SESSION['orderScript'])) { 
+						echo $_SESSION['orderScript']; 
+						$_SESSION['orderScript'] = null;
+					} ?>
 			</div>
-			<br/>
 		</div>
 
 		<div class="container">
@@ -123,6 +127,28 @@ session_start();
 		</div>
 	</section>
 	<!-- END section -->
+
+	<!--Order food modal-->
+	<div class="modal fade" id="orderInfo" tabindex="-1" role="dialog" aria-labelledby="modalDetailsTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">Order Details</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p><?php if(isset($_SESSION['orderInfo'])) { echo $_SESSION['orderInfo']; $_SESSION['orderInfo'] = null;  } ?></p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+							<!--end-->
+
 
 	<div id="site-loader" class="show fullscreen">
 		<svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>

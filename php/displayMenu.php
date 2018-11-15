@@ -30,7 +30,7 @@ session_start();
 <body>
 	<?php
 	$city = cleanInput($_GET['city']);
-	$sql  = "SELECT name,imageurl,details,quantity,price,manufacturedate,pickup_address,products.city,fname,lname,email,phoneno FROM products, users WHERE products.uid=users.id AND products.city='".$city . "' AND soldout = 0";
+	$sql  = "SELECT products.id as pid,name,imageurl,details,quantity,price,manufacturedate,pickup_address,products.city,fname,lname,email,phoneno FROM products, users WHERE products.uid=users.id AND products.city='".$city . "' AND soldout = 0 AND products.uid NOT IN (SELECT users.id FROM users WHERE users.id = " . $_SESSION['uid'] . ")";
 	$result = $conn->query($sql);
 	?>
 	
@@ -42,6 +42,7 @@ session_start();
    						 // output data of each row
 				while($row = $result->fetch_array()):
 					$i++;
+					$_SESSION['pid']=$row['pid'];
 
 					$time=strtotime($row['manufacturedate']);
 					$mdate=date('m/d/Y',$time);
@@ -53,32 +54,32 @@ session_start();
 								<h5 class="card-title"><?php echo $row['name']; ?></h5>
 								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetails<?php echo $i;?>">Details</button>
 								<?php
-								if (isset($_SESSION['username'])):
-								?>
-								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEnterOrder1" >Order now</button>
-								<?php
-									else:
-									?>
+								if (isset($_SESSION['username'])):?>
+								<form method="POST" action="writeOrder.php">
+								<input type="submit" name="btnOrder" class="btn btn-primary" value="Order Now!" ></input>
+								</form>
+								<?php 
+								else:?>
 								<button type="button" class="btn btn-primary" id="myBtn" onclick="alertfunc()">Order now</button>
 								
-								<?php
-									endif;
-								?>
+								<?php endif;?>
 								
 							</div>
+							
+							
 							
 							<!--Order food modal-->
 							<div class="modal fade" id="modalEnterOrder1" tabindex="-1" role="dialog" aria-labelledby="modalDetailsTitle" aria-hidden="true">
 								<div class="modal-dialog modal-dialog-centered" role="document">
 									<div class="modal-content">
 										<div class="modal-header">
-											<h5 class="modal-title" id="exampleModalLongTitle">Product Details</h5>
+											<h5 class="modal-title" id="exampleModalLongTitle">Order Details</h5>
 											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 												<span aria-hidden="true">&times;</span>
 											</button>
 										</div>
 										<div class="modal-body">
-											<p>Your food is ordered!</p>
+											<p><?php echo $_SESSION['orderInfo'];?></p>
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -127,6 +128,7 @@ session_start();
 					if($i%3==0):
 						?>
 					</div>
+					<br/>
 					<?php if($result->num_rows != $i):?>
 						<div class="row">
 							<?php

@@ -1,7 +1,7 @@
 <?php
-$host = 'tastybyte.mysql.database.azure.com';
-$username = 'tastybyte@tastybyte';
-$password = 'Tasty#byte';
+$host = 'db4free.net';
+$username = 'tastybyte';
+$password = 'q1w2e3r4';
 $dbname = 'tastybytedb';
 
 // Create connection

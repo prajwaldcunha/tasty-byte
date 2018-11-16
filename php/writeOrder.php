@@ -112,12 +112,12 @@ session_start();
 				
 				$_SESSION['orderInfo'] = "You have successfully ordered the product!";
 				$_SESSION['orderScript'] = "<script> $(document).ready(function(){ $('#orderInfo').modal('show'); }); </script>";
-				header("Location: menu.php");							   
+				//header("Location: menu.php");							   
 			}
 			else{
 				$_SESSION['orderInfo'] = "Problem in ordering the product";
 				$_SESSION['orderScript'] = "<script> $(document).ready(function(){ $('#orderInfo').modal('show'); }); </script>";
-				header("Location: menu.php");							   
+				//header("Location: menu.php");							   
 			}
 		}
 	?>

@@ -29,105 +29,119 @@ session_start();
 
 <body>
 	<?php
-		if ($_SERVER["REQUEST_METHOD"] == "POST"){
-			$orderdate=date("Y-m-d");
-			$pid = $_SESSION['pid'];
-			$uid=$_SESSION['uid'];
-			$stmt = $conn->prepare("INSERT INTO orders (uid,pid,orderdate) VALUES (?,?,?)");
-			$stmt->bind_param("iss",$uid,$pid,$orderdate);
-			$stmt->execute();
-				
-			$stmt= "UPDATE products SET soldout=1 where id=" . $pid;
-								
-			if($conn->query($stmt) === TRUE){
-				$sql = "SELECT name, price, pickup_address, products.city as pcity, fname, lname, email, phoneno, email FROM users, products WHERE products.uid= users.id AND products.id = " . $pid;
-				$result = $conn->query($sql);
-				$row = $result->fetch_array();
-				
-				$pname = $row['name'];
-				$price = $row['price'];
-				$pickup_address = $row['pickup_address'];
-				$city = $row['pcity'];
-				$seller_name = $row['fname'] . " " . $row['lname'];
-				$phone = $row['phoneno'];
-				$emailAdd = $row['email'];
-				
-				include_once "../../../vendor/autoload.php";
-				 /*
-				  * Create the body of the message (a plain-text and an HTML version).
-				  * $text is your plain-text email
-				  * $html is your html version of the email
-				  * If the receiver is able to view html emails then only the html
-				  * email will be displayed
-				  */
-				 $text = "Hi " . $_SESSION['username'] . ",\n Your order has been successfully placed!\nName of the product : " . $pname . "\nPrice : " . $price . "\nPickup Address : " . $pickup_address . ", " . $city . "\nSeller Name: " . $seller_name . "\nPhone : " . $phone . "\nEmail Address : " . $emailAdd . "\n";
-				 $html = "<html>
-				       <head></head>
-				       <body>
-				           <p>Hi " . $_SESSION['username'] . "<br>
-				              Your order has been successfully placed!<br>
-							  Name of the product : " . $pname . "<br>
-							  Price : " . $price . "<br>
-							  Pickup Address : " . $pickup_address . ", " . $city . "<br>
-							  Seller Name: " . $seller_name . "<br>
-							  Phone : " . $phone . "<br>
-							  Email Address : " . $emailAdd . "<br>
-				           </p>
-				       </body>
-				       </html>";
-				 // This is your From email address
-				 $from = array('dcunhaprajwal@gmail.com' => 'TastyByte');
-				 // Email recipients
-				 $to = array(
-					$_SESSION['email_id']
-				 );
-				 // Email subject
-				 $subject = 'Order Confirmation';
-				
-				 // Login credentials
-				 $username = 'azure_05b433688cf0f94d14ea288a577b4c05@azure.com';
-				 $password = 'q1w2e3r4t5';
-				
-				 // Setup Swift mailer parameters
-				 $transport = (new Swift_SmtpTransport('smtp.sendgrid.net', 587));
-				 $transport->setUsername($username);
-				 $transport->setPassword($password);
-				 $swift = (new Swift_Mailer($transport));
-				
-				 // Create a message (subject)
-				 $message = new Swift_Message($subject);
-				
-				 // attach the body of the email
-				 $message->setFrom($from);
-				 $message->setBody($html, 'text/html');
-				 $message->setTo($to);
-				 $message->addPart($text, 'text/plain');
-				
-				 // send message
-				 if ($recipients = $swift->send($message, $failures))
-				 {
-				     // This will let us know how many users received this message
-				     echo 'Message sent out to '.$recipients.' users';
-				 }
-				 // something went wrong =(
-				 else
-				 {
-				     echo "Something went wrong - ";
-				     print_r($failures);
-				 }
-				
-				
-				$_SESSION['orderInfo'] = "You have successfully ordered the product!";
-				$_SESSION['orderScript'] = "<script> $(document).ready(function(){ $('#orderInfo').modal('show'); }); </script>";
-				//header("Location: menu.php");							   
-			}
-			else{
-				$_SESSION['orderInfo'] = "Problem in ordering the product";
-				$_SESSION['orderScript'] = "<script> $(document).ready(function(){ $('#orderInfo').modal('show'); }); </script>";
-				//header("Location: menu.php");							   
-			}
-		}
+	$city = cleanInput($_GET['city']);
+	$sql  = "SELECT products.id as pid,name,imageurl,details,quantity,price,manufacturedate,pickup_address,products.city,fname,lname,email,phoneno FROM products, users WHERE products.uid=users.id AND products.city='".$city . "' AND soldout = 0 AND products.uid NOT IN (SELECT users.id FROM users WHERE users.id = " . $_SESSION['uid'] . ")";
+	$result = $conn->query($sql);
 	?>
+	
+	<div class="container">
+		<div class="row">
+			<?php
+			$i=0;
+			if ($result->num_rows > 0):
+   						 // output data of each row
+				while($row = $result->fetch_array()):
+					$i++;
+					$_SESSION['pid']=$row['pid'];
 
-</body>
-</html>
+					$time=strtotime($row['manufacturedate']);
+					$mdate=date('m/d/Y',$time);
+					?>
+					<div class="col-sm-4">
+						<div class="card">
+							<img class="card-img-top" src="<?php echo $row['imageurl'];?>" alt="Card image cap">
+							<div class="card-body">
+								<h5 class="card-title"><?php echo $row['name']; ?></h5>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetails<?php echo $i;?>">Details</button>
+								<?php
+								if (isset($_SESSION['username'])):?>
+								<form method="POST" action="writeOrder.php">
+								<input type="submit" name="btnOrder" class="btn btn-primary" value="Order Now!" ></input>
+								</form>
+								<?php 
+								else:?>
+								<button type="button" class="btn btn-primary" id="myBtn" onclick="alertfunc()">Order now</button>
+								
+								<?php endif;?>
+								
+							</div>
+							
+							
+							
+							<!--Order food modal-->
+							<div class="modal fade" id="modalEnterOrder1" tabindex="-1" role="dialog" aria-labelledby="modalDetailsTitle" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-centered" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLongTitle">Order Details</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<p><?php echo $_SESSION['orderInfo'];?></p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--end-->
+
+
+							<!-- Button trigger modal -->
+
+
+							<!-- Modal -->
+							<div class="modal fade" id="modalDetails<?php echo $i;?>" tabindex="-1" role="dialog" aria-labelledby="modalDetailsTitle" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-centered" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLongTitle">Product Details</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<ul>
+												<li>Product Name : <?php echo $row['name']; ?></li>
+												<li>Price :  Rs. <?php echo $row['price']; ?></li>
+												<li>Quantity: <?php echo $row['quantity']; ?></li>
+												<li>Date of manufacture : <?php echo $mdate; ?></li>
+												<li>Seller Name : <?php echo $row['fname']." ".$row['lname']; ?></li>
+												<li>PickUp Address : <?php echo $row['pickup_address']; ?></li>
+												<li>Phone number : <?php echo $row['phoneno']; ?></li>
+												<li>Email id: <?php echo $row['email']; ?></li>
+											</ul>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<?php
+					if($i%3==0):
+						?>
+					</div>
+					<br/>
+					<?php if($result->num_rows != $i):?>
+						<div class="row">
+							<?php
+						endif;
+					endif;
+
+				endwhile;
+
+				else:?>
+				<p>There are no products in your area</p>
+			<?php endif;?>
+
+		</div>
+
+	</body>
+	</html>

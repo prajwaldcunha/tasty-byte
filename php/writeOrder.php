@@ -30,7 +30,7 @@ session_start();
 <body>
 	<?php
 		if ($_SERVER["REQUEST_METHOD"] == "POST"){
-			$orderdate=date("m/d/Y");
+			$orderdate=date("Y-m-d");
 			$pid = $_SESSION['pid'];
 			$uid=$_SESSION['uid'];
 			$stmt = $conn->prepare("INSERT INTO orders (uid,pid,orderdate) VALUES (?,?,?)");

@@ -56,7 +56,7 @@ session_start();
 									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetails<?php echo $i;?>">Details</button>
 									<?php
 									if (isset($_SESSION['username'])):?>
-									<form method="POST" action="writeOrder.php">
+									<form method="POST" action="writeOrder.php" id = "formInline">
 									<input type="submit" name="btnOrder" class="btn btn-primary" value="Order Now!" ></input>
 									</form>
 									<?php 
@@ -80,7 +80,7 @@ session_start();
 												</button>
 											</div>
 											<div class="modal-body">
-												<p><?php echo $_SESSION['orderInfo'];?></p>
+												<p><?php if(isset($_SESSION['orderInfo'])) {echo $_SESSION['orderInfo']; } ?></p>
 											</div>
 											<div class="modal-footer">
 												<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -197,7 +197,7 @@ session_start();
 													</button>
 												</div>
 												<div class="modal-body">
-													<p><?php echo $_SESSION['orderInfo'];?></p>
+													<p><?php if(isset($_SESSION['orderInfo'])) {echo $_SESSION['orderInfo']; } ?></p>
 												</div>
 												<div class="modal-footer">
 													<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -56,7 +56,7 @@ session_start();
 									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetails<?php echo $i;?>">Details</button>
 									<?php
 									if (isset($_SESSION['username'])):?>
-									<form method="POST" action="writeOrder.php">
+									<form method="POST" action="writeOrder.php" id="formInline">
 									<input type="submit" name="btnOrder" class="btn btn-primary" value="Order Now!" ></input>
 									</form>
 									<?php 

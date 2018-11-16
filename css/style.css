@@ -1546,3 +1546,7 @@ em{
 
 /*Colors: Text */
 .yellow select  { color: #000; }
+
+#formInline {
+  display: inline;
+}

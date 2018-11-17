@@ -70,7 +70,7 @@ session_start();
 			</body>
 			</html>";
 				 // This is your From email address
-			$from = array('dcunhaprajwal@gmail.com' => 'TastyByte');
+			$from = array('raghunov97@gmail.com' => 'TastyByte');
 				 // Email recipients
 			$to = array(
 				$_SESSION['email_id']
@@ -80,9 +80,9 @@ session_start();
 			
 				 // Login credentials
 			$username = 'azure_05b433688cf0f94d14ea288a577b4c05@azure.com';
-			$password = 'q1w2e3r4t5';
+			$password = 'a1s2d3f4';
 			
-			
+
 				 // Setup Swift mailer parameters
 			$transport = (new Swift_SmtpTransport('smtp.sendgrid.net', 587));
 			$transport->setUsername($username);

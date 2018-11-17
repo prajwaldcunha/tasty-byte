@@ -82,6 +82,7 @@ session_start();
 			$username = 'azure_05b433688cf0f94d14ea288a577b4c05@azure.com';
 			$password = 'q1w2e3r4t5';
 			
+			
 				 // Setup Swift mailer parameters
 			$transport = (new Swift_SmtpTransport('smtp.sendgrid.net', 587));
 			$transport->setUsername($username);

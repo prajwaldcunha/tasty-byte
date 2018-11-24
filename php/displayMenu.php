@@ -2,6 +2,7 @@
 require  'connect.php';
 require 'functions.php';
 session_start();
+$_SESSION['pid'] = null;
 ?>
 
 <html lang="en">
@@ -43,8 +44,7 @@ session_start();
 	   						 // output data of each row
 					while($row = $result->fetch_array()):
 						$i++;
-						$_SESSION['pid']=$row['pid'];
-	
+
 						$time=strtotime($row['manufacturedate']);
 						$mdate=date('m/d/Y',$time);
 						?>
@@ -56,8 +56,9 @@ session_start();
 									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetails<?php echo $i;?>">Details</button>
 									<?php
 									if (isset($_SESSION['username'])):?>
-									<form method="POST" action="writeOrder.php" id = "formInline">
-									<input type="submit" name="btnOrder" class="btn btn-primary" value="Order Now!" ></input>
+									<form id = "formInline" method="POST" action="writeOrder.php">
+										<input type="hidden" value="<?php echo $row['pid'];?>" name="pid"/>
+										<input type="submit" name="btnOrder" class="btn btn-primary" value="Order Now!" ></input>
 									</form>
 									<?php 
 									else:?>
@@ -160,7 +161,7 @@ session_start();
 		   						 // output data of each row
 						while($row = $result->fetch_array()):
 							$i++;
-							$_SESSION['pid']=$row['pid'];
+							//$_SESSION['pid']=$row['pid'];
 		
 							$time=strtotime($row['manufacturedate']);
 							$mdate=date('m/d/Y',$time);
@@ -174,7 +175,7 @@ session_start();
 										<?php
 										if (isset($_SESSION['username'])):?>
 										<form method="POST" action="writeOrder.php">
-										<input type="submit" name="btnOrder" class="btn btn-primary" value="Order Now!" ></input>
+										<input type="submit" name="btnOrder" class="btn btn-primary" value="Order Now!"></input>
 										</form>
 										<?php 
 										else:?>

@@ -87,7 +87,7 @@ $result = $conn->query($sql);
 					</button>
 				</div>
 			</div>
-
+		
 			<div class="modal fade" id="addProdModal">
 				<div class="modal-dialog modal-dialog-centered">
 					<div class="modal-content">
@@ -175,7 +175,8 @@ $result = $conn->query($sql);
 			</div>
 		</div>
 	</div>
-
+	<br/>
+	<br/>
 	<div class="container">
 		<div class="row">
 			<?php
@@ -276,5 +277,3 @@ $result = $conn->query($sql);
 
 </body>
 </html>
-
-

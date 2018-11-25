@@ -1503,27 +1503,20 @@ em{
   height: 250px;
 }
 
-.headingBtn {
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
 
 .headingBtn h2 {
   text-align: center;
 }
 .headingBtn button {
-  position: absolute;
-  right: 0;
+  float: right;
 }
 
 .styled-select {
-   position: absolute;
    background: url(../images/dropdown.png) no-repeat 96% 0;
    height: 29px;
    overflow: hidden;
    width: 240px;
-   right: 0;
+   float: right;
 }
 
 .styled-select select {

@@ -103,6 +103,7 @@ session_start();
 		<div class="container">
 			<div class="headingBtn">
 				<h2>Menu</h2>
+			
 				<form>
 				  <div class="styled-select yellow rounded">
 					<select name="users" onchange="showCity(this.value)">
@@ -121,7 +122,8 @@ session_start();
 					} ?>
 			</div>
 		</div>
-
+		<br>
+		<br>
 		<div class="container">
 			<div id="cities"></div>
 		</div>
@@ -171,5 +173,3 @@ session_start();
 
 </body>
 </html>
-
-

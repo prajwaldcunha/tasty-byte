@@ -46,7 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
 	} else {
 		// if everything is ok, try to upload file
 		if (move_uploaded_file($_FILES["imageToUpload"]["tmp_name"], $target_file)) {
-			session_start();
 			$stmt = $conn->prepare("INSERT INTO products (name,imageurl,details,quantity,price,manufacturedate, pickup_address, city, uid) VALUES (?,?,?,?,?,?,?,?,?)");
 
 			$productName = cleanInput($_POST['prodName']);

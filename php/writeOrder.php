@@ -31,7 +31,7 @@ session_start();
 	<?php
 	if ($_SERVER["REQUEST_METHOD"] == "POST"){
 		$orderdate=date("Y-m-d");
-		$pid = $_SESSION['pid'];
+		$pid = $_POST['pid'];
 		$uid=$_SESSION['uid'];
 		$stmt = $conn->prepare("INSERT INTO orders (uid,pid,orderdate) VALUES (?,?,?)");
 		$stmt->bind_param("iss",$uid,$pid,$orderdate);
@@ -114,7 +114,7 @@ session_start();
 			$_SESSION['orderScript'] = "<script> $(document).ready(function(){ $('#orderInfo').modal('show'); }); </script>";
 			header("Location: menu.php");							   
 		}
-	}
+	 }
 	?>
 
 </body>

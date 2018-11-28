@@ -233,10 +233,6 @@ session_start();
 												<span class="errormessage"><?php if(isset($_SESSION['validation_error'])) { echo $_SESSION['validation_error']; }?></span>
 											</div>
 
-											<div class="forgot-link">
-												<a href="#forgot" data-toggle="modal" data-dismiss="modal" data-target="#forgot-password"> I forgot my password</a>
-											</div>
-
 
 											<!-- Button -->
 											<div class="control-group">
@@ -287,7 +283,7 @@ session_start();
 												<!-- Text input-->
 												<div class="group">
 													<input required="" class="input" type="password" name="password"><span class="highlight"></span><span class="bar"></span>
-													<label class="label" for="date">Password(minimum 8 characters)</label></div>
+													<label class="label" for="date">Password(min. 8 characters)</label></div>
 													<em>1-8 Characters</em>
 
 													<!-- phone number input-->
@@ -360,7 +356,7 @@ session_start();
 											<h4 class="modal-title" id="myModalLabel">Password will be sent to your email</h4>
 										</div>
 										<div class="modal-body">
-											<form class="form-horizontal" action="/php/connect.php">
+											<form class="form-horizontal" action="index.php">
 												<fieldset>
 													<div class="group">
 														<input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>

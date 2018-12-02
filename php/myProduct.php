@@ -72,7 +72,7 @@ $result = $conn->query($sql);
 	</nav>
 	<!-- END nav -->
 	<?php if (isset($_SESSION['username'])):
-		$sql = "SELECT name,price,imageurl,details,quantity,price,manufacturedate,pickup_address FROM products WHERE products.uid = ".$_SESSION['uid'];
+		$sql = "SELECT id,name,price,imageurl,details,quantity,price,manufacturedate,pickup_address,soldout FROM products WHERE products.uid = ".$_SESSION['uid'];
 		$result = $conn->query($sql);
 		?>	
 
@@ -198,6 +198,17 @@ $result = $conn->query($sql);
 							<div class="card-body">
 								<h5 class="card-title"><?php echo $row['name']; ?></h5>
 								<p class="card-text">Manufacture date : <?php echo $mdate; ?></p>
+								<p class="card-text">Product Status: 
+									<?php if($row['soldout']) { 
+											$stmt = "SELECT fname,lname FROM users,orders WHERE orders.uid=users.id AND orders.pid=" . $row['id'];
+											$res = $conn->query($stmt);
+											$customer = $res->fetch_array();
+											echo "Ordered by " . $customer['fname'] . " " . $customer['lname'];
+										}
+										else {
+											echo "Available";
+										}?>
+								</p>
 								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetails<?php echo $i;?>">Details</button>
 							</div>
 

@@ -40,7 +40,8 @@ session_start();
 		$stmt= "UPDATE products SET soldout=1 where id=" . $pid;
 		
 		if($conn->query($stmt) === TRUE){
-			$sql = "SELECT name, price, pickup_address, products.city as pcity, fname, lname, email, phoneno, email FROM users, products WHERE products.uid= users.id AND products.id = " . $pid;
+			//Email to customer regarding order confirmation
+			$sql = "SELECT name, price, pickup_address, products.city as pcity, fname, lname, phoneno, email FROM users, products WHERE products.uid= users.id AND products.id = " . $pid;
 			$result = $conn->query($sql);
 			$row = $result->fetch_array();
 			
@@ -77,6 +78,63 @@ session_start();
 			);
 				 // Email subject
 			$subject = 'Order Confirmation';
+			
+				 // Login credentials
+			$username = 'azure_05b433688cf0f94d14ea288a577b4c05@azure.com';
+			$password = 'a1s2d3f4';
+			
+
+				 // Setup Swift mailer parameters
+			$transport = (new Swift_SmtpTransport('smtp.sendgrid.net', 587));
+			$transport->setUsername($username);
+			$transport->setPassword($password);
+			$swift = (new Swift_Mailer($transport));
+			
+				 // Create a message (subject)
+			$message = new Swift_Message($subject);
+			
+				 // attach the body of the email
+			$message->setFrom($from);
+			$message->setBody($html, 'text/html');
+			$message->setTo($to);
+			$message->addPart($text, 'text/plain');
+			
+				 // send message
+			if ($recipients = $swift->send($message, $failures))
+			{
+				     // This will let us know how many users received this message
+			}
+
+
+			//Email to Seller regarding the customer
+			$stmt = "SELECT fname, lname, email, phoneno FROM users WHERE users.id = " . $_SESSION['uid'];
+			$res = $conn->query($stmt);
+			$customer = $res->fetch_array();
+			
+			$customer_name = $customer['fname'] . " " . $customer['lname'];
+			$phone = $customer['phoneno'];
+			$emailAdd = $customer['email'];
+			
+			$text = "Hi " . $seller_name . ",\nYour product has been ordered!\nCustomer Name: " . $customer_name . "\nPhone : " . $phone . "\nEmail Address : " . $emailAdd . "\n";
+			$html = "<html>
+			<head></head>
+			<body>
+			<p>Hi " . $seller_name . "<br>
+			Your product has been ordered!<br>
+			Customer Name: " . $customer_name . "<br>
+			Phone : " . $phone . "<br>
+			Email Address : " . $emailAdd . "<br>
+			</p>
+			</body>
+			</html>";
+				 // This is your From email address
+			$from = array('raghunov97@gmail.com' => 'TastyByte');
+				 // Email recipients
+			$to = array(
+				$emailAdd
+			);
+				 // Email subject
+			$subject = 'Customer Information';
 			
 				 // Login credentials
 			$username = 'azure_05b433688cf0f94d14ea288a577b4c05@azure.com';

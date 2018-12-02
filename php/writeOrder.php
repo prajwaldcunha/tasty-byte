@@ -59,7 +59,7 @@ session_start();
 			$html = "<html>
 			<head></head>
 			<body>
-			<p>Hi " . $_SESSION['username'] . "<br>
+			<p>Hi " . $_SESSION['username'] . ",<br>
 			Your order has been successfully placed!<br>
 			Name of the product : " . $pname . "<br>
 			Price : " . $price . "<br>
@@ -119,7 +119,7 @@ session_start();
 			$html = "<html>
 			<head></head>
 			<body>
-			<p>Hi " . $seller_name . "<br>
+			<p>Hi " . $seller_name . ",<br>
 			Your product has been ordered!<br>
 			Customer Name: " . $customer_name . "<br>
 			Phone : " . $phone . "<br>
@@ -131,7 +131,7 @@ session_start();
 			$from = array('raghunov97@gmail.com' => 'TastyByte');
 				 // Email recipients
 			$to = array(
-				$emailAdd
+				$customer['email']
 			);
 				 // Email subject
 			$subject = 'Customer Information';

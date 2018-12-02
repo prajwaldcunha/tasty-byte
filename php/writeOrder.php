@@ -131,7 +131,7 @@ session_start();
 			$from = array('raghunov97@gmail.com' => 'TastyByte');
 				 // Email recipients
 			$to = array(
-				$customer['email']
+				$row['email']
 			);
 				 // Email subject
 			$subject = 'Customer Information';

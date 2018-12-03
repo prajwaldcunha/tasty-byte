@@ -121,6 +121,7 @@ session_start();
 			<body>
 			<p>Hi " . $seller_name . ",<br>
 			Your product has been ordered!<br>
+			Product Name: " . $pname . "<br>
 			Customer Name: " . $customer_name . "<br>
 			Phone : " . $phone . "<br>
 			Email Address : " . $emailAdd . "<br>

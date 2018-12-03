@@ -109,7 +109,7 @@ $result = $conn->query($sql);
 									<div class="inner-wrap">
 										<label>Product name <input type="text" name="prodName" required="" maxlength="256" /></label>
 										<label>Product description <textarea name="prodDesc" required="" maxlength="150" rows="4"></textarea></label>
-										<label>Quantity<input type="text" pattern="[0-9]+[kg|ltrs|gm|ml]" name="quantity" required="" placeholder="Enter qunatity in kg/ltrs/gm/ml"/></label>                  
+										<label>Quantity<input type="text" pattern="[0-9]+[ ]?kg|ltrs|gm|ml" name="quantity" required="" placeholder="Enter qunatity in kg/ltrs/gm/ml"/></label>                  
 										<label>Date of manufacture <input type="date" name="dateOfManufacture" required=""  /></label>      
 										<label>Price <input type="text" name="price" required="" pattern="[0-9]+" /></label>
 										<label>Pickup Address <input type="text" name="pickup_address" required=""/></label>

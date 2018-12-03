@@ -19,6 +19,24 @@ $result = $conn->query($sql);
 	<link rel="stylesheet" href="../css/open-iconic-bootstrap.min.css">
 	<link rel="stylesheet" href="../css/animate.css">
 
+	<link rel="apple-touch-icon" sizes="57x57" href="../images/icons2/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="../images/icons2/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="../images/icons2/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="../images/icons2/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="../images/icons2/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="../images/icons2/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="../images/icons2/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="../images/icons2/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="../images/icons2/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="../images/icons2/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../images/icons2/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="../images/icons2/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../images/icons2/favicon-16x16.png">
+	<link rel="manifest" href="../images/icons2/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="../images/icons2/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
 	<link rel="stylesheet" href="../css/owl.carousel.min.css">
 	<link rel="stylesheet" href="../css/owl.theme.default.min.css">
 	<link rel="stylesheet" href="../css/magnific-popup.css">
@@ -109,7 +127,7 @@ $result = $conn->query($sql);
 									<div class="inner-wrap">
 										<label>Product name <input type="text" name="prodName" required="" maxlength="256" /></label>
 										<label>Product description <textarea name="prodDesc" required="" maxlength="150" rows="4"></textarea></label>
-										<label>Quantity<input type="text" pattern="[0-9]+[ ]?kg|ltrs|gm|ml" name="quantity" required="" placeholder="Enter qunatity in kg/ltrs/gm/ml"/></label>                  
+										<label>Quantity<input type="text" pattern="[0-9]+(\s)?[[kg]|[ltrs]|[gm]|[ml]]" name="quantity" required="" placeholder="Enter qunatity in kg/ltrs/gm/ml"/></label>                  
 										<label>Date of manufacture <input type="date" name="dateOfManufacture" required=""  /></label>      
 										<label>Price <input type="text" name="price" required="" pattern="[0-9]+" /></label>
 										<label>Pickup Address <input type="text" name="pickup_address" required=""/></label>

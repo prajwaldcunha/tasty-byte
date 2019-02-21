@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	        $_SESSION['uid'] = $row['id'];
 	        $_SESSION['city'] = $row['city'];
 
-			header("Location: https://tastybyte.azurewebsites.net/index.php");
+			header("Location: ../index.php");
 	    }
 	} else {
 	    $_SESSION['validation_error'] = "Username and password does not match";

@@ -4,6 +4,8 @@ require 'functions.php';
 session_start();
 ?>
 
+
+
 <html lang="en">
 <head>
 	<link href="../css/googleapis.css" rel="stylesheet">

@@ -140,8 +140,8 @@ session_start();
 			$subject = 'Customer Information';
 			
 				 // Login credentials
-			$username = 'azure_05b433688cf0f94d14ea288a577b4c05@azure.com';
-			$password = 'a1s2d3f4';
+			$username = 'azure_361b1b587616e92ff380ad8e8359a015@azure.com';
+			$password = 'Raghavendra@1997';
 			
 
 				 // Setup Swift mailer parameters

@@ -55,7 +55,7 @@ session_start();
 			$phone = $row['phoneno'];
 			$emailAdd = $row['email'];
 			
-			include_once "../../../vendor/autoload.php";
+			include_once "../vendor/autoload.php";
 			
 			$text = "Hi " . $_SESSION['username'] . ",\n Your order has been successfully placed!\nName of the product : " . $pname . "\nPrice : " . $price . "\nPickup Address : " . $pickup_address . ", " . $city . "\nSeller Name: " . $seller_name . "\nPhone : " . $phone . "\nEmail Address : " . $emailAdd . "\n";
 			$html = "<html>

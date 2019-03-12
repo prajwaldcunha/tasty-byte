@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
 	
 	if($stmt->execute()) {
 		$_SESSION['querysuccess'] = '<script>alert("Thank you for your feedback");</script>';
-		header("Location: https://tastybyte.azurewebsites.net/index.php");
+		header("Location: ../index.php");
 	}
 }
 ?>
